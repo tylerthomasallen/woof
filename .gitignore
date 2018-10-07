@@ -11,7 +11,7 @@
 /log/*
 /tmp/*
 !/log/.keep
-!/tmp/.keep
+!/tmp/.keepit
 
 # Ignore uploaded files in development
 /storage/*
