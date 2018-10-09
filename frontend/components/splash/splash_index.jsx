@@ -8,12 +8,10 @@ class SplashIndex extends React.Component {
   render() {
     const { logout } = this.props;
     if (this.props.currentUser === undefined) {
-      debugger;
       return (
         <SplashLoggedInItem />
       );
     } else {
-      debugger;
       return (
         <SplashLoggedOutItem logout={logout} currentUser={this.props.currentUser} />
       );

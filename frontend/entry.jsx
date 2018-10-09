@@ -7,7 +7,20 @@ import * as AuthApi from './util/api/auth_util';
 import { login } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
+  let store;
+
+  if (window.currentUser) {
+    const preloadState = {
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser}
+      },
+      session: { id: window.currentUser.id }
+    };
+
+    store = configureStore(preloadState);
+  } else {
+    store = configureStore();
+  }
   // for testing
   window.AuthApi = AuthApi;
   window.getState = store.getState;
