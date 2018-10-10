@@ -37,27 +37,51 @@ class SessionForm extends React.Component {
     );
   }
 
-  signUp() {
+  name() {
     const { formType } = this.props;
     if (formType === 'Sign Up') {
       return (
-      <React.Fragment>
-        <input type="text"
-          value={this.state.first_name}
-          onChange={this.update('first_name')}
-        />
+      <div>
 
-        <input type="text"
-          value={this.state.last_name}
-          onChange={this.update('last_name')}
-        />
+        <div className="session-form-input-names">
+          <input type="text"
+            value={this.state.first_name}
+            onChange={this.update('first_name')}
+            placeholder="First Name"
+            className="first-name"
+          />
 
+          <input type="text"
+            value={this.state.last_name}
+            onChange={this.update('last_name')}
+            placeholder="Last Name"
+           />
+         </div>
+        </div>
+      );
+    }
+  }
+
+  zipCode() {
+    const { formType } = this.props;
+    if (formType === 'Sign Up') {
+      return (
         <input type="text"
           value={this.state.zipcode}
           onChange={this.update('zipcode')}
+          placeholder="ZIP Code"
+          className="zip-code"
 
         />
-        </React.Fragment>
+      );
+    }
+  }
+
+  forgotPassword() {
+    const { formType } = this.props;
+    if (formType === 'Log In') {
+      return (
+        <a className="forgot-password">Forgot Password?</a>
       );
     }
   }
@@ -71,6 +95,7 @@ class SessionForm extends React.Component {
               src="https://cdn.merchantmaverick.com/wp-content/uploads/2018/05/yelp-logo-transparent-background-4.png">
             </img>
           </header>
+
           {this.renderErrors()}
 
           <div className="session-form-body">
@@ -83,16 +108,20 @@ class SessionForm extends React.Component {
                 <p className="session-form-left-button">{navLink}</p>
               </div>
 
+              <div className="legal-copy">
+                <p className="legal-copy-p">By logging in, you agree to Woof’s</p>
+                <a> Terms of Service </a>
+                <p className="legal-copy-p">and</p>
+                <a> Privacy Policy</a>
+              </div>
 
-              <p className="legal-copy">By logging in, you agree to Woof’s
-                Terms of Service and Privacy Policy.</p>
 
-              <div className="session-form-left-facebook">
+              <div className="session-form-left-facebook session-form-social">
                 <p className="fa fa-facebook"></p>
                 <p>{formType} with Facebook</p>
               </div>
 
-              <div className="session-form-left-google">
+              <div className="session-form-left-google session-form-social">
                 <img src="https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/cae242fd3929/assets/img/structural/24x24_google_rainbow.png">
                 </img>
                 <p>{formType} with Google</p>
@@ -105,7 +134,7 @@ class SessionForm extends React.Component {
               </div>
 
               <form onSubmit={this.handleSubmit}>
-                {this.signUp()}
+                {this.name()}
                 <input type="text"
                   value={this.state.email}
                   onChange={this.update('email')}
@@ -118,10 +147,21 @@ class SessionForm extends React.Component {
                   placeholder="Password"
                 />
 
+                {this.zipCode()}
+
+                {this.forgotPassword()}
+
                 <input type="submit" value={formType} />
 
               </form>
+
+              <div className="session-form-left-text bottom">
+                <p>{navLinkMessage}</p>
+                <p className="session-form-left-button bottom">{navLink}</p>
+              </div>
+
             </div>
+
 
             <div className="session-form-right">
               <img

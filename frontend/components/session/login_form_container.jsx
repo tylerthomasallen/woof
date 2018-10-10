@@ -10,7 +10,7 @@ const mapStateToProps = ({ errors }) => {
     errors: errors.session,
     formType: 'Log In',
     navLinkMessage: 'New to Woof?',
-    navLink: <Link to="/signup">Sign Up</Link>
+    navLink: <Link to="/signup">Sign up</Link>
   };
 };
 
