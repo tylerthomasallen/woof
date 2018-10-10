@@ -86,6 +86,68 @@ class SessionForm extends React.Component {
     }
   }
 
+  month() {
+    const months = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
+    return (
+      <select>
+        <option value="" selected disabled hidden>Month</option>
+        {months.map((month, idx) => (
+          <option key={idx} value={idx + 1}>{month}</option>
+        ))}
+      </select>
+    );
+  }
+
+  day() {
+    const days = [];
+    for (let i = 1; i <= 31; i++) {
+      days.push(i);
+    }
+    return (
+      <select className="birthday-select-middle">
+        <option value="" selected disabled hidden>Day</option>
+        {days.map((day, idx) => (
+          <option key={idx} value={day}>{day}</option>
+        ))}
+      </select>
+    );
+  }
+
+  year() {
+    const years = [];
+    for (let i = 1901; i <= 2018; i++) {
+      years.push(i);
+    }
+    return (
+      <select>
+        <option value="" selected disabled hidden>Year</option>
+        {years.map((year, idx) => (
+          <option key={idx} value={year}>{year}</option>
+        ))}
+      </select>
+    );
+  }
+
+  birthday() {
+    const { formType } = this.props;
+    if (formType === 'Sign Up') {
+      return (
+        <div>
+          <div className="birthday-text">
+            <p>Birthday</p>
+            <p className="optional">Optional</p>
+          </div>
+
+            <div className="birthday-dropdown">
+              {this.month()}
+              {this.day()}
+              {this.year()}
+            </div>
+        </div>
+      );
+    }
+  }
+
   render() {
     const { formType, navLink, navLinkMessage } = this.props;
       return (
@@ -148,6 +210,7 @@ class SessionForm extends React.Component {
                 />
 
                 {this.zipCode()}
+                {this.birthday()}
 
                 {this.forgotPassword()}
 
