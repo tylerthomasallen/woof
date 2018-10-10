@@ -93,6 +93,7 @@ span, article, footer, time, small {
     color: white;
     font-weight: bold;
     text-align: center;
+    cursor: pointer;
   }
 
   a {
@@ -179,7 +180,7 @@ span, article, footer, time, small {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 98%;
     margin: 20px 0;
 
     .or-line {
@@ -226,6 +227,7 @@ span, article, footer, time, small {
     display: flex;
     justify-content: center;
     margin: 10px 0;
+    width: 98%;
 
     select {
       width: 100%;

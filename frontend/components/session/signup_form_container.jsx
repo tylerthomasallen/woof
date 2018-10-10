@@ -9,7 +9,7 @@ const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
     formType: 'Sign Up',
-    navLinkMessage: 'Already on Woof?',
+    navLinkMessage: 'Connect with great local dogs',
     navLink: <Link to="/login">Login</Link>
   };
 };

@@ -148,8 +148,28 @@ class SessionForm extends React.Component {
     }
   }
 
+  topMessage() {
+    const { navLink, navLinkMessage, formType } = this.props;
+    if (formType === 'Sign Up') {
+      return (
+        <div className="session-form-left-text">
+          <p>{navLinkMessage}</p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="session-form-left-text">
+          <p>{navLinkMessage}</p>
+          <p className="session-form-left-button">{navLink}</p>
+        </div>
+      );
+    }
+  }
+
   render() {
     const { formType, navLink, navLinkMessage } = this.props;
+    let legalMessage;
+    formType === "Sign Up" ? legalMessage = "signing up" : legalMessage = "logging in";
       return (
         <div className="session-form">
           <header>
@@ -165,13 +185,10 @@ class SessionForm extends React.Component {
             <div className="session-form-left">
               <h3>{formType} to Woof</h3>
 
-              <div className="session-form-left-text">
-                <p>{navLinkMessage}</p>
-                <p className="session-form-left-button">{navLink}</p>
-              </div>
+              {this.topMessage()}
 
               <div className="legal-copy">
-                <p className="legal-copy-p">By logging in, you agree to Woof’s</p>
+                <p className="legal-copy-p">By {legalMessage}, you agree to Woof’s</p>
                 <a> Terms of Service </a>
                 <p className="legal-copy-p">and</p>
                 <a> Privacy Policy</a>
@@ -211,7 +228,6 @@ class SessionForm extends React.Component {
 
                 {this.zipCode()}
                 {this.birthday()}
-
                 {this.forgotPassword()}
 
                 <input type="submit" value={formType} />
