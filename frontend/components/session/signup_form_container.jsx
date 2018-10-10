@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { signup } from '../../actions/session_actions';
+import { signup, login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = ({ errors }) => {
@@ -10,13 +10,15 @@ const mapStateToProps = ({ errors }) => {
     errors: errors.session,
     formType: 'Sign Up',
     navLinkMessage: 'Connect with great local dogs',
-    navLink: <Link to="/login">Login</Link>
+    navLink: <Link to="/login">Log in</Link>,
+    bottomMessage: 'Already on Woof?'
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: (user) => dispatch(signup(user))
+    processForm: (user) => dispatch(signup(user)),
+    processGuestForm: (user) => dispatch(login(user))
   };
 };
 

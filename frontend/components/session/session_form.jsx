@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class SessionForm extends React.Component {
       password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuessSubmit = this.handleGuessSubmit.bind(this);
   }
 
   update(field) {
@@ -17,11 +19,17 @@ class SessionForm extends React.Component {
       [field]: e.currentTarget.value
     });
   }
-
+  
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+
+  handleGuessSubmit(e) {
+    e.preventDefault();
+    const user = {email: 'tylerthomasallen@gmail.com', password: 'password'};
+    this.props.processGuestForm(user);
   }
 
   renderErrors() {
@@ -36,6 +44,7 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
+
 
   name() {
     const { formType } = this.props;
@@ -167,15 +176,18 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const { formType, navLink, navLinkMessage } = this.props;
+    const { formType, navLink, navLinkMessage, bottomMessage } = this.props;
     let legalMessage;
     formType === "Sign Up" ? legalMessage = "signing up" : legalMessage = "logging in";
+
       return (
         <div className="session-form">
           <header>
-            <img
-              src="https://cdn.merchantmaverick.com/wp-content/uploads/2018/05/yelp-logo-transparent-background-4.png">
-            </img>
+            <Link to="/" >
+              <img className="header-logo"
+                src="https://cdn.merchantmaverick.com/wp-content/uploads/2018/05/yelp-logo-transparent-background-4.png">
+              </img>
+            </Link>
           </header>
 
           {this.renderErrors()}
@@ -213,7 +225,9 @@ class SessionForm extends React.Component {
               </div>
 
               <form onSubmit={this.handleSubmit}>
+
                 {this.name()}
+
                 <input type="text"
                   value={this.state.email}
                   onChange={this.update('email')}
@@ -234,8 +248,12 @@ class SessionForm extends React.Component {
 
               </form>
 
+              <form onSubmit={this.handleGuessSubmit}>
+                <input type="submit" value={`Guest ${formType}`} />
+              </form>
+
               <div className="session-form-left-text bottom">
-                <p>{navLinkMessage}</p>
+                <p>{bottomMessage}</p>
                 <p className="session-form-left-button bottom">{navLink}</p>
               </div>
 

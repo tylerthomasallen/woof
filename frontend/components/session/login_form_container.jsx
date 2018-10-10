@@ -10,13 +10,15 @@ const mapStateToProps = ({ errors }) => {
     errors: errors.session,
     formType: 'Log In',
     navLinkMessage: 'New to Woof?',
-    navLink: <Link to="/signup">Sign up</Link>
+    navLink: <Link to="/signup">Sign up</Link>,
+    bottomMessage: 'New to Woof?'
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: (user) => dispatch(login(user))
+    processForm: (user) => dispatch(login(user)),
+    processGuestForm: (user) => dispatch(login(user))
   };
 };
 
