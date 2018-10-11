@@ -12,7 +12,7 @@ class DogIndexNavItem extends React.Component {
 
           <div className="nav-left-temperment nav-item">
             <i className="fa fa-heart nav-span-i" aria-hidden="true"></i>
-            <span className="nav-span-i">Temperment</span>
+            <span className="nav-span-i">Temperments</span>
             <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
           </div>
 
@@ -33,7 +33,7 @@ class DogIndexNavItem extends React.Component {
 
         <div className="nav-right-review nav-item">
           <i className="fa fa-pencil-square-o nav-span-i" aria-hidden="true"></i>
-          <span className="nav-span-i">Write a review</span>
+          <span className="nav-span-i review">Write a Review</span>
         </div>
 
       </div>

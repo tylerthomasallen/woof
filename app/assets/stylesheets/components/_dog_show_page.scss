@@ -10,13 +10,13 @@ $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
   width: 100%;
   display: flex;
   justify-content: center;
+  background: #fafafa;
 }
 
 .dog-show-nav-bar {
   display: flex;
   justify-content: space-between;
-  height: 40px;
-  background: #fafafa;
+  height: 43px;
   width: 60%;
   border-left: .3px solid $nav-border-color;
 
@@ -33,14 +33,30 @@ $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
       color: #333;
       font-family: $yelp-font;
       font-size: 13px;
+      position: relative;
+      cursor: pointer;
 
       .nav-span-i {
-        margin: 0 5px;
+        margin: 0 3px 0 10px;
       }
 
       .fa {
         font-size: 18px;
       }
+
+      .fa-chevron-down {
+        margin: 0 15px 0 10px;
+        font-size: 16px;
+      }
+
+      .fa-pencil-square-o {
+        margin-left: 25px;
+      }
+
+      .review {
+        margin-right: 25px;
+      }
+
     }
 
     .nav-left-item:first-child {
