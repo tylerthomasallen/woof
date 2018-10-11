@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_235502) do
+ActiveRecord::Schema.define(version: 2018_10_11_161102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 2018_10_10_235502) do
     t.index ["lat", "lng"], name: "index_dogs_on_lat_and_lng", unique: true
     t.index ["lng"], name: "index_dogs_on_lng"
     t.index ["name"], name: "index_dogs_on_name", unique: true
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "rating", null: false
+    t.integer "dog_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_reviews_on_dog_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "types", force: :cascade do |t|

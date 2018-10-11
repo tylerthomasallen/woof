@@ -11,6 +11,10 @@ class Dog < ApplicationRecord
     through: :dog_types,
     source: :type
 
+  has_many :reviews,
+    foreign_key: :dog_id,
+    class_name: :Review
+
   after_initialize :set_defaults
 
   def set_defaults

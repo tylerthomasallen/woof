@@ -1,3 +1,4 @@
+require 'faker'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -26,3 +27,25 @@ User.create(first_name: 'Albus', last_name: 'Dumbledore', email: 'albus@hogwarts
 password: 'password', zipcode: '94110')
 User.create(first_name: 'Tyler', last_name: 'Allen', email: 'tylerthomasallen@gmail.com',
 password: 'password', zipcode: '94110')
+
+10.times do
+  name = Faker::HarryPotter.unique.character.split(' ');
+  first = name.first;
+  last = name.last;
+  User.create(
+    first_name: first,
+    last_name: last,
+    email: first + '@hogwarts.magic',
+    password: 'password',
+    zipcode: '94110'
+  )
+end
+
+10.times do
+  Review.create(
+    body: Faker::HarryPotter.unique.quote,
+    rating: Random.rand(1..5),
+    user_id: Random.rand(1..12),
+    dog_id: 1
+  )
+end
