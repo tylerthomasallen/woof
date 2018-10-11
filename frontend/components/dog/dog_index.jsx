@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 class DogIndex extends React.Component {
 
   componentDidMount() {
-    debugger;
   }
 
   render() {

@@ -5,6 +5,7 @@ import Root from './components/root';
 
 import * as AuthApi from './util/api/auth_util';
 import { login } from './actions/session_actions';
+import { retrieveDog } from './actions/dog_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // for testing
   window.AuthApi = AuthApi;
+  window.retrieveDog = retrieveDog;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.login = login;
