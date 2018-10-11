@@ -4,3 +4,5 @@ json.dog @dog, :id, :name, :hypoallergenic, :sheds, :good_with_kids,
 json.types @dog.types, :id, :name
 
 json.dogTypes @dog.dog_types, :id, :dog_id, :type_id
+
+json.reviews @dog.reviews, :id, :body, :rating, :user_id, :dog_id
