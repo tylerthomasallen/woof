@@ -1,0 +1,252 @@
+.session-form {
+
+  header {
+    height: 60px;
+    width: 100%;
+    background: #d32323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-logo {
+    height: 70px;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #d32323;
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  input {
+    border: 1px solid #999;
+    border-radius: 3px;
+    display: block;
+    padding: 5px 0 5px 5px;
+    background: #fff;
+    font-size: 14px;
+    line-height: 1.29em;
+    width: 96%;
+    margin-bottom: 9px;
+    text-align: left;
+  }
+
+
+  input::placeholder {
+    text-align: left;
+  }
+
+  input[type=submit] {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.3125em;
+    border-color: #8d0005;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    background-color: #d90007;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  a {
+    color: #0073bb;
+    cursor: pointer;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.session-form-body {
+  display: flex;
+  justify-content: center;
+}
+
+.session-form-errors {
+  background: #fcd6d3;
+  margin: 20px 100px;
+
+  li {
+    font-family: sans-serif;
+    padding: 20px;
+    color: #333333;
+  }
+}
+
+.session-form-left {
+  display: block;
+  text-align: center;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  max-width: 300px;
+  width: 100%;
+  height: 435px;
+  padding: 50px 100px;
+  margin-right: 50px;
+
+  .session-form-left-text {
+    display: flex;
+    justify-content: center;
+  }
+
+  .legal-copy {
+    margin-top: 10px;
+    font-size: 12px;
+    margin-bottom: 30px;
+
+    .legal-copy-p {
+      font-weight: normal;
+      font-size: 12px;
+    }
+  }
+
+  .session-form-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 15px 0 15px 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    padding: 5px 0 5px 5px;
+    width: 96%;
+    cursor: pointer;
+  }
+
+  .session-form-left-facebook {
+    background-color: #3b5998;
+    border: 1px solid #263961;
+
+    p {
+      color: white;
+      padding: 5px;
+    }
+
+  }
+
+  .session-form-left-facebook:hover {
+    background-color: #3B59A8;
+  }
+    .session-form-left-google {
+      background-color: white;
+      border: .3px solid grey;
+
+      p {
+        color: #666;
+        padding: 5px;
+      }
+  }
+
+  .session-form-left-google:hover {
+    background-color: #F6F5F5;
+  }
+
+  .login-seperator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    margin: 20px 0;
+
+    .or-line {
+      border-top: .2px solid #CBC8C8;
+      height: 1px;
+      width: 100%;
+    }
+
+    .or-text {
+      margin: 0 12px;
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+
+  .session-form-input-names {
+    display: flex;
+    width: 98%;
+
+    .first-name {
+      margin-right: 5px;
+    }
+  }
+
+  .zip-code {
+    margin-top: 15px;
+  }
+
+  .birthday-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0px;
+
+    .optional {
+      font-weight: 200;
+      color: #999;
+      margin-left: 5px;
+      font-size: 12px;
+    }
+  }
+
+  .birthday-dropdown {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    width: 98%;
+
+    select {
+      width: 100%;
+      height: 30px;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .birthday-select-middle {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+  }
+
+  .forgot-password {
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+  }
+
+  .bottom {
+    justify-content: flex-end;
+    color: #999;
+    font-size: 12px;
+    font-weight: normal;
+    padding-right: 3px;
+    margin-top: 3px;
+  }
+
+  .bottom p {
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 3px;
+  }
+}
+
+.session-form-left-button {
+  color: #0073bb;
+  margin-left: 4px;
+}
+
+.session-form-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
