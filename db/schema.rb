@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_230924) do
+ActiveRecord::Schema.define(version: 2018_10_10_235502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dog_types", force: :cascade do |t|
+    t.integer "dog_id", null: false
+    t.integer "type_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_dog_types_on_dog_id"
+    t.index ["type_id"], name: "index_dog_types_on_type_id"
+  end
 
   create_table "dogs", force: :cascade do |t|
     t.string "name", null: false
@@ -29,10 +38,18 @@ ActiveRecord::Schema.define(version: 2018_10_10_230924) do
     t.float "lng", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "temperment", null: false
     t.index ["address_line_one"], name: "index_dogs_on_address_line_one", unique: true
     t.index ["lat", "lng"], name: "index_dogs_on_lat_and_lng", unique: true
     t.index ["lng"], name: "index_dogs_on_lng"
     t.index ["name"], name: "index_dogs_on_name", unique: true
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_types_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
