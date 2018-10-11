@@ -10,6 +10,7 @@ export const receiveDog = payload => {
 };
 
 export const retrieveDog = dogId => dispatch => {
+  debugger
   return (
     DogUtil.fetchDog(dogId).then(
       dogInfo => (dispatch(receiveDog(dogInfo)))
