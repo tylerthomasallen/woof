@@ -214,7 +214,7 @@ class SessionForm extends React.Component {
 
 
               <div className="session-form-left-facebook session-form-social">
-                <p className="fa fa-facebook"></p>
+                <i className="fab fa-facebook-f" aria-hidden="true"></i>
                 <p>{formType} with Facebook</p>
               </div>
 

@@ -15,7 +15,7 @@ class DogIndexNavItem extends React.Component {
             <span className="nav-span-i">Temperment</span>
             <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
           </div>
-          
+
           <div className="nav-left-types nav-item">
             <i className="fa fa-paw nav-span-i" aria-hidden="true"></i>
             <span className="nav-span-i">Types</span>
