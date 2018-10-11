@@ -21,8 +21,31 @@ class DogIndexHeaderItem extends React.Component {
   }
 
   displayedTypes(types) {
+    let arrTypes;
+    if (types) {
+      arrTypes = Object.values(types);
+    } else {
+      arrTypes = [];
+    }
+
+    debugger;
+
     return (
       <div className="dog-show-types">
+        {arrTypes.map((type, idx) => {
+          if (idx < arrTypes) {
+            return (
+              <div>
+                <a>{type.name}</a>
+                <span>, </span>
+              </div>
+            );
+          } else {
+            return (
+              <a>{type.name}</a>
+            );
+          }
+        })}
       </div>
     );
   }
@@ -43,7 +66,7 @@ class DogIndexHeaderItem extends React.Component {
           <div className="dog-show-review-score">
             {this.displayedStars(reviewScore)}
             <span>{totalReviews} reviews</span>
-            {this.displayedTypes()}
+            {this.displayedTypes(types)}
           </div>
         </div>
       </div>

@@ -14,6 +14,10 @@ class SessionForm extends React.Component {
     this.handleGuessSubmit = this.handleGuessSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value

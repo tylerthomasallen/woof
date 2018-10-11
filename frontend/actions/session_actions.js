@@ -3,12 +3,19 @@ import * as AuthUtil from '../util/api/auth_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 export const receiveCurrentUser = currentUser => {
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser
+  };
+};
+
+export const clearErrors = () => {
+  return {
+    type: CLEAR_ERRORS
   };
 };
 
