@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import DogIndexHeaderItem from './dog_index_header_item';
+import DogIndexNavItem from './dog_index_nav_item';
 
 
 class DogIndex extends React.Component {
@@ -36,10 +37,21 @@ class DogIndex extends React.Component {
 
     return (
       <div>
+
         <div className="session-form-header">
           <h2>PLACEHOLDER FOR SEARCH COMPONENT</h2>
         </div>
-        <DogIndexHeaderItem dog={currentDog} types={currentTypes} reviews={currentDogReviews}/>
+
+        <div className="dog-show-upper-half">
+          <div className="nav-bar-container">
+            <DogIndexNavItem />
+          </div>
+          <div className="dog-show-body">
+            <DogIndexHeaderItem dog={currentDog} types={currentTypes} reviews={currentDogReviews}/>
+          </div>
+        </div>
+
+
       </div>
     );
   }

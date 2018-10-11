@@ -62,12 +62,14 @@ class SessionForm extends React.Component {
             onChange={this.update('first_name')}
             placeholder="First Name"
             className="first-name"
+            required
           />
 
           <input type="text"
             value={this.state.last_name}
             onChange={this.update('last_name')}
             placeholder="Last Name"
+            required
            />
          </div>
         </div>
@@ -84,7 +86,7 @@ class SessionForm extends React.Component {
           onChange={this.update('zipcode')}
           placeholder="ZIP Code"
           className="zip-code"
-
+          required
         />
       );
     }
@@ -236,12 +238,14 @@ class SessionForm extends React.Component {
                   value={this.state.email}
                   onChange={this.update('email')}
                   placeholder="Email"
+                  required
                 />
 
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   placeholder="Password"
+                  required
                 />
 
                 {this.zipCode()}

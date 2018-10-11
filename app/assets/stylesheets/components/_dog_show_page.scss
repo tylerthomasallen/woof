@@ -1,0 +1,77 @@
+$nav-border-color: #e6e6e6;
+$yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
+
+.dog-show-upper-half {
+  background: #f5f5f5;
+  height: 450px;
+}
+
+.nav-bar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dog-show-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  background: #fafafa;
+  width: 60%;
+  border-left: .3px solid $nav-border-color;
+
+  .nav-left {
+    display: flex;
+  }
+
+    .nav-item {
+      display: flex;
+      justify-content: center;
+      border-right: .3px solid $nav-border-color;
+      align-items: center;
+      font-weight: 500;
+      color: #333;
+      font-family: $yelp-font;
+      font-size: 13px;
+
+      .nav-span-i {
+        margin: 0 5px;
+      }
+
+      .fa {
+        font-size: 18px;
+      }
+    }
+
+    .nav-left-item:first-child {
+      border-left: .3px solid $nav-border-color;
+    }
+
+  .nav-right-review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: .3px solid $nav-border-color;
+  }
+}
+
+.dog-show-body {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background: #f5f5f5;
+
+  .dog-show-header {
+    display: block;
+    margin: 200px 0px;
+    display: none;
+  }
+}
+
+.dog-show-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0;
+}

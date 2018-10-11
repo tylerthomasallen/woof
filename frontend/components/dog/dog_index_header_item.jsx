@@ -22,27 +22,27 @@ class DogIndexHeaderItem extends React.Component {
 
   displayedTypes(types) {
     let arrTypes;
+
     if (types) {
       arrTypes = Object.values(types);
     } else {
       arrTypes = [];
     }
 
-    debugger;
 
     return (
       <div className="dog-show-types">
         {arrTypes.map((type, idx) => {
-          if (idx < arrTypes) {
+          if (idx < arrTypes.length -1) {
             return (
-              <div>
-                <a>{type.name}</a>
-                <span>, </span>
+              <div className="dog">
+                <a key={idx}>{type.name}</a>
+                <span key={idx + 1}>, </span>
               </div>
             );
           } else {
             return (
-              <a>{type.name}</a>
+              <a key={idx}>{type.name}</a>
             );
           }
         })}
@@ -61,14 +61,43 @@ class DogIndexHeaderItem extends React.Component {
 
     return (
       <div className="dog-show-header">
-        <div className="dog-show-left">
-          <h1>{dog.name}</h1>
+
+        <div className="dog-show-header-left">
+          <div className="dog-show-left-title">
+            <h1>{dog.name}</h1>
+            <i className="fas fa-bone"></i>
+          </div>
           <div className="dog-show-review-score">
             {this.displayedStars(reviewScore)}
             <span>{totalReviews} reviews</span>
             {this.displayedTypes(types)}
           </div>
         </div>
+
+        <div className="dog-show-header-right">
+
+          <div className="dog-show-write-review">
+            <i className="fa fa-star" aria-hidden="true"></i>
+            <button>Write a Review</button>
+          </div>
+          <div className="dog-show-header-right-buttons">
+            <div>
+              <i className="fa fa-camera" aria-hidden="true"></i>
+              <button>Add Photo</button>
+            </div>
+            <div>
+              <i className="fa fa-share-square-o" aria-hidden="true"></i>
+              <button>Share</button>
+            </div>
+            <div>
+              <i className="fa fa-bookmark" aria-hidden="true"></i>
+              <button>Save</button>
+            </div>
+
+          </div>
+          
+        </div>
+
       </div>
     );
   }
