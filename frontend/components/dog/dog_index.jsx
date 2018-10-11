@@ -13,8 +13,16 @@ class DogIndex extends React.Component {
   }
 
   render() {
-    const { dogs, dogId, dogTypes, types } = this.props;
-    const currentDog = dogs[dogId];
+    const { dogs, dogId, dogTypes, types, reviews } = this.props;
+    const currentDog = dogs[dogId] || {};
+
+    const currentDogReviews = {};
+    Object.values(reviews).forEach(review => {
+      if (review.dog_id === parseInt(dogId)) {
+        currentDogReviews[review.id] = review;
+      }
+    });
+
 
     const currentDogTypes = Object.values(dogTypes).filter(dogType => dogType.dog_id = dogId);
     const currentTypes = {};
@@ -30,8 +38,8 @@ class DogIndex extends React.Component {
       <div>
         <div className="session-form-header">
           <h2>PLACEHOLDER FOR SEARCH COMPONENT</h2>
-          <DogIndexHeaderItem dog={currentDog} types={currentTypes}/>
         </div>
+        <DogIndexHeaderItem dog={currentDog} types={currentTypes} reviews={currentDogReviews}/>
       </div>
     );
   }
