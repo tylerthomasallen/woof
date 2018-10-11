@@ -201,9 +201,9 @@ class SessionForm extends React.Component {
 
               <div className="legal-copy">
                 <p className="legal-copy-p">By {legalMessage}, you agree to Woof’s</p>
-                <a> Terms of Service </a>
-                <p className="legal-copy-p">and</p>
-                <a> Privacy Policy</a>
+                 <span> </span><a>Terms of Service</a><span> </span>
+                 <p className="legal-copy-p">and</p>
+                 <span> </span><a>Privacy Policy</a>
               </div>
 
 
