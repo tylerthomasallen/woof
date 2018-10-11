@@ -3,7 +3,6 @@ import DogIndex from './dog_index';
 import { retrieveDog } from '../../actions/dog_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     dogId: ownProps.match.params.dogId,
     user: state.entities.user,

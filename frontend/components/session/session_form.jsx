@@ -182,7 +182,7 @@ class SessionForm extends React.Component {
 
       return (
         <div className="session-form">
-          <header>
+          <header className="session-form-header">
             <Link to="/" >
               <img className="header-logo"
                 src="https://cdn.merchantmaverick.com/wp-content/uploads/2018/05/yelp-logo-transparent-background-4.png">

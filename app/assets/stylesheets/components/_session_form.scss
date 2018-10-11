@@ -1,13 +1,16 @@
-.session-form {
+$yelp-red: #d32323;
 
-  header {
-    height: 60px;
-    width: 100%;
-    background: #d32323;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.session-form-header {
+  height: 60px;
+  width: 100%;
+  background: $yelp-red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.session-form {
 
   .header-logo {
     height: 70px;
@@ -17,7 +20,7 @@
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 6px;
-    color: #d32323;
+    color: $yelp-red;
     margin-bottom: 6px;
   }
 
