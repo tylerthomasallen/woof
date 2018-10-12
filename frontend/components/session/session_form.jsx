@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
       password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleGuessSubmit = this.handleGuessSubmit.bind(this);
+    this.handleGuestSubmit = this.handleGuestSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  handleGuessSubmit(e) {
+  handleGuestSubmit(e) {
     e.preventDefault();
     const user = {email: 'tylerthomasallen@gmail.com', password: 'password'};
     this.props.processGuestForm(user);
@@ -256,7 +256,7 @@ class SessionForm extends React.Component {
 
               </form>
 
-              <form onSubmit={this.handleGuessSubmit}>
+              <form onSubmit={this.handleGuestSubmit}>
                 <input type="submit" value={`Guest ${formType}`} />
               </form>
 
