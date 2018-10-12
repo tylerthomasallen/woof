@@ -11,6 +11,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '*']
   },
   module: {
+
     rules: [
       {
         test: /\.jsx?$/,
@@ -21,6 +22,10 @@ module.exports = {
             presets: ['@babel/env', '@babel/react']
           }
         },
+      },
+
+      { test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
       }
     ]
   },

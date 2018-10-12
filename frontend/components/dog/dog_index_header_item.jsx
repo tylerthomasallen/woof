@@ -9,15 +9,29 @@ class DogIndexHeaderItem extends React.Component {
   }
 
   displayedStars(score) {
-    return (
-      <div className="dog-show-stars">
-        <i className="fas fa-star"></i>
-        <i className="fas fa-star"></i>
-        <i className="fas fa-star"></i>
-        <i className="fas fa-star"></i>
-        <i className="fas fa-star"></i>
-      </div>
-    );
+    switch (score) {
+      case 0:
+        return <img src={require('../../../app/assets/images/stars/regular_0@3x.png')} className="star-img"/>;
+      case 1.5:
+        return <img src={require('../../../app/assets/images/stars/regular_1_half@3x.png')} className="star-img"/>;
+      case 2:
+        return <img src={require('../../../app/assets/images/stars/regular_2@3x.png')} className="star-img"/>;
+      case 2.5:
+        return <img src={require('../../../app/assets/images/stars/regular_2_half@3x.png')} className="star-img"/>;
+      case 3:
+        return <img src={require('../../../app/assets/images/stars/regular_3@3x.png')} className="star-img"/>;
+      case 3.5:
+        return <img src={require('../../../app/assets/images/stars/regular_3_half@3x.png')} className="star-img"/>;
+      case 4:
+        return <img src={require('../../../app/assets/images/stars/regular_4@3x.png')} className="star-img"/>;
+      case 4.5:
+        return <img src={require('../../../app/assets/images/stars/regular_4_half@3x.png')} className="star-img"/>;
+      case 5:
+        return <img src={require('../../../app/assets/images/stars/regular_5@3x.png')} className="star-img"/>;
+      default:
+        return <img src={require('../../../app/assets/images/stars/regular_3@3x.png')} className="star-img"/>;
+
+    }
   }
 
   displayedTypes(types) {
@@ -65,10 +79,11 @@ class DogIndexHeaderItem extends React.Component {
         <div className="dog-show-header-left">
           <div className="dog-show-left-title">
             <h1>{dog.name}</h1>
-            <i className="fas fa-bone"></i>
+            <i className="fas fa-check-circle"></i>
+            <span>Claimed</span>
           </div>
           <div className="dog-show-review-score">
-            {this.displayedStars(reviewScore)}
+            {this.displayedStars(1.5)}
             <span>{totalReviews} reviews</span>
             {this.displayedTypes(types)}
           </div>
@@ -78,20 +93,20 @@ class DogIndexHeaderItem extends React.Component {
 
           <div className="dog-show-write-review">
             <i className="fa fa-star" aria-hidden="true"></i>
-            <button>Write a Review</button>
+            <span>Write a Review</span>
           </div>
           <div className="dog-show-header-right-buttons">
             <div>
               <i className="fa fa-camera" aria-hidden="true"></i>
-              <button>Add Photo</button>
+              <span>Add Photo</span>
             </div>
             <div>
-              <i className="fa fa-share-square-o" aria-hidden="true"></i>
-              <button>Share</button>
+              <i className="fas fa-share-square"></i>
+              <span>Share</span>
             </div>
             <div>
               <i className="fa fa-bookmark" aria-hidden="true"></i>
-              <button>Save</button>
+              <span>Save</span>
             </div>
 
           </div>

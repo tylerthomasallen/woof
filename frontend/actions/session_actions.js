@@ -34,6 +34,7 @@ export const logoutCurrentUser = () => {
 
 
 export const signup = currentUser => dispatch => {
+  debugger
   return (
     AuthUtil.fetchSignUp(currentUser).then(
       user => (dispatch(receiveCurrentUser(user))),

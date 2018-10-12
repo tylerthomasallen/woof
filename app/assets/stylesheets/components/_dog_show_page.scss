@@ -1,6 +1,7 @@
 $nav-border-color: #e6e6e6;
 $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
 $yelp-blue: #0073bb;
+$yelp-red: #d32323;
 
 .nav-bar-container {
   width: 100%;
@@ -120,11 +121,6 @@ $yelp-blue: #0073bb;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-
-  .dog-show-header {
-    display: block;
-    margin: 200px 0px;
-  }
 }
 
 .dog-show-header {
@@ -132,4 +128,95 @@ $yelp-blue: #0073bb;
   justify-content: space-between;
   width: 100%;
   margin: 20px 0;
+  font-family: $yelp-font;
+
+  .dog-show-header-left {
+
+    .dog-show-left-title {
+      display: flex;
+      align-items: center;
+
+      h1 {
+        font-size: 36px;
+        font-weight: 900;
+        text-shadow: 0 1px rgba(255,255,255,0.7);
+        color: #272727;
+      }
+
+      i {
+        color: $yelp-blue;
+        margin: 0 10px;
+      }
+    }
+
+    .dog-show-stars {
+      display: flex;
+    }
+  }
+
+  .dog-show-header-right {
+    display: flex;
+    align-items: center;
+
+    .dog-show-write-review {
+      display: flex;
+      background: $yelp-red;
+      color: white;
+      margin-right: 12px;
+      height: 37px;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 3px;
+      font-family: $yelp-font;
+      border: .5px solid #8d0005;
+
+      i {
+        margin-right: 10px;
+      }
+
+      span {
+        font-weight: bold;
+        font-size: 14px;
+
+      }
+    }
+
+    .dog-show-header-right-buttons {
+      display: flex;
+      color: #666;
+      font-size: 12px;
+      font-weight: 600;
+
+      div:first-child {
+        border-radius: 3px 0 0 3px;
+      }
+
+      div:last-child {
+        border-radius: 0 3px 3px 0;
+      }
+
+      div {
+        display: flex;
+        padding: 0 8px;
+        border: .5px solid rgb(204, 204, 204);
+        height: 28px;
+        align-items: center;
+        background: #F7F7F7;
+        justify-content: center;
+
+        i {
+          margin-left: 5px;
+        }
+
+        span {
+          margin: 0 5px;
+        }
+
+      }
+    }
+  }
+}
+
+.star-img {
+  width: 40%;
 }

@@ -63,7 +63,7 @@ class DogNavIndex extends React.Component {
             this.showModal('showChars')} onMouseLeave={() => this.hideModal('showChars')}>
             <div className={showCharsClass}>
               <i className="fa fa-snowflake-o nav-span-i" aria-hidden="true"></i>
-              <span className="nav-span-i">Traits</span>
+              <span className="nav-span-i">Characteristics</span>
               <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
            </div>
             <NavModal show={this.state.showChars} formType='chars'/>
