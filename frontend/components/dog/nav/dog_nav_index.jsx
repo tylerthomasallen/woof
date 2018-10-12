@@ -1,5 +1,5 @@
 import React from 'react';
-import TempModal from './temp_modal';
+import NavModal from './nav_modal';
 
 class DogNavIndex extends React.Component {
 
@@ -31,7 +31,7 @@ class DogNavIndex extends React.Component {
   }
 
   render() {
-    const { showTempsClass, typesClass, charsClass } = this.state;
+    const { showTempsClass, showTypesClass, showCharsClass } = this.state;
 
     return (
       <div className="dog-show-nav-bar">
@@ -45,20 +45,28 @@ class DogNavIndex extends React.Component {
               <span className="nav-span-i">Temperments</span>
               <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
             </div>
-            <TempModal show={this.state.showTemps} hideModal={this.hideModal}/>
+            <NavModal show={this.state.showTemps} formType='temps'/>
           </div>
 
-          <div className="nav-left-types nav-item">
-            <i className="fa fa-paw nav-span-i" aria-hidden="true"></i>
-            <span className="nav-span-i">Types</span>
-            <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
+          <div className="nav-left-types nav-item" onMouseEnter={() =>
+            this.showModal('showTypes')} onMouseLeave={() => this.hideModal('showTypes')}>
+            <div className={showTypesClass}>
+              <i className="fa fa-paw nav-span-i" aria-hidden="true"></i>
+              <span className="nav-span-i">Types</span>
+              <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
+            </div>
+            <NavModal show={this.state.showTypes} formType='types'/>
           </div>
 
 
-          <div className="nav-left-char nav-item">
-            <i className="fa fa-snowflake-o nav-span-i" aria-hidden="true"></i>
-            <span className="nav-span-i">Characteristics</span>
-            <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
+          <div className="nav-left-char nav-item" onMouseEnter={() =>
+            this.showModal('showChars')} onMouseLeave={() => this.hideModal('showChars')}>
+            <div className={showCharsClass}>
+              <i className="fa fa-snowflake-o nav-span-i" aria-hidden="true"></i>
+              <span className="nav-span-i">Traits</span>
+              <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
+           </div>
+            <NavModal show={this.state.showChars} formType='chars'/>
           </div>
 
         </div>
