@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import DogIndexHeaderItem from './dog_index_header_item';
-import DogIndexNavItem from './dog_index_nav_item';
+import DogNavIndex from './nav/dog_nav_index';
 
 
 class DogIndex extends React.Component {
@@ -44,7 +44,7 @@ class DogIndex extends React.Component {
 
         <div className="dog-show-upper-half">
           <div className="nav-bar-container">
-            <DogIndexNavItem />
+            <DogNavIndex />
           </div>
           <div className="dog-show-body">
             <DogIndexHeaderItem dog={currentDog} types={currentTypes} reviews={currentDogReviews}/>

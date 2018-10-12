@@ -1,7 +1,27 @@
 import React from 'react';
+import TempModal from './temp_modal';
 
-class DogIndexNavItem extends React.Component {
+class DogNavIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showTemps: false,
+      showTypes: false,
+      showChars: false
+    };
+
+    this.showModal = this.showModal.bind(this);
+    this.hideModal = this.showModal.bind(this);
+  }
+
+  showModal(field) {
+    this.setState({[field]: true});
+  }
+
+  hideModal(field) {
+    this.setState({[field]: false});
+  }
 
   render() {
 
@@ -10,10 +30,12 @@ class DogIndexNavItem extends React.Component {
 
         <div className="nav-left">
 
-          <div className="nav-left-temperment nav-item">
+          <div className="nav-left-temperment nav-item" onMouseEnter={() =>
+            this.showModal('showTemps')} onMouseLeave={() => this.setState({showTemps: false})}>
             <i className="fa fa-heart nav-span-i" aria-hidden="true"></i>
             <span className="nav-span-i">Temperments</span>
             <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
+            <TempModal show={this.state.showTemps} hideModal={this.hideModal}/>
           </div>
 
           <div className="nav-left-types nav-item">
@@ -41,4 +63,4 @@ class DogIndexNavItem extends React.Component {
   }
 }
 
-export default DogIndexNavItem;
+export default DogNavIndex;

@@ -91,3 +91,21 @@ $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
   width: 100%;
   margin: 20px 0;
 }
+
+.modal-container {
+  position: absolute;
+  right: 8px;
+  top: 40px;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+
+  .inner-modal {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin: 10px;
+    }
+  }
+}
