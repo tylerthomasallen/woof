@@ -1,5 +1,6 @@
 $nav-border-color: #e6e6e6;
 $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
+$yelp-blue: #0073bb;
 
 .dog-show-upper-half {
   background: #f5f5f5;
@@ -59,6 +60,10 @@ $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
 
     }
 
+    .nav-item-container:hover {
+      color: #0073bb;
+    }
+
     .nav-left-item:first-child {
       border-left: .3px solid $nav-border-color;
     }
@@ -94,18 +99,35 @@ $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
 
 .modal-container {
   position: absolute;
-  right: 8px;
-  top: 40px;
+  left: -.3px;
+  top: 43px;
   background-color: white;
   z-index: 1;
   display: flex;
+  padding-top: 5px;
+  border: .3px solid #F2F2F2;
+
 
   .inner-modal {
     display: flex;
     flex-direction: column;
 
-    a {
-      margin: 10px;
+    .modal-items {
+      margin: 20px 20px;
+      display: flex;
+      align-items: center;
+
+      a {
+        margin-left: 6px;
+      }
+    }
+
+    .modal-items:hover {
+      color: #0073bb;
     }
   }
+}
+
+.showNavHover {
+  color: $yelp-blue;
 }

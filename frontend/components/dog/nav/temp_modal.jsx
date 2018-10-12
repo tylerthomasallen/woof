@@ -12,17 +12,33 @@ class TempModal extends React.Component {
       return (
         <div className="modal-container">
           <div className="modal-left inner-modal">
-            <a>Happy</a>
-            <a>Happy</a>
-            <a>Happy</a>
-            <a>Happy</a>
+            <div className="modal-items">
+              <i className="fas fa-bone"></i>
+              <a>Confident</a>
+            </div>
+            <div className="modal-items">
+              <i className="fas fa-bone"></i>
+              <a>Timid</a>
+            </div>
+            <div className="modal-items">
+              <i className="fas fa-bone"></i>
+              <a>Independent</a>
+            </div>
           </div>
 
           <div className="modal-right inner-modal">
-            <a>Happy</a>
-            <a>Happy</a>
-            <a>Happy</a>
-            <a>Happy</a>
+            <div className="modal-items">
+              <i className="fas fa-bone"></i>
+              <a>Laidback</a>
+            </div>
+            <div className="modal-items">
+              <i className="fas fa-bone"></i>
+              <a>Adaptable</a>
+            </div>
+            <div className="modal-items">
+              <i className="fas fa-bone"></i>
+              <a>Friendly</a>
+            </div>
           </div>
         </div>
       );

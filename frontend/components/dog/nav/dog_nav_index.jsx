@@ -7,34 +7,44 @@ class DogNavIndex extends React.Component {
     super(props);
     this.state = {
       showTemps: false,
+      showTempsClass: '',
       showTypes: false,
-      showChars: false
+      showTypesClass: '',
+      showChars: false,
+      showCharsClass: ''
     };
 
     this.showModal = this.showModal.bind(this);
-    this.hideModal = this.showModal.bind(this);
+    this.hideModal = this.hideModal.bind(this);
   }
 
   showModal(field) {
     this.setState({[field]: true});
+    let currClass = field + 'Class';
+    this.setState({[currClass]: 'showNavHover'});
   }
 
   hideModal(field) {
     this.setState({[field]: false});
+    let currClass = field + 'Class';
+    this.setState({[currClass]: ''});
   }
 
   render() {
+    const { showTempsClass, typesClass, charsClass } = this.state;
 
     return (
       <div className="dog-show-nav-bar">
 
         <div className="nav-left">
 
-          <div className="nav-left-temperment nav-item" onMouseEnter={() =>
-            this.showModal('showTemps')} onMouseLeave={() => this.setState({showTemps: false})}>
-            <i className="fa fa-heart nav-span-i" aria-hidden="true"></i>
-            <span className="nav-span-i">Temperments</span>
-            <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
+          <div className='nav-left-temperment nav-item' onMouseEnter={() =>
+            this.showModal('showTemps')} onMouseLeave={() => this.hideModal('showTemps')}>
+            <div className={showTempsClass}>
+              <i className="fa fa-heart nav-span-i" aria-hidden="true"></i>
+              <span className="nav-span-i">Temperments</span>
+              <i className="fa fa-chevron-down nav-span-i" aria-hidden="true"></i>
+            </div>
             <TempModal show={this.state.showTemps} hideModal={this.hideModal}/>
           </div>
 
