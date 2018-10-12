@@ -46,10 +46,11 @@ class DogIndexHeaderItem extends React.Component {
 
     return (
       <div className="dog-show-types">
+        <span>.</span>
         {arrTypes.map((type, idx) => {
           if (idx < arrTypes.length -1) {
             return (
-              <div className="dog">
+              <div className="">
                 <a key={idx}>{type.name}</a>
                 <span key={idx + 1}>, </span>
               </div>
@@ -83,10 +84,10 @@ class DogIndexHeaderItem extends React.Component {
             <span>Claimed</span>
           </div>
           <div className="dog-show-review-score">
-            {this.displayedStars(1.5)}
+            {this.displayedStars(reviewScore)}
             <span>{totalReviews} reviews</span>
-            {this.displayedTypes(types)}
           </div>
+          {this.displayedTypes(types)}
         </div>
 
         <div className="dog-show-header-right">

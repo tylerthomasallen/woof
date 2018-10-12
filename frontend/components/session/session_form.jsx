@@ -196,13 +196,13 @@ class SessionForm extends React.Component {
             </Link>
           </header>
 
-          {this.renderErrors()}
 
+          {this.renderErrors()}
           <div className="session-form-body">
 
             <div className="session-form-left">
-              <h3>{formType} to Woof</h3>
 
+              <h3>{formType} to Woof</h3>
               {this.topMessage()}
 
               <div className="legal-copy">
@@ -211,7 +211,6 @@ class SessionForm extends React.Component {
                  <p className="legal-copy-p">and</p>
                  <span> </span><a>Privacy Policy</a>
               </div>
-
 
               <div className="session-form-left-facebook session-form-social">
                 <i className="fab fa-facebook-f" aria-hidden="true"></i>
@@ -277,8 +276,10 @@ class SessionForm extends React.Component {
 
             </div>
 
+            <div className="footer">
 
-          </div>
+            </div>
+        </div>
       );
     }
   }

@@ -149,9 +149,39 @@ $yelp-red: #d32323;
       }
     }
 
-    .dog-show-stars {
+    .dog-show-review-score {
       display: flex;
+      align-items: center;
+      margin: 10px 0;
+
+      span {
+        color: #666;
+        margin-left: 5px;
+      }
+
+      .star-img {
+        width: 40%;
+      }
     }
+
+    .dog-show-types {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-right: 4px;
+      }
+
+      a {
+        color: $yelp-blue;
+        cursor: pointer;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
   }
 
   .dog-show-header-right {
@@ -215,8 +245,4 @@ $yelp-red: #d32323;
       }
     }
   }
-}
-
-.star-img {
-  width: 40%;
 }

@@ -9,7 +9,7 @@ import DogIndexContainer from './dog/dog_index_container';
 
 const App = () => {
   return (
-    <div>
+    <div className="app-body">
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
