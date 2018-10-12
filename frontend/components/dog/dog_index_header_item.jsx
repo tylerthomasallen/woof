@@ -46,7 +46,8 @@ class DogIndexHeaderItem extends React.Component {
 
     return (
       <div className="dog-show-types">
-        <span>.</span>
+        <i className="fa fa-paw nav-span-i" aria-hidden="true"></i>
+        <span className="dot">&#183;</span>
         {arrTypes.map((type, idx) => {
           if (idx < arrTypes.length -1) {
             return (

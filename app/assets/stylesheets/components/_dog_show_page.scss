@@ -32,6 +32,7 @@ $yelp-red: #d32323;
       font-size: 13px;
       position: relative;
       cursor: pointer;
+      color: #454242;
 
       .nav-span-i {
         margin: 0 3px 0 10px;
@@ -172,6 +173,11 @@ $yelp-red: #d32323;
         margin-right: 4px;
       }
 
+      .dot {
+        margin: 8px;
+        color: #6C6B6B;
+      }
+
       a {
         color: $yelp-blue;
         cursor: pointer;
@@ -199,6 +205,7 @@ $yelp-red: #d32323;
       border-radius: 3px;
       font-family: $yelp-font;
       border: .5px solid #8d0005;
+      cursor: pointer;
 
       i {
         margin-right: 10px;
@@ -209,6 +216,10 @@ $yelp-red: #d32323;
         font-size: 14px;
 
       }
+    }
+
+    .dog-show-write-review:hover {
+      background: #EC1414;
     }
 
     .dog-show-header-right-buttons {
@@ -233,6 +244,8 @@ $yelp-red: #d32323;
         align-items: center;
         background: #F7F7F7;
         justify-content: center;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        cursor: pointer;
 
         i {
           margin-left: 5px;
@@ -242,6 +255,10 @@ $yelp-red: #d32323;
           margin: 0 5px;
         }
 
+      }
+
+      div:hover {
+        background: white;
       }
     }
   }
