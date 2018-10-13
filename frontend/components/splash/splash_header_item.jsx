@@ -5,18 +5,26 @@ class SplashHeaderItem extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  // <div className="splash-login">
-  //   <ul className="splash-login-ul">
-  //     <li><Link to="/login">Log In</Link></li>
-  //     <li><Link to="/signup">Sign Up</Link></li>
-  //   </ul>
-  // </div>
-
-  handleChange() {
+  sessionDisplay() {
+    const { currentUser, logout } = this.props;
+    debugger
+    if (!currentUser) {
+      return (
+        <div className="splash-top-nav-right">
+          <Link to="/login" className="nav-item not-signup login">Log In</Link>
+          <Link to="/signup" className="nav-item sign-up-button">Sign Up</Link>
+        </div>
+      );
+    } else {
+      return (
+        <div className="splash-top-nav-right">
+          <a className="nav-item not-signup logout" onClick={() => logout()}>Log out</a>
+          <Link to="/signup" className="nav-item sign-up-button">Sign Up</Link>
+        </div>
+      );
+    }
 
   }
 
@@ -34,10 +42,7 @@ class SplashHeaderItem extends React.Component {
                 <Link to="/" className="nav-item not-signup">Talk</Link>
               </div>
 
-              <div className="splash-top-nav-right">
-                <Link to="/login" className="nav-item not-signup login">Log In</Link>
-                <Link to="/signup" className="nav-item sign-up-button">Sign Up</Link>
-              </div>
+              {this.sessionDisplay()}
             </div>
 
             <div className="splash-header-logo">
@@ -49,7 +54,6 @@ class SplashHeaderItem extends React.Component {
               <div className="splash-search-input left-bar">
                 <span>Find</span>
                 <input type="text"
-                  onChange={this.handleChange()}
                   placeholder="labradors, pugs, poodles..."
                   className="left-input"
                 />
@@ -58,32 +62,31 @@ class SplashHeaderItem extends React.Component {
               <div className="splash-search-input right-bar">
                 <span>Near</span>
                 <input type="text"
-                  onChange={this.handleChange()}
                   placeholder="San Francisco, CA"
                   className="right-input"
                 />
               </div>
 
               <div className="splash-search-button">
-                <i class="fas fa-search"></i>
+                <i className="fas fa-search"></i>
               </div>
             </div>
 
             <div className="splash-bottom-nav">
               <Link to="/" className="nav-item ">
-                <i class="fas fa-paw black-lab"></i>
+                <i className="fas fa-paw black-lab"></i>
                 <span>Black Lab</span>
               </Link>
               <Link to="/dog/1" className="nav-item ">
-                <i class="fas fa-paw yellow-lab"></i>
+                <i className="fas fa-paw yellow-lab"></i>
                 <span>Yellow Lab</span>
               </Link>
               <Link to="/" className="nav-item ">
-                <i class="fas fa-paw choc-lab"></i>
+                <i className="fas fa-paw choc-lab"></i>
                 <span>Husky</span>
               </Link>
               <Link to="/" className="nav-item ">
-                <i class="fas fa-paw golden"></i>
+                <i className="fas fa-paw golden"></i>
                 <span>Golden Retriever</span>
               </Link>
             </div>

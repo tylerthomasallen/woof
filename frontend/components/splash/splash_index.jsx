@@ -7,10 +7,10 @@ class SplashIndex extends React.Component {
 
 
   render() {
-    const { logout } = this.props;
+    const { logout, currentUser } = this.props;
       return (
       <div className="splash-parent-container">
-        <SplashHeaderItem />
+        <SplashHeaderItem logout={logout} currentUser={currentUser}/>
       </div>
     );
   }
