@@ -4,13 +4,17 @@ $yelp-blue: #0073bb;
 $yelp-red: #d32323;
 $yelp-grey: #666;
 
+
 .splash-header-container {
   height: 570px;
-  background-image: url('https://images2.alphacoders.com/588/588305.jpg');
-  background-size: cover;
-  background-position: 50%;
   width: 100%;
   font-family: $yelp-font;
+  background: linear-gradient(
+    rgba(20, 20, 20, .5),
+    rgba(20, 20, 20, .5)),
+    url('https://images2.alphacoders.com/588/588305.jpg');
+  background-size: cover;
+  background-position: 50%;
 
   .splash-body {
     width: 56%;
