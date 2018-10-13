@@ -12,26 +12,6 @@ class SplashHeaderItem extends React.Component {
     };
   }
 
-  sessionDisplay() {
-    const { currentUser, logout } = this.props;
-    if (!currentUser) {
-      return (
-        <div className="splash-top-nav-right">
-          <Link to="/login" className="nav-item not-signup login">Log In</Link>
-          <Link to="/signup" className="nav-item sign-up-button">Sign Up</Link>
-        </div>
-      );
-    } else {
-      return (
-        <div className="splash-top-nav-right">
-          <a className="nav-item not-signup logout" onClick={() => logout()}>Log out</a>
-          <Link to="/signup" className="nav-item sign-up-button">Sign Up</Link>
-        </div>
-      );
-    }
-
-  }
-
   render() {
     const { formType } = this.state;
 
@@ -48,7 +28,7 @@ class SplashHeaderItem extends React.Component {
                 <Link to="/" className="nav-item not-signup">Talk</Link>
               </div>
 
-              <SessionButtonsContainer />
+              <SessionButtonsContainer formType={formType}/>
             </div>
 
             <div className="splash-header-logo">

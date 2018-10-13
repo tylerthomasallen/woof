@@ -2,9 +2,11 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import SessionButtons from './session_buttons';
 
+// {session, entities}
+
 const mapStateToProps = ( {session, entities} ) => {
   return {
-    currentUser: entities.users[session.id]
+    currentUser: entities.users[session.id],
   };
 };
 

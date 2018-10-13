@@ -7,13 +7,6 @@ import Header from '../header/header';
 
 class DogIndex extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      formType: 'show'
-    };
-  }
-
   componentDidMount() {
     const { dogs, dogId } = this.props;
     if ( !dogs[dogId] ) {
@@ -23,7 +16,6 @@ class DogIndex extends React.Component {
 
   render() {
     const { dogs, dogId, dogTypes, types, reviews } = this.props;
-    const { formType } = this.state;
 
     const currentDog = dogs[dogId] || {};
 
@@ -47,8 +39,7 @@ class DogIndex extends React.Component {
 
     return (
       <div>
-
-        <Header formType={formType}/>
+        <Header />
 
         <div className="dog-show-upper-half">
           <div className="nav-bar-container">
