@@ -69,7 +69,24 @@ class SplashHeaderItem extends React.Component {
               </div>
             </div>
 
-
+            <div className="splash-bottom-nav">
+              <Link to="/" className="nav-item ">
+                <i class="fas fa-paw black-lab"></i>
+                <span>Black Lab</span>
+              </Link>
+              <Link to="/dog/1" className="nav-item ">
+                <i class="fas fa-paw yellow-lab"></i>
+                <span>Yellow Lab</span>
+              </Link>
+              <Link to="/" className="nav-item ">
+                <i class="fas fa-paw choc-lab"></i>
+                <span>Husky</span>
+              </Link>
+              <Link to="/" className="nav-item ">
+                <i class="fas fa-paw golden"></i>
+                <span>Golden Retriever</span>
+              </Link>
+            </div>
 
           </div>
         </div>

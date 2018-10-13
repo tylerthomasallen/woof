@@ -6,7 +6,7 @@ $yelp-grey: #666;
 
 
 .splash-header-container {
-  height: 570px;
+  height: 600px;
   width: 100%;
   font-family: $yelp-font;
   background: linear-gradient(
@@ -70,7 +70,7 @@ $yelp-grey: #666;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 79px;
+    margin-top: 87px;
     margin-bottom: 17px;
 
     img {
@@ -138,6 +138,45 @@ $yelp-grey: #666;
 
     .splash-search-button:hover {
       background: #AF1E1E;
+    }
+  }
+}
+
+.splash-bottom-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+
+  .nav-item {
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 9px;
+    padding-left: 11px;
+    padding-right: 11px;
+
+    i {
+      padding-right: 5px;
+    }
+
+    .yellow-lab {
+      color: yellow;
+    }
+
+    .black-lab {
+      color: black;
+    }
+
+    .choc-lab {
+      color: grey;
+    }
+
+    .golden {
+      color: gold;
+    }
+
+    span:hover {
+      text-decoration: underline;
     }
   }
 }
