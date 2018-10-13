@@ -1,15 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from '../searchbar/searchbar';
+import SessionButtonsContainer from '../session/session_buttons_container';
 
 class SplashHeaderItem extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      formType: "splash"
+    };
   }
 
   sessionDisplay() {
     const { currentUser, logout } = this.props;
-    debugger
     if (!currentUser) {
       return (
         <div className="splash-top-nav-right">
@@ -29,6 +33,8 @@ class SplashHeaderItem extends React.Component {
   }
 
   render() {
+    const { formType } = this.state;
+
     return (
 
         <div className="splash-header-container">
@@ -42,35 +48,14 @@ class SplashHeaderItem extends React.Component {
                 <Link to="/" className="nav-item not-signup">Talk</Link>
               </div>
 
-              {this.sessionDisplay()}
+              <SessionButtonsContainer />
             </div>
 
             <div className="splash-header-logo">
               <img src='https://i.imgur.com/RZ5UvrT.png' />
             </div>
 
-            <div className="splash-search-container">
-
-              <div className="splash-search-input left-bar">
-                <span>Find</span>
-                <input type="text"
-                  placeholder="labradors, pugs, poodles..."
-                  className="left-input"
-                />
-              </div>
-
-              <div className="splash-search-input right-bar">
-                <span>Near</span>
-                <input type="text"
-                  placeholder="San Francisco, CA"
-                  className="right-input"
-                />
-              </div>
-
-              <div className="splash-search-button">
-                <i className="fas fa-search"></i>
-              </div>
-            </div>
+            <SearchBar formType={formType}/>
 
             <div className="splash-bottom-nav">
               <Link to="/" className="nav-item ">

@@ -1,0 +1,133 @@
+$nav-border-color: #e6e6e6;
+$yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
+$yelp-blue: #0073bb;
+$yelp-red: #d32323;
+$yelp-grey: #666;
+
+.splash-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .splash-search-input {
+    background: white;
+    padding: 8px 0;
+
+    span {
+      color: #666;
+      margin: 0 12px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    input {
+      height: 30px;
+    }
+  }
+
+  .left-bar {
+    border-radius: 4px 0 0 4px;
+
+    .left-input {
+      border-right: 1px solid grey;
+      width: 420px;
+    }
+  }
+
+  .right-bar {
+    padding-right: 10px;
+
+    .right-input {
+      width: 340px;
+    }
+
+    .right-input::placeholder {
+      color: #272727;
+    }
+  }
+
+  .splash-search-button {
+    background: $yelp-red;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 23px;
+    cursor: pointer;
+    border: .2px solid #8d0005;
+
+    i {
+      color: white;
+      font-size: 18px;
+    }
+  }
+
+  .splash-search-button:hover {
+    background: #AF1E1E;
+  }
+}
+
+
+.show-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $yelp-font;
+
+  .show-search-input {
+    background: white;
+    padding: 8px 0;
+
+    span {
+      color: #333;
+      margin: 0 12px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    input {
+      height: 30px;
+    }
+  }
+
+  .left-bar {
+    border-radius: 4px 0 0 4px;
+
+    .left-input {
+      border-right: 1px solid grey;
+      width: 420px;
+    }
+  }
+
+  .right-bar {
+    padding-right: 10px;
+
+    .right-input {
+      width: 340px;
+    }
+
+    .right-input::placeholder {
+      color: #272727;
+    }
+  }
+
+  .show-search-button {
+    background: $yelp-red;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 23px;
+    cursor: pointer;
+    border: .2px solid #8d0005;
+
+    i {
+      color: white;
+      font-size: 18px;
+    }
+  }
+
+  .show-search-button:hover {
+    background: #AF1E1E;
+  }
+}
