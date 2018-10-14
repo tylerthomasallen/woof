@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import MarkerManager from '../../util/marker_manager';
+import MarkerManager from '../../util/map/marker_manager';
 
 class ShowMap extends React.Component {
 
   componentDidMount() {
-    const map = ReactDOM.findDOMNode(this.refs.map);
-
-    const mapOptions = {
-      center: { lat: 37.7758, lng: -122.435 }, // this is SF
-      zoom: 13
-    };
-
-    this.map = new google.maps.Map(map, mapOptions);
+    // debugger;
+    // const { dog } = this.props;
+    // const map = ReactDOM.findDOMNode(this.refs.map);
+    //
+    // const mapOptions = {
+    //   center: { lat: dog.lat, lng: dog.lng }, // this is SF
+    //   zoom: 13
+    // };
+    //
+    // this.map = new google.maps.Map(map, mapOptions);
     // this.MarkerManager = new MarkerManager(this.map);
     // this.registerListeners();
   }
@@ -30,14 +32,29 @@ class ShowMap extends React.Component {
   // }
 
   // componentDidUpdate() {
-  //   this.MarkerManager.updateMarkers(this.props.benches);
+  //
+  //   const { dog } = this.props;
+  //   const map = ReactDOM.findDOMNode(this.refs.map);
+  //
+  //   const mapOptions = {
+  //     center: { lat: dog.lat, lng: dog.lng }, // this is SF
+  //     zoom: 20
+  //   };
+  //
+  //   this.map = new google.maps.Map(map, mapOptions);
+  //   this.MarkerManager = new MarkerManager(this.map);
+  //   this.MarkerManager.updateMarkers([dog]);
   // }
 
   render() {
-    return (
-      <div id='show-map-container' ref='map'>
-      </div>
+    const { dog } = this.props;
 
+    return (
+      <div show-map-container>
+        <img src={`https://maps.googleapis.com/maps/api/staticmap?scale=2&center=${dog.lat},${dog.lng}&zoom=13
+&markers=icon:https://i.imgur.com/fhFzIgh.png | ${dog.lat}, ${dog.lng}&size=286x135&scale=2
+&key=AIzaSyAtuRxYMQ20cACgsvqS9xvEA1hTQG43pV0`} width="286"/>
+      </div>
     );
   }
 }
