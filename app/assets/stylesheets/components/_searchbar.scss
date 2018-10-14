@@ -25,16 +25,16 @@ $yelp-grey: #666;
     }
   }
 
-  .left-bar {
+  .splash-left-bar {
     border-radius: 4px 0 0 4px;
 
     .left-input {
-      border-right: 1px solid grey;
+      border-right: 1px solid #999;
       width: 420px;
     }
   }
 
-  .right-bar {
+  .splash-right-bar {
     padding-right: 10px;
 
     .right-input {
@@ -76,34 +76,35 @@ $yelp-grey: #666;
 
   .show-search-input {
     background: white;
-    padding: 8px 0;
+    padding: 7px 0;
 
     span {
       color: #333;
-      margin: 0 12px;
+      margin-right: 5px;
+      margin-left: 12px;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 13px;
     }
 
     input {
-      height: 30px;
+      height: 21px;
     }
   }
 
-  .left-bar {
+  .show-left-bar {
     border-radius: 4px 0 0 4px;
 
     .left-input {
-      border-right: 1px solid grey;
-      width: 420px;
+      border-right: 1px solid #999;
+      width: 275px;
     }
   }
 
-  .right-bar {
+  .show-right-bar {
     padding-right: 10px;
 
     .right-input {
-      width: 340px;
+      width: 260px;
     }
 
     .right-input::placeholder {

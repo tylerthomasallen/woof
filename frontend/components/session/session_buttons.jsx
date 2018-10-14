@@ -16,15 +16,15 @@ class SessionButtons extends React.Component {
     if (!currentUser) {
       return (
         <div className={`splash-top-nav-right`}>
-          <Link to="/login" className={`nav-item not-signup splash-login`}>Log In</Link>
-          <Link to="/signup" className={`nav-item splash-sign-up-button`}>Sign Up</Link>
+          <Link to="/login" className={`nav-items not-signup ${formType}-login`}>Log In</Link>
+          <Link to="/signup" className={`nav-items ${formType}-sign-up-button`}>Sign Up</Link>
         </div>
       );
     } else {
       return (
         <div className={`splash-top-nav-right`}>
-          <a className={`nav-item not-signup logout`} onClick={() => logout()}>Log out</a>
-          <Link to="/signup" className={`nav-item sign-up-button`}>Sign Up</Link>
+          <a className={`nav-items not-signup logout`} onClick={() => logout()}>Log out</a>
+          <Link to="/signup" className={`nav-items ${formType}-sign-up-button`}>Sign Up</Link>
         </div>
       );
     }

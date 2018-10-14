@@ -4,6 +4,17 @@ $yelp-blue: #0073bb;
 $yelp-red: #d32323;
 $yelp-grey: #666;
 
+.nav-items {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  margin-right: 9px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+  padding-left: 11px;
+  padding-right: 11px;
+  font-family: $yelp-font;
+}
 
 .splash-header-container {
   height: 600px;
@@ -31,17 +42,6 @@ $yelp-grey: #666;
 
     .splash-top-nav-left {
       display: flex;
-    }
-
-    .nav-item {
-      color: white;
-      font-weight: 700;
-      font-size: 14px;
-      margin-right: 9px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid transparent;
-      padding-left: 11px;
-      padding-right: 11px;
     }
 
     .splash-login {
@@ -87,7 +87,7 @@ $yelp-grey: #666;
   justify-content: center;
   margin-top: 22px;
 
-  .nav-item {
+  .nav-items {
     color: white;
     font-weight: 700;
     font-size: 14px;
@@ -123,4 +123,24 @@ $yelp-grey: #666;
 
 .logout {
   cursor: pointer;
+}
+
+.show-login {
+  border: 1px solid #c41314;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 10px 12px;
+  margin-right: 5px;
+}
+
+.show-login:hover {
+  border-bottom: 1px solid #c41314;
+  background: #cc2122;
+}
+
+.show-sign-up-button {
+  background-color: #f8f8f8;
+  color: #333;
+  border-radius: 3px;
+  padding-top: 8px;
 }

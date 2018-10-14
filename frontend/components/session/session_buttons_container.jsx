@@ -4,9 +4,10 @@ import SessionButtons from './session_buttons';
 
 // {session, entities}
 
-const mapStateToProps = ( {session, entities} ) => {
+const mapStateToProps = ({ entities, session}, { formType }) => {
   return {
     currentUser: entities.users[session.id],
+    formType: formType
   };
 };
 

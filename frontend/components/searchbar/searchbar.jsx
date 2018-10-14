@@ -11,7 +11,7 @@ class SearchBar extends React.Component {
     return (
       <div className={`${formType}-search-container`}>
 
-        <div className={`${formType}-search-input left-bar`}>
+        <div className={`${formType}-search-input ${formType}-left-bar`}>
           <span>Find</span>
           <input type="text"
             placeholder="labradors, pugs, poodles..."
@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
           />
         </div>
 
-        <div className={`${formType}-search-input right-bar`}>
+        <div className={`${formType}-search-input ${formType}-right-bar`}>
           <span>Near</span>
           <input type="text"
             placeholder="San Francisco, CA"

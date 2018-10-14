@@ -8,7 +8,30 @@ $yelp-red: #d32323;
   display: flex;
   justify-content: center;
   background: #fafafa;
-  
+
+}
+
+.splash-login {
+  padding-left: 11px;
+  padding-right: 11px;
+  margin-right: 18px;
+}
+
+.splash-sign-up-button {
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 8px 25px;
+  margin-right: 0;
+}
+
+.splash-sign-up-button:hover {
+  background-color: white;
+  color: #666;
+}
+
+.not-signup:hover {
+  border-bottom: 2px solid white;
+  border-radius: 0;
 }
 
 .dog-show-nav-bar {
@@ -263,4 +286,8 @@ $yelp-red: #d32323;
       }
     }
   }
+}
+
+.show-login {
+  color: black;
 }

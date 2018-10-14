@@ -23,9 +23,9 @@ class SplashHeaderItem extends React.Component {
 
             <div className="splash-top-nav">
               <div className="splash-top-nav-left">
-                <Link to="/" className="nav-item not-signup">Write a Review</Link>
-                <Link to="/" className="nav-item not-signup">Events</Link>
-                <Link to="/" className="nav-item not-signup">Talk</Link>
+                <Link to="/" className="nav-items not-signup">Write a Review</Link>
+                <Link to="/" className="nav-items not-signup">Events</Link>
+                <Link to="/" className="nav-items not-signup">Talk</Link>
               </div>
 
               <SessionButtonsContainer formType={formType}/>
@@ -38,19 +38,19 @@ class SplashHeaderItem extends React.Component {
             <SearchBar formType={formType}/>
 
             <div className="splash-bottom-nav">
-              <Link to="/" className="nav-item ">
+              <Link to="/" className="nav-items ">
                 <i className="fas fa-paw black-lab"></i>
                 <span>Black Lab</span>
               </Link>
-              <Link to="/dog/1" className="nav-item ">
+              <Link to="/dog/1" className="nav-items ">
                 <i className="fas fa-paw yellow-lab"></i>
                 <span>Yellow Lab</span>
               </Link>
-              <Link to="/" className="nav-item ">
+              <Link to="/" className="nav-items ">
                 <i className="fas fa-paw choc-lab"></i>
                 <span>Husky</span>
               </Link>
-              <Link to="/" className="nav-item ">
+              <Link to="/" className="nav-items ">
                 <i className="fas fa-paw golden"></i>
                 <span>Golden Retriever</span>
               </Link>
