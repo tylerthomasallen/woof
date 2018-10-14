@@ -38,6 +38,8 @@ class DogIndex extends React.Component {
       }
     });
 
+
+
     return (
       <div>
         <Header />
@@ -51,13 +53,35 @@ class DogIndex extends React.Component {
             <div className="map-container">
               <ShowMap dog={currentDog}/>
               <div className="map-text-container">
-                <div className="map-text-upper">
+
+                <div className="map-text-item">
                   <i className="fas fa-map-marker-alt map-show-icon"></i>
                   <div className="map-text-address">
                     <span className="map-text-address-line-one map-text">{currentDog.address_line_one}</span>
                     <span className="map-text-city map-text">{currentDog.city}, {currentDog.state} {currentDog.zip_code}</span>
                   </div>
                 </div>
+
+                <div className="map-text-item">
+                  <i className="fas fa-directions map-show-icon"></i>
+                  <a>Get Directions</a>
+                </div>
+
+                <div className="map-text-item">
+                  <i className="fas fa-phone fa-rotate-180 map-show-icon"></i>
+                  <p>(415) 626-5600</p>
+                </div>
+
+                <div className="map-text-item">
+                  <i className="fas fa-share-square map-show-icon"></i>
+                  <a href="https://www.google.com/">www.google.com</a>
+                </div>
+
+                <div className="map-text-item map-text-item-last">
+                  <i className="fas fa-mobile-alt map-show-icon"></i>
+                  <a className="map-phone-link">Send to your phone</a>
+                </div>
+
               </div>
             </div>
           </div>

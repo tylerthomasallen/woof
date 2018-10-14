@@ -1,4 +1,5 @@
 $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
+$yelp-blue: #0073bb;
 
 .map-text-container {
   min-height: 105px;
@@ -6,15 +7,17 @@ $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  flex-direction: column;
 
-  .map-text-upper {
+  .map-text-item {
     display: flex;
-    justify-content: space-between;
+    margin-top: 5px;
 
     .map-show-icon {
       margin-left: 13px;
       margin-top: 8px;
       margin-right: 10px;
+      color: #666;
     }
 
     .map-text-address {
@@ -22,8 +25,21 @@ $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
       font-weight: bold;
       font-size: 14px;
     }
-  }
 
+    a {
+      margin-top: 7px;
+      color: $yelp-blue;
+      cursor: pointer;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    p {
+      margin-top: 7px;
+    }
+  }
 }
 .show-map {
   height: 135px;
@@ -50,4 +66,12 @@ $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
 
 .map-text-city {
   display: block;
+}
+
+.map-phone-link {
+  margin-left: 7px;
+}
+
+.map-text-item-last {
+padding-bottom: 5px;
 }
