@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import DogIndexHeaderItem from './dog_index_header_item';
 import DogNavIndex from './nav/dog_nav_index';
 import Header from '../header/header';
+import ShowMap from '../map/show_map';
 
 
 class DogIndex extends React.Component {
@@ -49,6 +50,8 @@ class DogIndex extends React.Component {
             <DogIndexHeaderItem dog={currentDog} types={currentTypes} reviews={currentDogReviews}/>
           </div>
         </div>
+
+        <ShowMap dog={currentDog}/>
 
 
       </div>
