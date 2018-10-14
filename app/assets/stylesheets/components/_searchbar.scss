@@ -73,6 +73,7 @@ $yelp-grey: #666;
   justify-content: center;
   align-items: center;
   font-family: $yelp-font;
+  margin-right: 20px;
 
   .show-search-input {
     background: white;
@@ -82,12 +83,13 @@ $yelp-grey: #666;
       color: #333;
       margin-right: 5px;
       margin-left: 12px;
-      font-weight: 700;
-      font-size: 13px;
+      font-weight: bold;
+      font-size: 14px;
     }
 
     input {
       height: 21px;
+      font-size: 13px;
     }
   }
 
@@ -113,12 +115,12 @@ $yelp-grey: #666;
   }
 
   .show-search-button {
-    background: $yelp-red;
+    background: #bd1f1f;
     border-radius: 0 4px 4px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 14px 23px;
+    padding: 9.3px 18px;
     cursor: pointer;
     border: .2px solid #8d0005;
 

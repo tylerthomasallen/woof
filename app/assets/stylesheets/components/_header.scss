@@ -1,0 +1,16 @@
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+
+  .header-logo-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 56px;
+    }
+  }
+}

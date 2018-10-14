@@ -32,7 +32,9 @@ class SplashHeaderItem extends React.Component {
             </div>
 
             <div className="splash-header-logo">
-              <img src='https://i.imgur.com/RZ5UvrT.png' />
+              <Link to="/" >
+                <img src='https://i.imgur.com/RZ5UvrT.png' />
+              </Link>
             </div>
 
             <SearchBar formType={formType}/>

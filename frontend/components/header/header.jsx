@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBar from '../searchbar/searchbar';
 import SessionButtonsContainer from '../session/session_buttons_container';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   constructor(props) {
@@ -14,8 +15,10 @@ class Header extends React.Component {
     const { formType } = this.state;
     return (
       <div className="session-form-header">
-        <div className="session-form-logo">
-          <img src="" />
+        <div className="header-logo">
+          <Link to="/" className="header-logo-link">
+            <img src='https://i.imgur.com/RZ5UvrT.png' />
+          </Link>
         </div>
         <SearchBar formType={formType} />
         <SessionButtonsContainer formType={formType}/>

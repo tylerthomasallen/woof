@@ -74,6 +74,11 @@ $yelp-grey: #666;
     margin-top: 87px;
     margin-bottom: 17px;
 
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     img {
       height: 105px;
     }
