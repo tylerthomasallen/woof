@@ -50,9 +50,9 @@ class ShowMap extends React.Component {
     const { dog } = this.props;
 
     return (
-      <div show-map-container>
+      <div className="show-map">
         <img src={`https://maps.googleapis.com/maps/api/staticmap?scale=2&center=${dog.lat},${dog.lng}&zoom=13
-&markers=icon:https://i.imgur.com/fhFzIgh.png | ${dog.lat}, ${dog.lng}&size=286x135&scale=2
+&markers=color:0xd32323 | ${dog.lat}, ${dog.lng}&size=286x135&scale=2
 &key=AIzaSyAtuRxYMQ20cACgsvqS9xvEA1hTQG43pV0`} width="286"/>
       </div>
     );

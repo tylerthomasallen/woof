@@ -48,10 +48,20 @@ class DogIndex extends React.Component {
           </div>
           <div className="dog-show-body">
             <DogIndexHeaderItem dog={currentDog} types={currentTypes} reviews={currentDogReviews}/>
+            <div className="map-container">
+              <ShowMap dog={currentDog}/>
+              <div className="map-text-container">
+                <div className="map-text-upper">
+                  <i className="fas fa-map-marker-alt map-show-icon"></i>
+                  <div className="map-text-address">
+                    <span className="map-text-address-line-one map-text">{currentDog.address_line_one}</span>
+                    <span className="map-text-city map-text">{currentDog.city}, {currentDog.state} {currentDog.zip_code}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <ShowMap dog={currentDog}/>
 
 
       </div>

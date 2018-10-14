@@ -1,3 +1,53 @@
-.show-map-container {
+$yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
+
+.map-text-container {
+  min-height: 105px;
+  font-family: $yelp-font;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+
+  .map-text-upper {
+    display: flex;
+    justify-content: space-between;
+
+    .map-show-icon {
+      margin-left: 13px;
+      margin-top: 8px;
+      margin-right: 10px;
+    }
+
+    .map-text-address {
+      margin-top: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+
+}
+.show-map {
   height: 135px;
+  width: 286px;
+  border: 1px solid #ccc;
+}
+
+
+
+.map-container {
+  background: white;
+  width: 294px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.map-text {
+  line-height: 18px;
+}
+
+.map-text-city {
+  display: block;
 }
