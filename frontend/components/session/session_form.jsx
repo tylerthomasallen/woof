@@ -190,8 +190,8 @@ class SessionForm extends React.Component {
         <div className="session-form">
           <header className="session-form-header">
             <Link to="/" >
-              <img className="header-logo"
-                src="https://cdn.merchantmaverick.com/wp-content/uploads/2018/05/yelp-logo-transparent-background-4.png">
+              <img className="session-header-logo"
+                src="https://i.imgur.com/RZ5UvrT.png">
               </img>
             </Link>
           </header>
