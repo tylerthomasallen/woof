@@ -30,23 +30,26 @@ class ReviewIndexItem extends React.Component {
 
     return `${month}/${day}/${year}`;
   }
-  //
-  // componentDidMount() {
-  //   const { fetchUser, currentReview } = this.props;
-  // 
-  //   const user = fetchUser(currentReview.user_id);
-  //
-  //   this.setState({user: user});
-  // }
 
-  formattedName() {
-    // const { user } = this.state;
-    //
-    // if (user.first_name) {
-    //   return `${user.first_name} ${user.last_name[0]}.`;
-    // }
+  componentDidMount() {
+    const { retrieveUser, currentReview, users} = this.props;
+    const userId = currentReview.user_id;
 
-    return 'Tyler A.';
+    if (users[userId]) {
+      this.setState({user: users[userId]});
+    } else {
+      retrieveUser(currentReview.user_id);
+    }
+  }
+
+  formattedName(currentUser) {
+
+    if (currentUser.first_name) {
+      debugger;
+      return `${currentUser.first_name} ${currentUser.last_name[0]}.`;
+    } else {
+      return 'Tyler A.';
+    }
 
   }
 
@@ -63,8 +66,8 @@ class ReviewIndexItem extends React.Component {
 
   render() {
 
-    const { currentReview } = this.props;
-    const { user } = this.state;
+    const { currentReview, users } = this.props;
+    const currentUser = users[currentReview.user_id] || {};
 
     return (
       <div className="review-item-container">
@@ -77,7 +80,7 @@ class ReviewIndexItem extends React.Component {
 
           <div className="user-info">
 
-            <span className="user-info-name">{this.formattedName()}</span>
+            <span className="user-info-name">{this.formattedName(currentUser)}</span>
             <span className="user-info-loc">{this.formattedLocation()}</span>
 
             <div className="user-info-reviews">

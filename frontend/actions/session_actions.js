@@ -8,7 +8,6 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 export const receiveCurrentUser = currentUser => {
-  debugger;
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser
