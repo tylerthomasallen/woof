@@ -33,7 +33,7 @@ class ReviewIndexItem extends React.Component {
 
   // componentDidMount() {
   //   const { fetchUser, currentReview } = this.props;
-  //
+  // 
   //   const user = fetchUser(currentReview.user_id);
   //
   //   this.setState({user: user});

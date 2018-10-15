@@ -51,14 +51,14 @@ class DogIndexHeaderItem extends React.Component {
         {arrTypes.map((type, idx) => {
           if (idx < arrTypes.length -1) {
             return (
-              <div className="">
-                <a key={idx}>{type.name}</a>
-                <span key={idx + 1}>, </span>
+              <div className="" key={type.id}>
+                <a key={type.id + 1}>{type.name}</a>
+                <span key={type.id + 2}>, </span>
               </div>
             );
           } else {
             return (
-              <a key={idx}>{type.name}</a>
+              <a key={type.id}>{type.name}</a>
             );
           }
         })}
