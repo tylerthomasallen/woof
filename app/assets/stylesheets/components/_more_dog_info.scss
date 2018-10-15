@@ -1,0 +1,31 @@
+$yelp-red: #d32323;
+
+.reviews-right-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+
+  .more-dog-info {
+
+    h3 {
+      font-weight: bold;
+      color: $yelp-red;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .dog-info-attribute {
+      display: flex;
+      font-size: 14px;
+
+
+      span:first-child {
+        margin-right: 5px;
+      }
+
+      span:last-child {
+        font-weight: bold;
+      }
+    }
+  }
+}

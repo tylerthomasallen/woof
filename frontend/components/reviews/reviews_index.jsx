@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReviewIndexItem from './review_index_item';
+import MoreDogInfo from '../dog/more_dog_info';
 
 class ReviewsIndex extends React.Component {
 
@@ -29,7 +30,7 @@ class ReviewsIndex extends React.Component {
           </div>
 
           <div className="reviews-right-container">
-
+            <MoreDogInfo dog={currentDog}/>
           </div>
 
         </div>
