@@ -66,16 +66,17 @@ $yelp-orange: #f15c00;
       border-bottom: 1px solid $light-grey-border;
       margin-bottom: 25px;
       display: flex;
+      width: 100%;
 
       .review-item-user {
-        margin-right: 80px;
+        margin-right: 40px;
         display: flex;
+        width: 36%;
 
         .user-info {
           display: flex;
           flex-direction: column;
           margin-left: 12px;
-          width: 120px;
           font-size: 13px;
 
           .user-info-name {
@@ -92,10 +93,16 @@ $yelp-orange: #f15c00;
         }
       }
 
-      .review-item-body {
-        padding-top: 10px;
-        font-size: 14px;
+      .review-item-review {
+        width: 60%;
+        margin-left: 40px;
+
+        .review-item-body {
+          padding-top: 10px;
+          font-size: 14px
+        }
       }
+
     }
 }
 

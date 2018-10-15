@@ -1,14 +1,8 @@
 import React from 'react';
 import Stars from '../stars/stars';
+import * as MapApi from '../../util/api/map_util';
 
 class ReviewIndexItem extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: {}
-    };
-  }
 
   todaysDate() {
     const today = new Date();
@@ -35,9 +29,7 @@ class ReviewIndexItem extends React.Component {
     const { retrieveUser, currentReview, users} = this.props;
     const userId = currentReview.user_id;
 
-    if (users[userId]) {
-      this.setState({user: users[userId]});
-    } else {
+    if (!users[userId]) {
       retrieveUser(currentReview.user_id);
     }
   }
@@ -45,7 +37,6 @@ class ReviewIndexItem extends React.Component {
   formattedName(currentUser) {
 
     if (currentUser.first_name) {
-      debugger;
       return `${currentUser.first_name} ${currentUser.last_name[0]}.`;
     } else {
       return 'Tyler A.';
@@ -53,11 +44,8 @@ class ReviewIndexItem extends React.Component {
 
   }
 
-  formattedLocation() {
-    const { user } = this.state;
-
-    // return `${user.city}, ${user.state}`;
-    return 'San Francisco, CA';
+  formattedLocation(currentUser) {
+    return `${currentUser.city}, ${currentUser.state}`;
   }
 
   randomReviewCount() {
@@ -81,7 +69,7 @@ class ReviewIndexItem extends React.Component {
           <div className="user-info">
 
             <span className="user-info-name">{this.formattedName(currentUser)}</span>
-            <span className="user-info-loc">{this.formattedLocation()}</span>
+            <span className="user-info-loc">{this.formattedLocation(currentUser)}</span>
 
             <div className="user-info-reviews">
               <i className="fas fa-star user-info-star"></i>

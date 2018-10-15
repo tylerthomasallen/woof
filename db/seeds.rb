@@ -37,7 +37,9 @@ password: 'password', zipcode: '94110')
     last_name: last,
     email: first + '@hogwarts.magic',
     password: 'password',
-    zipcode: '94110'
+    zipcode: '94110',
+    state: Faker::Address.state_abbr,
+    city: Faker::Address.city
   )
 end
 
