@@ -16,10 +16,8 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    debugger
-    @user = User.find(params[:id])
+    @user = User.find(params[:userId])
     if @user
-      debugger
       render "api/users/show"
     else
       render json: ['No user found'], status: 404

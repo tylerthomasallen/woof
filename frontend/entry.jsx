@@ -5,7 +5,7 @@ import Root from './components/root';
 
 import * as AuthApi from './util/api/auth_util';
 import * as UserApi from './util/api/user_util';
-import { login } from './actions/session_actions';
+import { login, retrieveUser } from './actions/session_actions';
 import { retrieveDog } from './actions/dog_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.login = login;
   window.UserApi = UserApi;
+  window.retrieveUser = retrieveUser;
   // end for testing
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);

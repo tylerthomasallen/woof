@@ -1,4 +1,5 @@
 import * as AuthUtil from '../util/api/auth_util';
+import * as UserUtil from '../util/api/user_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
@@ -7,6 +8,7 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 export const receiveCurrentUser = currentUser => {
+  debugger;
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser
@@ -33,8 +35,17 @@ export const logoutCurrentUser = () => {
 };
 
 
+export const retrieveUser = userId => dispatch => {
+  return (
+    UserUtil.fetchUser(userId).then(
+      user => (dispatch(receiveCurrentUser(user)))
+    )
+  );
+};
+
+
+
 export const signup = currentUser => dispatch => {
-  debugger
   return (
     AuthUtil.fetchSignUp(currentUser).then(
       user => (dispatch(receiveCurrentUser(user))),

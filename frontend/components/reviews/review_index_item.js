@@ -30,7 +30,7 @@ class ReviewIndexItem extends React.Component {
 
     return `${month}/${day}/${year}`;
   }
-
+  //
   // componentDidMount() {
   //   const { fetchUser, currentReview } = this.props;
   // 
