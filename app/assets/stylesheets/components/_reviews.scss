@@ -3,6 +3,7 @@ $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
 $yelp-blue: #0073bb;
 $yelp-red: #d32323;
 $light-grey-border: #DCD9D9;
+$yelp-grey: #666;
 
 .reviews-container {
   padding-top: 100px;
@@ -14,6 +15,7 @@ $light-grey-border: #DCD9D9;
   justify-content: flex-start;
   border-bottom: 1px solid $light-grey-border;
   padding-bottom: 10px;
+  width: 72%;
 
   span {
     padding: 0, 5px;
@@ -27,6 +29,50 @@ $light-grey-border: #DCD9D9;
   }
 }
 
-.review-items-container {
-  
+.review-rating {
+  display: flex;
+  align-items: center;
+
+  span {
+    color: $yelp-grey;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+}
+
+.review-stars {
+
+  img {
+    max-width: 100px;
+
+  }
+}
+
+.review-body {
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-between;
+
+  .reviews-middle-container {
+    width: 75%;
+    padding-top: 10px;
+    padding-right: 50px;
+
+
+    .review-item-container {
+      padding-bottom: 20px;
+      border-bottom: 1px solid $light-grey-border;
+      margin-bottom: 25px;
+
+      .review-item-body {
+        padding-top: 10px;
+        font-size: 14px;
+      }
+    }
+}
+
+  .reviews-right-container {
+    border-left: 1px solid $light-grey-border;
+    width: 25%;
+  }
 }

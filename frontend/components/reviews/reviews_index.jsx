@@ -19,11 +19,25 @@ class ReviewsIndex extends React.Component {
           <span>for a {`${currentDog.name}`}</span>
         </div>
 
-        <div className="review-items-container">
-          {currentReviews.map(review => (
-            <ReviewIndexItem currentReview={review} />
-          ))}
+        <div className="review-body">
+          
+
+          <div className="reviews-middle-container">
+            {currentReviews.map(review => (
+              <ReviewIndexItem key={review.id} currentReview={review} />
+            ))}
+          </div>
+
+          <div className="reviews-right-container">
+
+          </div>
+
         </div>
+
+
+
+
+
 
       </div>
     );
