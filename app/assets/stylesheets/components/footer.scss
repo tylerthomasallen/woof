@@ -1,0 +1,63 @@
+$yelp-red: #d32323;
+
+.footer-container {
+  background: #f5f5f5;
+  height: 100%;
+  max-height: 400px;
+  margin-top: 200px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .footer-text {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      color: $yelp-red;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    .footer-text-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        padding: 5px;
+
+        i {
+          font-size: 30px;
+        }
+
+        i:hover {
+          font-weight: bold;
+        }
+
+        .fa-github {
+          color: black;
+        }
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .footer-img {
+    background-image: url(https://s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/ce4d102c522c/assets/img/structural/footer_cityscape@2x.png);
+    height: 140px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 100%;
+    }
+  }
+}
