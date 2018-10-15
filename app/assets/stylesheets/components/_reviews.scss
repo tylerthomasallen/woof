@@ -1,0 +1,32 @@
+$nav-border-color: #e6e6e6;
+$yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
+$yelp-blue: #0073bb;
+$yelp-red: #d32323;
+$light-grey-border: #DCD9D9;
+
+.reviews-container {
+  padding-top: 100px;
+}
+
+.reviews-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid $light-grey-border;
+  padding-bottom: 10px;
+
+  span {
+    padding: 0, 5px;
+    font-size: 21px;
+  }
+
+  span:first-child {
+    font-weight: bold;
+    color: $yelp-red;
+    padding-right: 5px;
+  }
+}
+
+.review-items-container {
+  
+}

@@ -4,6 +4,7 @@ import DogIndexHeaderItem from './dog_index_header_item';
 import DogNavIndex from './nav/dog_nav_index';
 import Header from '../header/header';
 import ShowMap from '../map/show_map';
+import ReviewsContainer from '../reviews/reviews_container';
 
 
 class DogIndex extends React.Component {
@@ -45,6 +46,7 @@ class DogIndex extends React.Component {
         <Header />
 
         <div className="dog-show-upper-half">
+
           <div className="nav-bar-container">
             <DogNavIndex />
           </div>
@@ -85,8 +87,11 @@ class DogIndex extends React.Component {
               </div>
             </div>
           </div>
+
         </div>
 
+        <ReviewsContainer dogId={dogId}/>
+        
 
       </div>
     );
