@@ -6,6 +6,8 @@ $yelp-red: #d32323;
   padding-left: 30px;
 
   .more-dog-info {
+    position: sticky;
+    top: 20px;
 
     h3 {
       font-weight: bold;
@@ -17,10 +19,12 @@ $yelp-red: #d32323;
     .dog-info-attribute {
       display: flex;
       font-size: 14px;
+      margin-bottom: 5px;
+      align-items: center;
 
 
       span:first-child {
-        margin-right: 5px;
+        margin-right: 6px;
       }
 
       span:last-child {
