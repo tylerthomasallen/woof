@@ -5,7 +5,7 @@ import ReviewIndexItem from './review_index_item';
 class ReviewsIndex extends React.Component {
 
   render() {
-    let { currentDog, currentReviews } = this.props;
+    let { currentDog, currentReviews, fetchUser } = this.props;
 
     if (currentDog === undefined) {
       currentDog = {};
@@ -20,11 +20,10 @@ class ReviewsIndex extends React.Component {
         </div>
 
         <div className="review-body">
-          
 
           <div className="reviews-middle-container">
             {currentReviews.map(review => (
-              <ReviewIndexItem key={review.id} currentReview={review} />
+              <ReviewIndexItem key={review.id} currentReview={review} fetchUser={fetchUser}/>
             ))}
           </div>
 
