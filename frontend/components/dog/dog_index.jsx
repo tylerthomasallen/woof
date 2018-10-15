@@ -53,38 +53,48 @@ class DogIndex extends React.Component {
           </div>
           <div className="dog-show-body">
             <DogIndexHeaderItem dog={currentDog} types={currentTypes} reviews={currentDogReviews}/>
-            <div className="map-container">
-              <ShowMap dog={currentDog}/>
-              <div className="map-text-container">
 
-                <div className="map-text-item">
-                  <i className="fas fa-map-marker-alt map-show-icon"></i>
-                  <div className="map-text-address">
-                    <span className="map-text-address-line-one map-text">{currentDog.address_line_one}</span>
-                    <span className="map-text-city map-text">{currentDog.city}, {currentDog.state} {currentDog.zip_code}</span>
+            <div className="dog-show-bottom-half">
+
+              <div className="map-container">
+                <ShowMap dog={currentDog}/>
+                <div className="map-text-container">
+
+                  <div className="map-text-item">
+                    <i className="fas fa-map-marker-alt map-show-icon"></i>
+                    <div className="map-text-address">
+                      <span className="map-text-address-line-one map-text">{currentDog.address_line_one}</span>
+                      <span className="map-text-city map-text">{currentDog.city}, {currentDog.state} {currentDog.zip_code}</span>
+                    </div>
                   </div>
-                </div>
 
-                <div className="map-text-item">
-                  <i className="fas fa-directions map-show-icon"></i>
-                  <a>Get Directions</a>
-                </div>
+                  <div className="map-text-item">
+                    <i className="fas fa-directions map-show-icon"></i>
+                    <a>Get Directions</a>
+                  </div>
 
-                <div className="map-text-item">
-                  <i className="fas fa-phone fa-rotate-180 map-show-icon"></i>
-                  <p>(415) 626-5600</p>
-                </div>
+                  <div className="map-text-item">
+                    <i className="fas fa-phone fa-rotate-180 map-show-icon"></i>
+                    <p>(415) 626-5600</p>
+                  </div>
 
-                <div className="map-text-item">
-                  <i className="fas fa-share-square map-show-icon"></i>
-                  <a href="https://www.google.com/">www.google.com</a>
-                </div>
+                  <div className="map-text-item">
+                    <i className="fas fa-share-square map-show-icon"></i>
+                    <a href="https://www.google.com/">www.google.com</a>
+                  </div>
 
-                <div className="map-text-item map-text-item-last">
-                  <i className="fas fa-mobile-alt map-show-icon"></i>
-                  <a className="map-phone-link">Send to your phone</a>
-                </div>
+                  <div className="map-text-item map-text-item-last">
+                    <i className="fas fa-mobile-alt map-show-icon"></i>
+                    <a className="map-phone-link">Send to your phone</a>
+                  </div>
 
+                </div>
+              </div>
+
+              <div className="dog-photos-container">
+                <img src="http://www.hollywoodanimals.com/images/portfolio/popup/Dogs/Jax/Jax-snow.jpg" />
+                <img src="https://lvlabrescue.com/wedoitforthelabs/wp-content/uploads/2017/03/LVLR-Puppies-13-800x400.jpg" />
+                <img src="https://ybxzcgnc7b-flywheel.netdna-ssl.com/wp-content/uploads/2018/06/neem-oil-for-dogs.jpg" />
               </div>
             </div>
           </div>

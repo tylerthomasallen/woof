@@ -27,6 +27,7 @@ gem 'bcrypt', '~> 3.1.12'
 gem 'jquery-rails'
 gem 'sassc'
 gem 'faker'
+gem "aws-sdk-s3"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

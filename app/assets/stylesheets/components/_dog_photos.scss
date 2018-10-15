@@ -1,0 +1,25 @@
+.dog-show-bottom-half {
+  display: flex;
+  align-items: center;
+}
+
+.dog-photos-container {
+  height: 250px;
+  display: flex;
+  width: 70%;
+  overflow: none;
+  align-items: center;
+
+  img {
+    height: 220px;
+    width: 33.3%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  img:hover {
+    height: 250px;
+    width: 35%;
+    z-index: 1;
+  }
+}

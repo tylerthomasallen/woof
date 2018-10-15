@@ -15,6 +15,8 @@ class Dog < ApplicationRecord
     foreign_key: :dog_id,
     class_name: :Review
 
+  has_many_attached :photos
+
   after_initialize :set_defaults
 
   def set_defaults
@@ -29,5 +31,5 @@ class Dog < ApplicationRecord
       .where("lng > ?", bounds[:southWest][:lng])
       .where("lng < ?", bounds[:northEast][:lng])
   end
-  
+
 end
