@@ -5,6 +5,7 @@ import DogNavIndex from './nav/dog_nav_index';
 import Header from '../header/header';
 import ShowMap from '../map/show_map';
 import ReviewsContainer from '../reviews/reviews_container';
+import Footer from '../footer/footer';
 
 
 class DogIndex extends React.Component {
@@ -91,7 +92,8 @@ class DogIndex extends React.Component {
         </div>
 
         <ReviewsContainer dogId={dogId}/>
-        
+
+        <Footer />
 
       </div>
     );
