@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class DogIndexHeaderItem extends React.Component {
 
@@ -94,10 +95,13 @@ class DogIndexHeaderItem extends React.Component {
 
         <div className="dog-show-header-right">
 
-          <div className="dog-show-write-review">
-            <i className="fa fa-star" aria-hidden="true"></i>
-            <span>Write a Review</span>
-          </div>
+          {/* <div className="dog-show-write-review"> */}
+            <Link to={`/dog/${dog.id}/writeareview`} className="dog-show-write-review">
+              <i className="fa fa-star" aria-hidden="true"></i>
+              <span>Write a Review</span>
+            </Link>
+
+          {/* </div> */}
           <div className="dog-show-header-right-buttons">
             <div>
               <i className="fa fa-camera" aria-hidden="true"></i>
