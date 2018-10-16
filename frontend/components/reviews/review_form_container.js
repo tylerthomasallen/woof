@@ -4,14 +4,14 @@ import { retrieveDog } from '../../actions/dog_actions';
 import ReviewForm from './review_form';
 
 const mapStateToProps = ( { entities, session }, ownProps ) => {
-  const dogId = ownProps.match.params.dogId;
+  const dogId = parseInt(ownProps.match.params.dogId);
   const userId = session.id;
   const { dogs } = entities;
-  debugger;
+  
   return {
     dogId,
     userId,
-
+    dogs
   };
 };
 

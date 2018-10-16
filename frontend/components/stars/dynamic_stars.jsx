@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-class Stars extends React.Component {
+class DynamicStars extends React.Component {
 
   roundRating(score) {
     // simple but giving credit to stackoverflow post https://stackoverflow.com/questions/6137986/javascript-roundoff-number-to-nearest-0-5
-    return Math.round(score * 2) / 2;
+    return Math.round(parseInt(score) * 2) / 2;
   }
 
   displayedStars(score) {
@@ -13,7 +13,7 @@ class Stars extends React.Component {
       case 0:
         return <img src={require('../../../app/assets/images/stars/regular_0@3x.png')} className="star-img"/>;
       case 1:
-        return <img src={require('../../../app/assets/images/stars/regular_1@3x.png')} className="star-img"/>
+        return <img src={require('../../../app/assets/images/stars/regular_1@3x.png')} className="star-img"/>;
       case 1.5:
         return <img src={require('../../../app/assets/images/stars/regular_1_half@3x.png')} className="star-img"/>;
       case 2:
@@ -46,4 +46,4 @@ class Stars extends React.Component {
   }
 }
 
-export default Stars;
+export default DynamicStars;
