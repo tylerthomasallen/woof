@@ -1,4 +1,4 @@
-// import * as UserUtil from '../util/api/user_util';
+import * as ReviewUtil from '../util/api/review_util';
 // export const RECEIVE_USER = 'RECEIVE_USER';
 //
 // // export const UPDATE_BOUNDS = 'UPDATE_BOUNDS';
@@ -9,7 +9,7 @@
 // //     bounds
 // //   };
 // // };
-// 
+//
 // export const receiveUser = user => {
 //   return {
 //     type: RECEIVE_USER,

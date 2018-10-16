@@ -19,7 +19,17 @@ class ReviewForm extends React.Component {
     this.updateStarsMouseLeave = this.updateStarsMouseLeave.bind(this);
     this.updatePermStars = this.updatePermStars.bind(this);
     this.updateReviewText = this.updateReviewText.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { permRatingText, permStars } = this.state;
+    const { dogId, createReview, userId } = this.props;
+
+    createReview({review: {body: permRatingText, rating: permStars,
+      dog_id: dogId, user_id: userId  }});
   }
 
   fetchDog() {
@@ -34,9 +44,8 @@ class ReviewForm extends React.Component {
   }
 
   bodyPlaceholder() {
-    const placeholder = "Your reviews help others learn about great local dogs.";
-    // \n \n Please don't review this dog if you don't want to
-    // see your awesome reviewback on the dog's page";
+    const placeholder = "Greatness starts here...";
+
     return placeholder;
   }
 
@@ -99,7 +108,7 @@ class ReviewForm extends React.Component {
     return (
       <div className="review-form-input">
 
-        <form className="review-form">
+        <form className="review-form" onSubmit={this.handleSubmit}>
 
           <div className="review-top-with-stars">
             <div className="review-form-stars">
@@ -125,13 +134,15 @@ class ReviewForm extends React.Component {
 
           </div>
 
-          <input type="text"
+          <textarea type="text"
             value={this.state.body}
             onChange={this.update('body')}
             placeholder={this.bodyPlaceholder()}
             className="review-form-text-input"
             required
           />
+
+          <input type="submit" value="Post Review" className="form-submit-button"/>
         </form>
       </div>
     );
