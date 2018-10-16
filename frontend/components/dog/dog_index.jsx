@@ -17,19 +17,49 @@ class DogIndex extends React.Component {
     }
   }
 
+  addClass(num) {
+    let curr = document.getElementById(`dog-image-${num}`);
+    let sibOne;
+    let sibTwo;
+
+    if (num === 0) {
+      sibOne = document.getElementById(`dog-image-1`);
+      sibTwo = document.getElementById(`dog-image-2`);
+    } else if (num === 1) {
+      sibOne = document.getElementById(`dog-image-0`);
+      sibTwo = document.getElementById(`dog-image-2`);
+    } else if (num === 2) {
+      sibOne = document.getElementById(`dog-image-0`);
+      sibTwo = document.getElementById(`dog-image-1`);
+    }
+
+    curr.classList.add('dog-image-1');
+    sibOne.classList.remove('dog-image-1');
+    sibTwo.classList.remove('dog-image-1');
+    debugger;
+  }
+
+  removeClass(num) {
+    // onMouseLeave={() => this.removeClass(idx)}
+    let curr = document.getElementById(`dog-image-${num}`);
+  }
+
   dogPhotos() {
     const { dogs, dogId } = this.props;
     const currentDog = dogs[dogId];
 
     if (currentDog) {
       return (
-        <div className="dog-photos-container">
+        <div className="dog-photos-container" onMouseLeave={() => this.addClass(1)}>
           {currentDog.dogPhotos.map((photo,idx) => (
-            <img key={idx} src={photo.url}/>
+            <img key={idx} src={photo.url} className={`dog-image-${idx}`} id={`dog-image-${idx}`}
+              onMouseEnter={() => this.addClass(idx)} />
           ))}
         </div>
       );
     }
+
+    document.querySelectorAll("img")
   }
 
   render() {
