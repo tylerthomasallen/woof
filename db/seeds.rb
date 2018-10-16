@@ -89,6 +89,26 @@ password: 'password', zipcode: '94110')
 tyler = User.create(first_name: 'Tyler', last_name: 'Allen', email: 'tylerthomasallen@gmail.com',
 password: 'password', zipcode: '94110')
 
+ron = User.create(first_name: 'Ron', last_name: 'Weasley', email: 'ron@hogwarts.magic',
+password: 'password', zipcode: '94110')
+
+draco = User.create(first_name: 'Draco', last_name: 'Malfoy', email: 'draco@hogwarts.magic',
+password: 'password', zipcode: '94110')
+
+hagrid = User.create(first_name: 'Rubeus', last_name: 'Hagrid', email: 'hagrid@hogwarts.magic',
+password: 'password', zipcode: '94110')
+
+snape = User.create(first_name: 'Severus', last_name: 'Snape', email: 'snape@hogwarts.magic',
+password: 'password', zipcode: '94110')
+
+sirius = User.create(first_name: 'Sirius', last_name: 'Black', email: 'sirius@hogwarts.magic',
+password: 'password', zipcode: '94110')
+
+lord = User.create(first_name: 'Lord', last_name: 'Voldemort', email: 'lord@hogwarts.magic',
+password: 'password', zipcode: '94110')
+
+
+
 dumbledore_photo = File.open("/Users/tylerallen/Desktop/Photos/users/dumbledore.jpg")
 dumbledore.photo.attach(io: dumbledore_photo, filename: 'dumbledore.jpg')
 
@@ -101,6 +121,23 @@ hermione.photo.attach(io: hermione_photo, filename: 'hermione.jpg')
 tyler_photo = File.open("/Users/tylerallen/Desktop/Photos/users/tyler.jpg")
 tyler.photo.attach(io: tyler_photo, filename: 'tyler.jpg')
 
+ron_photo = File.open("/Users/tylerallen/Desktop/Photos/users/ron.jpg")
+ron.photo.attach(io: ron_photo, filename: 'ron.jpg')
+
+draco_photo = File.open("/Users/tylerallen/Desktop/Photos/users/draco.jpg")
+draco.photo.attach(io: draco_photo, filename: 'draco.jpg')
+
+hagrid_photo = File.open("/Users/tylerallen/Desktop/Photos/users/hagrid.jpg")
+hagrid.photo.attach(io: hagrid_photo, filename: 'hagrid.jpg')
+
+snape_photo = File.open("/Users/tylerallen/Desktop/Photos/users/snape.jpg")
+snape.photo.attach(io: snape_photo, filename: 'snape.jpg')
+
+sirius_photo = File.open("/Users/tylerallen/Desktop/Photos/users/sirius.jpg")
+sirius.photo.attach(io: sirius_photo, filename: 'sirius.jpg')
+
+lord_photo = File.open("/Users/tylerallen/Desktop/Photos/users/lord.jpg")
+lord.photo.attach(io: lord_photo, filename: 'lord.jpg')
 
 # 10.times do
 #   name = Faker::HarryPotter.unique.character.split(' ');
@@ -117,38 +154,72 @@ tyler.photo.attach(io: tyler_photo, filename: 'tyler.jpg')
 #   )
 # end
 
-10.times do
+i = 0
+
+while i < 10
   Review.create(
     body: Faker::HarryPotter.unique.quote,
     rating: Random.rand(1..5),
-    user_id: Random.rand(1..4),
+    user_id: i,
     dog_id: 1
   )
-end
 
-10.times do
   Review.create(
     body: Faker::StarWars.unique.quote,
     rating: Random.rand(1..5),
-    user_id: Random.rand(1..4),
+    user_id: i,
     dog_id: 2
   )
-end
 
-10.times do
   Review.create(
     body: Faker::ChuckNorris.unique.fact,
     rating: Random.rand(1..5),
-    user_id: Random.rand(1..4),
+    user_id: i,
     dog_id: 3
   )
-end
 
-10.times do
   Review.create(
     body: Faker::GreekPhilosophers.unique.quote,
     rating: Random.rand(1..5),
-    user_id: Random.rand(1..4),
+    user_id: i,
     dog_id: 4
   )
+
+  i += 1
 end
+
+# 10.times do
+#   Review.create(
+#     body: Faker::HarryPotter.unique.quote,
+#     rating: Random.rand(1..5),
+#     user_id: Random.rand(1..4),
+#     dog_id: 1
+#   )
+# end
+
+# 10.times do
+#   Review.create(
+#     body: Faker::StarWars.unique.quote,
+#     rating: Random.rand(1..5),
+#     user_id: Random.rand(1..4),
+#     dog_id: 2
+#   )
+# end
+
+# 10.times do
+#   Review.create(
+#     body: Faker::ChuckNorris.unique.fact,
+#     rating: Random.rand(1..5),
+#     user_id: Random.rand(1..4),
+#     dog_id: 3
+#   )
+# end
+
+# 10.times do
+#   Review.create(
+#     body: Faker::GreekPhilosophers.unique.quote,
+#     rating: Random.rand(1..5),
+#     user_id: Random.rand(1..4),
+#     dog_id: 4
+#   )
+# end
