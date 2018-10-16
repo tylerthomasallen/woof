@@ -35,9 +35,10 @@ class DogIndexHeaderItem extends React.Component {
   }
 
   displayedTypes(types) {
+    const { dogTypes, dogId } = this.props;
     let arrTypes;
 
-    if (types) {
+    if (Object.keys(types).length >= 1) {
       arrTypes = Object.values(types);
     } else {
       arrTypes = [];

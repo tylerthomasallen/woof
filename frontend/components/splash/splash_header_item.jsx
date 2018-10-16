@@ -40,7 +40,7 @@ class SplashHeaderItem extends React.Component {
             <SearchBar formType={formType}/>
 
             <div className="splash-bottom-nav">
-              <Link to="/" className="nav-items ">
+              <Link to="/dog/2" className="nav-items ">
                 <i className="fas fa-paw black-lab"></i>
                 <span>Black Lab</span>
               </Link>
@@ -48,11 +48,11 @@ class SplashHeaderItem extends React.Component {
                 <i className="fas fa-paw yellow-lab"></i>
                 <span>Yellow Lab</span>
               </Link>
-              <Link to="/" className="nav-items ">
+              <Link to="/dog/3" className="nav-items ">
                 <i className="fas fa-paw choc-lab"></i>
-                <span>Husky</span>
+                <span>Siberian Husky</span>
               </Link>
-              <Link to="/" className="nav-items ">
+              <Link to="/dog/4" className="nav-items ">
                 <i className="fas fa-paw golden"></i>
                 <span>Golden Retriever</span>
               </Link>

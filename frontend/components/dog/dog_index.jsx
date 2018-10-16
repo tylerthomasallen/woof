@@ -17,8 +17,27 @@ class DogIndex extends React.Component {
     }
   }
 
+  dogPhotos() {
+    const { dogs, dogId } = this.props;
+    const currentDog = dogs[dogId];
+
+    if (currentDog) {
+      return (
+        <div className="dog-photos-container">
+          {currentDog.dogPhotos.map((photo,idx) => (
+            <img key={idx} src={photo.url}/>
+          ))}
+        </div>
+      );
+    }
+  }
+
   render() {
     const { dogs, dogId, dogTypes, types, reviews } = this.props;
+
+    if ( !dogs[dogId] ) {
+      this.props.retrieveDog(dogId);
+    }
 
     const currentDog = dogs[dogId] || {};
 
@@ -30,17 +49,32 @@ class DogIndex extends React.Component {
     });
 
 
-    const currentDogTypes = Object.values(dogTypes).filter(dogType => dogType.dog_id = dogId);
-    const currentTypes = {};
+    // const currentDogTypes = Object.values(dogTypes).filter(dogType => dogType.dog_id = dogId);
+    const currentDogTypes = [];
+
+    Object.values(dogTypes).forEach(dogType => {
+      if (dogType.dog_id === parseInt(dogId)) {
+        currentDogTypes.push(dogType);
+      }
+    });
+
+    let currentTypes = {};
+
+    if (Object.keys(currentTypes).length >= 1) {
+      currentTypes = {};
+    }
 
     currentDogTypes.forEach(dogType => {
-      let type_id = dogType.type_id;
-      if (types[type_id]) {
+      const { type_id, dog_id } = dogType;
+      if (types[type_id] && parseInt(dog_id) === parseInt(dogId)) {
         currentTypes[type_id] = types[type_id];
       }
     });
 
+    debugger;
 
+
+    const currentDogPhotos = currentDog.dogPhotos;
 
     return (
       <div>
@@ -91,11 +125,14 @@ class DogIndex extends React.Component {
                 </div>
               </div>
 
-              <div className="dog-photos-container">
+              {this.dogPhotos()}
+
+              {/* <div className="dog-photos-container">
                 <img src="http://www.hollywoodanimals.com/images/portfolio/popup/Dogs/Jax/Jax-snow.jpg" />
                 <img src="https://lvlabrescue.com/wedoitforthelabs/wp-content/uploads/2017/03/LVLR-Puppies-13-800x400.jpg" />
                 <img src="https://ybxzcgnc7b-flywheel.netdna-ssl.com/wp-content/uploads/2018/06/neem-oil-for-dogs.jpg" />
-              </div>
+              </div> */}
+
             </div>
           </div>
 
