@@ -10,17 +10,20 @@ import { login, retrieveUser } from './actions/session_actions';
 import { retrieveDog } from './actions/dog_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
+
   let store;
 
   if (window.currentUser) {
+    const userId = window.currentUser.currentUser.id;
     const preloadState = {
       entities: {
-        users: { [window.currentUser.id]: window.currentUser}
+        users: { [window.currentUser.currentUser.id]: window.currentUser.currentUser}
       },
-      session: { id: window.currentUser.id }
+      session: { id: window.currentUser.currentUser.id }
     };
 
     store = configureStore(preloadState);
+    delete window.currentUser;
   } else {
     store = configureStore();
   }

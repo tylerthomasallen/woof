@@ -36,7 +36,6 @@ class DogIndex extends React.Component {
     curr.classList.add('dog-image-1');
     sibOne.classList.remove('dog-image-1');
     sibTwo.classList.remove('dog-image-1');
-    debugger;
   }
 
   removeClass(num) {
@@ -58,8 +57,6 @@ class DogIndex extends React.Component {
         </div>
       );
     }
-
-    document.querySelectorAll("img")
   }
 
   render() {
