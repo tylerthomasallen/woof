@@ -126,6 +126,13 @@ $yelp-orange: #f15c00;
     color: grey;
     padding: 10px;
   }
+
+  img {
+    object-fit: cover;
+    height: 60px;
+    width: 60px;
+    border-radius: 3px;
+  }
 }
 
 .user-info-reviews {

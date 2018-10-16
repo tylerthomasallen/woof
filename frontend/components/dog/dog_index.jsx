@@ -71,8 +71,6 @@ class DogIndex extends React.Component {
       }
     });
 
-    debugger;
-
 
     const currentDogPhotos = currentDog.dogPhotos;
 

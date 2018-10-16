@@ -44,6 +44,24 @@ class ReviewIndexItem extends React.Component {
 
   }
 
+  userPhoto(currentUser) {
+
+    if (Object.keys(currentUser) >= 1) {
+      return (
+        <div className="user-photo">
+          <img src={currentUser.photoUrl} />
+        </div>
+      );
+    } else {
+      return (
+        <div className="user-photo">
+          <i className="fas fa-user-astronaut"></i>
+        </div>
+      );
+    }
+
+  }
+
   formattedLocation(currentUser) {
     return `${currentUser.city}, ${currentUser.state}`;
   }
@@ -62,8 +80,10 @@ class ReviewIndexItem extends React.Component {
 
         <div className="review-item-user">
 
+          {/* {this.userPhoto(currentUser)} */}
+
           <div className="user-photo">
-            <i className="fas fa-user-astronaut"></i>
+            <img src={currentUser.photoUrl} />
           </div>
 
           <div className="user-info">

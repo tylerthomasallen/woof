@@ -77,31 +77,51 @@ DogType.create(dog_id: golden_retriever.id, type_id: sporting.id)
 
 User.destroy_all
 
-User.create(first_name: 'Albus', last_name: 'Dumbledore', email: 'albus@hogwarts.magic',
-password: 'password', zipcode: '94110')
-User.create(first_name: 'Tyler', last_name: 'Allen', email: 'tylerthomasallen@gmail.com',
+dumbledore = User.create(first_name: 'Albus', last_name: 'Dumbledore', email: 'albus@hogwarts.magic',
 password: 'password', zipcode: '94110')
 
-10.times do
-  name = Faker::HarryPotter.unique.character.split(' ');
-  first = name.first;
-  last = name.last;
-  User.create(
-    first_name: first,
-    last_name: last,
-    email: first + '@hogwarts.magic',
-    password: 'password',
-    zipcode: '94110',
-    state: Faker::Address.state_abbr,
-    city: Faker::Address.city
-  )
-end
+harry = User.create(first_name: 'Harry', last_name: 'Potter', email: 'harry@hogwarts.magic',
+password: 'password', zipcode: '94110')
+
+hermione = User.create(first_name: 'Hermione', last_name: 'Granger', email: 'hermione@hogwarts.magic',
+password: 'password', zipcode: '94110')
+
+tyler = User.create(first_name: 'Tyler', last_name: 'Allen', email: 'tylerthomasallen@gmail.com',
+password: 'password', zipcode: '94110')
+
+dumbledore_photo = File.open("/Users/tylerallen/Desktop/Photos/users/dumbledore.jpg")
+dumbledore.photo.attach(io: dumbledore_photo, filename: 'dumbledore.jpg')
+
+harry_photo = File.open("/Users/tylerallen/Desktop/Photos/users/harry.jpg")
+harry.photo.attach(io: harry_photo, filename: 'harry.jpg')
+
+hermione_photo = File.open("/Users/tylerallen/Desktop/Photos/users/hermione.jpg")
+hermione.photo.attach(io: hermione_photo, filename: 'hermione.jpg')
+
+tyler_photo = File.open("/Users/tylerallen/Desktop/Photos/users/tyler.jpg")
+tyler.photo.attach(io: tyler_photo, filename: 'tyler.jpg')
+
+
+# 10.times do
+#   name = Faker::HarryPotter.unique.character.split(' ');
+#   first = name.first;
+#   last = name.last;
+#   User.create(
+#     first_name: first,
+#     last_name: last,
+#     email: first + '@hogwarts.magic',
+#     password: 'password',
+#     zipcode: '94110',
+#     state: Faker::Address.state_abbr,
+#     city: Faker::Address.city
+#   )
+# end
 
 10.times do
   Review.create(
     body: Faker::HarryPotter.unique.quote,
     rating: Random.rand(1..5),
-    user_id: Random.rand(1..12),
+    user_id: Random.rand(1..4),
     dog_id: 1
   )
 end
@@ -110,7 +130,7 @@ end
   Review.create(
     body: Faker::StarWars.unique.quote,
     rating: Random.rand(1..5),
-    user_id: Random.rand(1..12),
+    user_id: Random.rand(1..4),
     dog_id: 2
   )
 end
@@ -119,7 +139,7 @@ end
   Review.create(
     body: Faker::ChuckNorris.unique.fact,
     rating: Random.rand(1..5),
-    user_id: Random.rand(1..12),
+    user_id: Random.rand(1..4),
     dog_id: 3
   )
 end
@@ -128,7 +148,7 @@ end
   Review.create(
     body: Faker::GreekPhilosophers.unique.quote,
     rating: Random.rand(1..5),
-    user_id: Random.rand(1..12),
+    user_id: Random.rand(1..4),
     dog_id: 4
   )
 end

@@ -7,10 +7,10 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
-export const receiveCurrentUser = currentUser => {
+export const receiveCurrentUser = payload => {
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser
+    payload
   };
 };
 
