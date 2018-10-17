@@ -8,7 +8,7 @@ const reviewsReducer = (state = {}, action) => {
       const { reviews } = action.payload;
       const newState = {};
       reviews.forEach(review => newState[review.id] = review);
-      return merge({}, state, newState);
+      return newState;
     default:
       return state;
   }
