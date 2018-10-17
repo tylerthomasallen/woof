@@ -1,6 +1,7 @@
 import React from 'react';
 import Stars from '../stars/stars';
 import * as MapApi from '../../util/api/map_util';
+import { Link } from 'react-router-dom';
 
 class ReviewIndexItem extends React.Component {
 
@@ -45,7 +46,7 @@ class ReviewIndexItem extends React.Component {
   }
 
   reviewItemButtons(currentUser) {
-    const { session } = this.props;
+    const { session, dog, currentReview } = this.props;
 
     if (currentUser.id === session.id) {
       return (
@@ -53,28 +54,29 @@ class ReviewIndexItem extends React.Component {
         <div className="review-item-edit-buttons">
           <div className="review-item-buttons">
             <div>
-              <i class="fas fa-lightbulb"></i>
+              <i className="fas fa-lightbulb"></i>
               <span>Useful</span>
             </div>
 
             <div>
-              <i class="fas fa-grin-beam"></i>
+              <i className="fas fa-grin-beam"></i>
               <span>Funny</span>
             </div>
 
             <div>
-              <i class="fas fa-user-astronaut"></i>
+              <i className="fas fa-user-astronaut"></i>
               <span>Cool</span>
             </div>
           </div>
           <div className="edit-delete-buttons">
-            <div className="edit-delete">
-              <i class="fas fa-edit"></i>
+
+          <Link to={`/dog/${dog.id}/editreview/${currentReview.id}`} className="edit-delete">
+              <i className="fas fa-edit"></i>
               <span>Edit</span>
-            </div>
+          </Link>
 
             <div className="edit-delete">
-              <i class="fas fa-trash"></i>
+              <i className="fas fa-trash"></i>
               <span>Delete</span>
             </div>
           </div>
@@ -84,17 +86,17 @@ class ReviewIndexItem extends React.Component {
       return (
         <div className="review-item-buttons">
           <div>
-            <i class="fas fa-lightbulb"></i>
+            <i className="fas fa-lightbulb"></i>
             <span>Useful</span>
           </div>
 
           <div>
-            <i class="fas fa-grin-beam"></i>
+            <i className="fas fa-grin-beam"></i>
             <span>Funny</span>
           </div>
 
           <div>
-            <i class="fas fa-user-astronaut"></i>
+            <i className="fas fa-user-astronaut"></i>
             <span>Cool</span>
           </div>
         </div>

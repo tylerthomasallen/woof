@@ -27,7 +27,9 @@ class ReviewsIndex extends React.Component {
 
           <div className="reviews-middle-container">
             {currentReviews.map(review => (
-              <ReviewIndexItem key={review.id} currentReview={review} retrieveUser={retrieveUser} users={users} session={session}/>
+              <ReviewIndexItem key={review.id} currentReview={review}
+                retrieveUser={retrieveUser} users={users} session={session}
+              dog={currentDog}/>
             ))}
           </div>
 

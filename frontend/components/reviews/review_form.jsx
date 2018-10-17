@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../header/header';
 import { Link } from 'react-router-dom';
 import DynamicStars from '../stars/dynamic_stars';
-import { fetchCreateReview } from '../../util/api/review_util';
 import { Redirect } from 'react-router-dom';
 
 class ReviewForm extends React.Component {
@@ -15,7 +14,8 @@ class ReviewForm extends React.Component {
       permStars: 0,
       ratingText: "Select your rating",
       permRatingText: '',
-      backToDogPage: false
+      backToDogPage: false,
+      counter: 1
     };
 
     this.updateStarsMouseEnter = this.updateStarsMouseEnter.bind(this);
@@ -28,6 +28,8 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
 
+    const { processForm } = this.props;
+
     e.preventDefault();
     const { body, permStars } = this.state;
     const { dogId, userId } = this.props;
@@ -37,13 +39,36 @@ class ReviewForm extends React.Component {
       errors.classList.add('isActive');
     } else {
 
-      fetchCreateReview({body: body, rating: permStars,
+      processForm({body: body, rating: permStars,
         dog_id: dogId, user_id: userId  }).then(
           () => this.setState({backToDogPage: true})
         );
       }
 
   }
+
+  componentDidUpdate() {
+    const { reviews, reviewId } = this.props;
+    const currentReview = reviews[reviewId];
+
+    if (this.state.counter === 1) {
+      this.setState({counter: this.state.counter + 1});
+      this.setState({body: currentReview.body});
+      this.setState({permStars: currentReview.rating});
+      this.updateReviewText(currentReview.rating, 'permRatingText');
+    }
+  }
+
+  // componentDidMount() {
+  //   const { reviews, reviewId, formType } = this.props;
+  //
+  //   if (formType === "Edit" && reviews[reviewId]) {
+  //       const currentReview = reviews[reviewId];
+  //       this.updateState('body', currentReview.body);
+  //       this.updateState('permStars', currentReview.rating);
+  //       this.updateReviewText(currentReview.rating, true);
+  //     }
+  // }
 
   fetchDog() {
     const { retrieveDog, dogId } = this.props;
@@ -113,9 +138,15 @@ class ReviewForm extends React.Component {
     }
   }
 
-  reviewFormInput() {
+  reviewFormInput(currentReview) {
 
     const { ratingText } = this.state;
+    const { formType } = this.props;
+
+    if (Object.keys(currentReview) >= 1) {
+      this.updatePermStars(currentReview.rating);
+      this.setState({body: currentReview.body});
+    }
 
     return (
       <div className="review-form-input">
@@ -155,7 +186,7 @@ class ReviewForm extends React.Component {
             required
           />
 
-          <input type="submit" value="Post Review" className="form-submit-button"/>
+          <input type="submit" value={`${formType} Review`} className="form-submit-button"/>
         </form>
       </div>
     );
@@ -163,7 +194,7 @@ class ReviewForm extends React.Component {
 
   render () {
 
-    const { dogId, userId, dogs } = this.props;
+    const { dogId, userId, dogs, reviews, reviewId, formType } = this.props;
 
     if (this.state.backToDogPage === true) {
       return <Redirect to={`/dog/${dogId}`} />;
@@ -176,6 +207,14 @@ class ReviewForm extends React.Component {
     } else {
       this.fetchDog();
       currentDog = {};
+    }
+
+    let currentReview;
+
+    if (reviews[reviewId]) {
+      currentReview = reviews[reviewId];
+    } else {
+      currentReview = {};
     }
 
 
@@ -192,7 +231,7 @@ class ReviewForm extends React.Component {
             {currentDog.name}
           </Link>
 
-          {this.reviewFormInput()}
+          {this.reviewFormInput(currentReview)}
 
         </div>
       </div>
