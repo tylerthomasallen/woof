@@ -12,9 +12,7 @@ class DogIndex extends React.Component {
 
   componentDidMount() {
     const { dogs, dogId } = this.props;
-    if ( !dogs[dogId] ) {
-      this.props.retrieveDog(dogId);
-    }
+    this.props.retrieveDog(dogId);
   }
 
   addClass(num) {

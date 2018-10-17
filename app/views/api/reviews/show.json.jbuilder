@@ -1,1 +1,1 @@
-json.reviews @reviews, :id, :body, :rating, :user_id, :dog_id
+json.reviews @review, :id, :body, :rating, :user_id, :dog_id

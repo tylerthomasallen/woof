@@ -3,6 +3,7 @@ import Header from '../header/header';
 import { Link } from 'react-router-dom';
 import DynamicStars from '../stars/dynamic_stars';
 import { fetchCreateReview } from '../../util/api/review_util';
+import { Redirect } from 'react-router-dom';
 
 class ReviewForm extends React.Component {
 
@@ -30,13 +31,12 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     const { body, permStars } = this.state;
     const { dogId, userId } = this.props;
-
-
-
     debugger;
 
-    fetchCreateReview({review: {body: body, rating: permStars,
-      dog_id: dogId, user_id: userId  }}).then(
+
+
+    fetchCreateReview({body: body, rating: permStars,
+      dog_id: dogId, user_id: userId  }).then(
         () => this.setState({backToDogPage: true})
       );
   }

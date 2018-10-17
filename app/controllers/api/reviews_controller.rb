@@ -1,11 +1,9 @@
 class Api::ReviewsController < ApplicationController
 
   def create
-    debugger
     @review = Review.new(review_params)
 
     if @review.save
-      debugger
       render "api/reviews/show"
     else
       render json: @review.errors.full_messages, status: 401
