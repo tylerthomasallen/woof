@@ -7,3 +7,14 @@ export const fetchCreateReview = review => {
     }
   });
 };
+
+export const fetchEditReview = (review, reviewId) => {
+  debugger;
+  return $.ajax ({
+    method: 'GET',
+    url: `api/reviews/${reviewId}/edit`,
+    data: {
+      review
+    }
+  });
+};

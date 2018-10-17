@@ -12,7 +12,16 @@ class Api::ReviewsController < ApplicationController
   end
 
   def edit
+    debugger;
+    @review = Review.find(params[:id])
+    debugger;
 
+    if @review.update(review_params)
+      debugger;
+      render "api/reviews/show"
+    else
+      render json: @review.errors.full_messages, status: 404
+    end
   end
 
   def delete

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { retrieveDog } from '../../actions/dog_actions';
 import ReviewForm from './review_form';
+import { fetchEditReview } from '../../util/api/review_util';
 
 const mapStateToProps = ( { entities, session }, ownProps ) => {
 
@@ -22,7 +23,7 @@ const mapStateToProps = ( { entities, session }, ownProps ) => {
 
 const mapDispatchToProps = dispatch => ({
   retrieveDog: (dogId) => dispatch(retrieveDog(dogId)),
-
+  processForm: (review, reviewId) => fetchEditReview(review, reviewId)
 });
 
 export default connect(

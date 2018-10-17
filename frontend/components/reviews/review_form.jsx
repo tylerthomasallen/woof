@@ -8,12 +8,39 @@ class ReviewForm extends React.Component {
 
   constructor(props) {
     super(props);
+
+    const { reviews, reviewId, formType } = props;
+
+    let permStars = 0;
+    let body = '';
+    let permRatingText = '';
+    let currentReview;
+
+    if (formType === 'Edit' && reviews[reviewId]) {
+      currentReview = reviews[reviewId];
+      permStars = currentReview.rating;
+      body = currentReview.body;
+
+      if (permStars === 1) {
+        permRatingText = 'Eek! Methinks not.';
+      } else if (permStars === 2) {
+        permRatingText = "Meh. I've had better dogs.";
+      } else if (permStars === 3) {
+        permRatingText = 'A-OK.';
+      } else if (permStars === 4) {
+        permRatingText = "Yay! I'm a fan.";
+      } else if (permStars === 5) {
+        permRatingText = "Woohoo! As good as it gets!";
+      }
+
+    }
+
     this.state = {
-      body: '',
+      body: body,
       stars: 0,
-      permStars: 0,
+      permStars: permStars,
       ratingText: "Select your rating",
-      permRatingText: '',
+      permRatingText: permRatingText,
       backToDogPage: false,
       counter: 1
     };
@@ -28,47 +55,51 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
 
-    const { processForm } = this.props;
+    const { processForm, formType } = this.props;
 
     e.preventDefault();
     const { body, permStars } = this.state;
-    const { dogId, userId } = this.props;
+    const { dogId, userId, reviews, reviewId } = this.props;
 
     if (permStars === 0) {
       const errors = document.getElementById('star-errors');
       errors.classList.add('isActive');
     } else {
 
-      processForm({body: body, rating: permStars,
-        dog_id: dogId, user_id: userId  }).then(
-          () => this.setState({backToDogPage: true})
-        );
+      if ( formType === "Edit") {
+        processForm({body: body, rating: permStars,
+          dog_id: dogId, user_id: userId}, reviewId).then(
+            () => this.setState({backToDogPage: true})
+          );
+
+      } else {
+        processForm({body: body, rating: permStars,
+          dog_id: dogId, user_id: userId}).then(
+            () => this.setState({backToDogPage: true})
+          );
+
+      }
+
       }
 
   }
 
   componentDidUpdate() {
-    const { reviews, reviewId } = this.props;
-    const currentReview = reviews[reviewId];
+    const { reviews, reviewId, formType } = this.props;
 
-    if (this.state.counter === 1) {
-      this.setState({counter: this.state.counter + 1});
-      this.setState({body: currentReview.body});
-      this.setState({permStars: currentReview.rating});
-      this.updateReviewText(currentReview.rating, 'permRatingText');
+    if (formType === "Edit") {
+      const currentReview = reviews[reviewId];
+
+      if (this.state.counter === 1) {
+        this.setState({counter: this.state.counter + 1});
+        this.setState({body: currentReview.body});
+        this.setState({permStars: currentReview.rating});
+        this.updateReviewText(currentReview.rating, 'permRatingText');
+      }
+
     }
   }
 
-  // componentDidMount() {
-  //   const { reviews, reviewId, formType } = this.props;
-  //
-  //   if (formType === "Edit" && reviews[reviewId]) {
-  //       const currentReview = reviews[reviewId];
-  //       this.updateState('body', currentReview.body);
-  //       this.updateState('permStars', currentReview.rating);
-  //       this.updateReviewText(currentReview.rating, true);
-  //     }
-  // }
 
   fetchDog() {
     const { retrieveDog, dogId } = this.props;
@@ -138,15 +169,10 @@ class ReviewForm extends React.Component {
     }
   }
 
-  reviewFormInput(currentReview) {
+  reviewFormInput() {
 
     const { ratingText } = this.state;
     const { formType } = this.props;
-
-    if (Object.keys(currentReview) >= 1) {
-      this.updatePermStars(currentReview.rating);
-      this.setState({body: currentReview.body});
-    }
 
     return (
       <div className="review-form-input">
@@ -209,13 +235,6 @@ class ReviewForm extends React.Component {
       currentDog = {};
     }
 
-    let currentReview;
-
-    if (reviews[reviewId]) {
-      currentReview = reviews[reviewId];
-    } else {
-      currentReview = {};
-    }
 
 
     return (
@@ -231,7 +250,7 @@ class ReviewForm extends React.Component {
             {currentDog.name}
           </Link>
 
-          {this.reviewFormInput(currentReview)}
+          {this.reviewFormInput()}
 
         </div>
       </div>
