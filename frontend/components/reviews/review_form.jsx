@@ -67,8 +67,7 @@ class ReviewForm extends React.Component {
     } else {
 
       if ( formType === "Edit") {
-        processForm({body: body, rating: permStars,
-          dog_id: dogId, user_id: userId}, reviewId).then(
+        processForm({body: body, rating: permStars}, reviewId).then(
             () => this.setState({backToDogPage: true})
           );
 

@@ -1,9 +1,19 @@
 import React from 'react';
 import Stars from '../stars/stars';
 import * as MapApi from '../../util/api/map_util';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { fetchDestroyReview } from '../../util/api/review_util';
+import { fetchDog } from '../../util/api/dog_util';
 
 class ReviewIndexItem extends React.Component {
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      backToDogPage: false
+    };
+  }
 
   todaysDate() {
     const today = new Date();
@@ -45,6 +55,13 @@ class ReviewIndexItem extends React.Component {
 
   }
 
+  destroyReview() {
+    const { currentReview, dog } = this.props;
+    fetchDestroyReview(currentReview.id).then(
+      () => this.setState({backToDogPage: true})
+    );
+  }
+
   reviewItemButtons(currentUser) {
     const { session, dog, currentReview } = this.props;
 
@@ -75,7 +92,7 @@ class ReviewIndexItem extends React.Component {
               <span>Edit</span>
           </Link>
 
-            <div className="edit-delete">
+            <div className="edit-delete" onClick={() => this.destroyReview()}>
               <i className="fas fa-trash"></i>
               <span>Delete</span>
             </div>
@@ -132,8 +149,13 @@ class ReviewIndexItem extends React.Component {
 
   render() {
 
-    const { currentReview, users } = this.props;
+    const { currentReview, users, dog } = this.props;
     const currentUser = users[currentReview.user_id] || {};
+
+
+    if (this.state.backToDogPage === true) {
+      return <Redirect to={`/dog/${dog.id}`} />;
+    }
 
     return (
       <div className="review-item-container">
