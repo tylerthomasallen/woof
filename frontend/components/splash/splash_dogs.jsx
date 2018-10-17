@@ -9,7 +9,6 @@ class SplashDogs extends React.Component {
     retrieveDog(1);
     retrieveDog(2);
     retrieveDog(3);
-    retrieveDog(4);
   }
 
   render() {
@@ -29,10 +28,21 @@ class SplashDogs extends React.Component {
       });
     });
 
-    debugger;
+    Object.values(dogs).forEach(dog => {
+      dog['reviewCount'] = 0;
+      Object.values(reviews).forEach(review => {
+        dog['reviewCount'] += 1;
+      });
+    });
+
     return (
       <div className="splash-dogs-container">
-        <DogPreviewItem />
+        <h2>Find the Best Dogs in Town</h2>
+        <div className="splash-dogs-preview-comp">
+          {Object.values(dogs).map(dog => (
+            <DogPreviewItem dog={dog} key={dog.id} cssClass="splash"/>
+          ))}
+        </div>
       </div>
     );
   }

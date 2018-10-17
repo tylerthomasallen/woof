@@ -1,0 +1,62 @@
+$yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
+$yelp-blue: #0073bb;
+$yelp-red: #d32323;
+$yelp-lighter-border: #e6e6e6;
+
+.splash-dog-preview-item-container {
+  display: flex;
+  font-family: $yelp-font;
+  flex-direction: column;
+  height: 100%;
+  width: 95%;
+  border: 1px solid $yelp-lighter-border;
+  border-radius: 3px;
+  margin-right: 30px;
+
+  img {
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+.splash-dog-preview-item-container:last-child {
+  margin-right: 0px;
+}
+
+.splash-dog-preview-item-text {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+  a {
+    width: 50%;
+  }
+
+  h3 {
+    color: $yelp-blue;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  h3:hover {
+    text-decoration: underline;
+  }
+
+  .splash-dog-preview-stars {
+    display: flex;
+
+    div {
+      align-self: center;
+    }
+
+    img {
+      width: 100px;
+      height: 100%;
+      margin-right: 20px;
+      align-content: center;
+    }
+  }
+}
