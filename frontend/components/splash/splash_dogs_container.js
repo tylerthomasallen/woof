@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import DogPreviewItem from './dog_preview_item';
+import SplashDogs from './splash_dogs';
 import { retrieveDogs, retrieveDog } from '../../actions/dog_actions';
 
 const mapStateToProps = ( {entities}, ownProps) => {
@@ -22,4 +22,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(DogPreviewItem);
+)(SplashDogs);

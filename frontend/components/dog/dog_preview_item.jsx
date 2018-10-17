@@ -3,9 +3,12 @@ import React from 'react';
 class DogPreviewItem extends React.Component {
 
   componentDidMount() {
-    const { retrieveDogs, dogs, types, dogTypes, reviews } = this.props;
-
-    retrieveDogs();
+    // const { dogs, types, dogTypes, reviews, retrieveDog } = this.props;
+    //
+    // retrieveDog(1);
+    // retrieveDog(2);
+    // retrieveDog(3);
+    // retrieveDog(4);
   }
 
   render() {
