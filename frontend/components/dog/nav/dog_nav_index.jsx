@@ -1,5 +1,6 @@
 import React from 'react';
 import NavModal from './nav_modal';
+import { Link } from 'react-router-dom';
 
 class DogNavIndex extends React.Component {
 
@@ -32,6 +33,7 @@ class DogNavIndex extends React.Component {
 
   render() {
     const { showTempsClass, showTypesClass, showCharsClass } = this.state;
+    const { dog } = this.props;
 
     return (
       <div className="dog-show-nav-bar">
@@ -71,10 +73,11 @@ class DogNavIndex extends React.Component {
 
         </div>
 
-        <div className="nav-right-review nav-item">
+
+        <Link to={`/dog/${dog.id}/writeareview`} className="nav-right-review nav-item">
           <i className="fa fa-pencil-square-o nav-span-i" aria-hidden="true"></i>
           <span className="nav-span-i review">Write a Review</span>
-        </div>
+        </Link>
 
       </div>
     );

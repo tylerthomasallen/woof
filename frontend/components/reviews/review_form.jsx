@@ -13,7 +13,7 @@ class ReviewForm extends React.Component {
       body: '',
       stars: 0,
       permStars: 0,
-      ratingText: "Select your rating, unless it's a zero...",
+      ratingText: "Select your rating",
       permRatingText: '',
       backToDogPage: false
     };
@@ -31,14 +31,18 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     const { body, permStars } = this.state;
     const { dogId, userId } = this.props;
-    debugger;
 
+    if (permStars === 0) {
+      const errors = document.getElementById('star-errors');
+      errors.classList.add('isActive');
+    } else {
 
+      fetchCreateReview({body: body, rating: permStars,
+        dog_id: dogId, user_id: userId  }).then(
+          () => this.setState({backToDogPage: true})
+        );
+      }
 
-    fetchCreateReview({body: body, rating: permStars,
-      dog_id: dogId, user_id: userId  }).then(
-        () => this.setState({backToDogPage: true})
-      );
   }
 
   fetchDog() {
@@ -67,7 +71,7 @@ class ReviewForm extends React.Component {
 
   updateStarsMouseLeave() {
     this.setState({stars: 0});
-    this.setState({ratingText: "Select your rating, unless it's a zero..."});
+    this.setState({ratingText: "Select your rating"});
   }
 
   updatePermStars(num) {
@@ -115,6 +119,7 @@ class ReviewForm extends React.Component {
 
     return (
       <div className="review-form-input">
+
 
         <form className="review-form" onSubmit={this.handleSubmit}>
 
@@ -178,6 +183,9 @@ class ReviewForm extends React.Component {
     return (
       <div className="review-form">
         <Header />
+        <div className="review-form-star-errors" id="star-errors">
+          <span>Pick a star rating!</span>
+        </div>
         <div className="review-form-container">
 
           <div className="review-form-body">
@@ -194,49 +202,5 @@ class ReviewForm extends React.Component {
   }
 }
 
-{/* <label>
-  <input type="radio"
-    className="review-radio-star"
-    value="1"
-    name="star"
-  />
-  {/* <img src={require()}></img> */}
-
-// </label>
-//
-// <label>
-//   <input type="radio"
-//     className="review-radio-star"
-//     value="2"
-//     name="star"
-//   />
-    {/* <img src={require("../../../app/assets/images/stars/regular_1@3x.png")}>
-
-    </img> */}
-// </label>
-//
-// <label>
-//   <input type="radio"
-//     className="review-radio-star"
-//     value="3"
-//     name="star"
-//   />
-// </label>
-//
-// <label>
-//   <input type="radio"
-//     className="review-radio-star"
-//     value="4"
-//     name="star"
-//   />
-// </label>
-//
-// <label>
-//   <input type="radio"
-//     className="review-radio-star"
-//     value="5"
-//     name="star"
-// //   />
-// </label> */}
 
 export default ReviewForm;

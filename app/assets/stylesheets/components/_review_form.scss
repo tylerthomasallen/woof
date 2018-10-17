@@ -80,7 +80,9 @@ $yelp-light-border: #e6e6e6;
 }
 
 .review-form {
-  margin: 15px;
+  form {
+    margin: 15px;
+  }
 }
 
 .form-submit-button {
@@ -99,4 +101,18 @@ $yelp-light-border: #e6e6e6;
   width: 40%;
   margin-left: -15px;
 
+}
+
+.review-form-star-errors {
+  position: absolute;
+    top: 161px;
+    left: 170px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d32323;
+    display: none;
+}
+
+.isActive {
+  display: inline;
 }

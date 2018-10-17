@@ -106,7 +106,7 @@ class DogIndex extends React.Component {
         <div className="dog-show-upper-half">
 
           <div className="nav-bar-container">
-            <DogNavIndex />
+            <DogNavIndex dog={currentDog}/>
           </div>
           <div className="dog-show-body">
             <DogIndexHeaderItem dog={currentDog} types={currentTypes} reviews={currentDogReviews}/>
