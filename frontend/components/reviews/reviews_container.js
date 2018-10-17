@@ -3,7 +3,7 @@ import { fetchReviews } from '../../actions/reviews_actions';
 import { retrieveUser } from '../../actions/session_actions';
 import ReviewsIndex from './reviews_index';
 
-const mapStateToProps = ( {entities}, ownProps ) => {
+const mapStateToProps = ( {entities, session}, ownProps ) => {
   const { reviews, dogs, users } = entities;
   const { dogId } = ownProps;
 
@@ -21,7 +21,8 @@ const mapStateToProps = ( {entities}, ownProps ) => {
   return {
     currentDog,
     currentReviews,
-    users
+    users,
+    session
   };
 };
 

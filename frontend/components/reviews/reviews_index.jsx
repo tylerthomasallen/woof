@@ -7,11 +7,13 @@ class ReviewsIndex extends React.Component {
 
 
   render() {
-    let { currentDog, currentReviews, retrieveUser, users } = this.props;
+    let { currentDog, currentReviews, retrieveUser, users, session } = this.props;
 
     if (currentDog === undefined) {
       currentDog = {};
     }
+
+
 
       return (
 
@@ -25,7 +27,7 @@ class ReviewsIndex extends React.Component {
 
           <div className="reviews-middle-container">
             {currentReviews.map(review => (
-              <ReviewIndexItem key={review.id} currentReview={review} retrieveUser={retrieveUser} users={users}/>
+              <ReviewIndexItem key={review.id} currentReview={review} retrieveUser={retrieveUser} users={users} session={session}/>
             ))}
           </div>
 

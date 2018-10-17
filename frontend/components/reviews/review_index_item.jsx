@@ -44,6 +44,64 @@ class ReviewIndexItem extends React.Component {
 
   }
 
+  reviewItemButtons(currentUser) {
+    const { session } = this.props;
+
+    if (currentUser.id === session.id) {
+      return (
+
+        <div className="review-item-edit-buttons">
+          <div className="review-item-buttons">
+            <div>
+              <i class="fas fa-lightbulb"></i>
+              <span>Useful</span>
+            </div>
+
+            <div>
+              <i class="fas fa-grin-beam"></i>
+              <span>Funny</span>
+            </div>
+
+            <div>
+              <i class="fas fa-user-astronaut"></i>
+              <span>Cool</span>
+            </div>
+          </div>
+          <div className="edit-delete-buttons">
+            <div className="edit-delete">
+              <i class="fas fa-edit"></i>
+              <span>Edit</span>
+            </div>
+
+            <div className="edit-delete">
+              <i class="fas fa-trash"></i>
+              <span>Delete</span>
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="review-item-buttons">
+          <div>
+            <i class="fas fa-lightbulb"></i>
+            <span>Useful</span>
+          </div>
+
+          <div>
+            <i class="fas fa-grin-beam"></i>
+            <span>Funny</span>
+          </div>
+
+          <div>
+            <i class="fas fa-user-astronaut"></i>
+            <span>Cool</span>
+          </div>
+        </div>
+      );
+    }
+  }
+
   userPhoto(currentUser) {
 
     if (Object.keys(currentUser) >= 1) {
@@ -110,6 +168,9 @@ class ReviewIndexItem extends React.Component {
           <div className="review-item-body">
             <p>{currentReview.body}</p>
           </div>
+
+          {this.reviewItemButtons(currentUser)}
+
 
         </div>
 

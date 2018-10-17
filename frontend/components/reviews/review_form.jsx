@@ -166,7 +166,6 @@ class ReviewForm extends React.Component {
     const { dogId, userId, dogs } = this.props;
 
     if (this.state.backToDogPage === true) {
-      debugger;
       return <Redirect to={`/dog/${dogId}`} />;
     }
 

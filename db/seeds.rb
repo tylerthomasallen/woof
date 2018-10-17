@@ -156,6 +156,8 @@ lord.photo.attach(io: lord_photo, filename: 'lord.jpg')
 
 i = 0
 
+Review.destroy_all
+
 while i < 10
   Review.create(
     body: Faker::HarryPotter.unique.quote,

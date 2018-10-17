@@ -157,3 +157,80 @@ $yelp-orange: #f15c00;
     font-weight: bold;
   }
 }
+
+.review-item-buttons {
+  display: flex;
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 40px;
+
+  div {
+    display: flex;
+    padding: 0 8px;
+    border: 0.5px solid #cccccc;
+    height: 28px;
+    align-items: center;
+    background: #F7F7F7;
+    justify-content: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    i {
+      font-weight: 900;
+      margin-left: 5px;
+    }
+
+    span {
+      margin: 0 5px;
+    }
+  }
+
+  div:first-child {
+    border-radius: 3px 0 0 3px;
+  }
+
+  div:last-child {
+    border-radius: 0 3px 3px 0;
+  }
+
+  div:hover {
+    background: white;
+  }
+}
+
+.review-item-edit-buttons {
+  display: flex;
+
+  .edit-delete-buttons {
+    margin-top: 39px;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .edit-delete {
+      background: $yelp-red;
+      padding: 7px;
+      border-radius: 3px;
+      cursor: pointer;
+      border: .5px solid #8d0005;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 5px;
+      }
+    }
+
+    .edit-delete:first-child {
+    }
+
+    .edit-delete:hover {
+      background: #EC1414;
+    }
+  }
+}
