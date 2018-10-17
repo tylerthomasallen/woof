@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../header/header';
 import { Link } from 'react-router-dom';
 import DynamicStars from '../stars/dynamic_stars';
+import { fetchCreateReview } from '../../util/api/review_util';
 
 class ReviewForm extends React.Component {
 
@@ -11,8 +12,9 @@ class ReviewForm extends React.Component {
       body: '',
       stars: 0,
       permStars: 0,
-      ratingText: 'Select your rating',
-      permRatingText: ''
+      ratingText: "Select your rating, unless it's a zero...",
+      permRatingText: '',
+      backToDogPage: false
     };
 
     this.updateStarsMouseEnter = this.updateStarsMouseEnter.bind(this);
@@ -24,12 +26,19 @@ class ReviewForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    const { permRatingText, permStars } = this.state;
-    const { dogId, createReview, userId } = this.props;
 
-    createReview({review: {body: permRatingText, rating: permStars,
-      dog_id: dogId, user_id: userId  }});
+    e.preventDefault();
+    const { body, permStars } = this.state;
+    const { dogId, userId } = this.props;
+
+
+
+    debugger;
+
+    fetchCreateReview({review: {body: body, rating: permStars,
+      dog_id: dogId, user_id: userId  }}).then(
+        () => this.setState({backToDogPage: true})
+      );
   }
 
   fetchDog() {
@@ -52,22 +61,21 @@ class ReviewForm extends React.Component {
   updateStarsMouseEnter(num) {
     this.setState({stars: num});
     this.setState({permStars: 0});
-    this.updateReviewText(num, true);
+    this.updateReviewText(num, 'ratingText');
+    this.setState({permRatingText: ''});
   }
 
   updateStarsMouseLeave() {
     this.setState({stars: 0});
-    this.setState({ratingText: 'Select your rating'});
+    this.setState({ratingText: "Select your rating, unless it's a zero..."});
   }
 
   updatePermStars(num) {
     this.setState({permStars: num});
-    this.updateReviewText(num, true);
+    this.updateReviewText(num, 'permRatingText');
   }
 
-  updateReviewText(num, perm){
-    let field;
-    perm ? field = 'permRatingText' : field = 'ratingText';
+  updateReviewText(num, field){
     if (num === 1) {
       this.setState({[field]: 'Eek! Methinks not.'});
     } else if (num === 2) {
@@ -136,7 +144,7 @@ class ReviewForm extends React.Component {
 
           <textarea type="text"
             value={this.state.body}
-            onChange={this.update('body')}
+            onChange={(e) => this.setState({body: e.currentTarget.value})}
             placeholder={this.bodyPlaceholder()}
             className="review-form-text-input"
             required
@@ -149,7 +157,13 @@ class ReviewForm extends React.Component {
   }
 
   render () {
+
     const { dogId, userId, dogs } = this.props;
+
+    if (this.state.backToDogPage === true) {
+      debugger;
+      return <Redirect to={`/dog/${dogId}`} />;
+    }
 
     let currentDog;
 

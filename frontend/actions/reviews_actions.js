@@ -1,5 +1,5 @@
 import * as ReviewUtil from '../util/api/review_util';
-// export const RECEIVE_USER = 'RECEIVE_USER';
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 //
 // // export const UPDATE_BOUNDS = 'UPDATE_BOUNDS';
 // //
@@ -10,17 +10,17 @@ import * as ReviewUtil from '../util/api/review_util';
 // //   };
 // // };
 //
-// export const receiveUser = user => {
+// export const receiveReview = review => {
 //   return {
-//     type: RECEIVE_USER,
-//     user
+//     type: RECEIVE_REVIEW,
+//     review
 //   };
 // };
-//
-// export const retrieveUser = userId => dispatch => {
+
+// export const createReview = review => dispatch => {
 //   return (
-//     ReviewUtil.fetchUser(userId).then(
-//       userInfo => (dispatch(receiveUser(userInfo)))
+//     ReviewUtil.fetchCreateReview(review).then(
+//       reviewInfo => (dispatch(push(`/dog/${reviewInfo.dog_id}`)))
 //     )
 //   );
 // };
