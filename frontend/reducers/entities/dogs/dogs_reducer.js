@@ -1,4 +1,4 @@
-import { RECEIVE_DOG } from '../../../actions/dog_actions';
+import { RECEIVE_DOG, RECEIVE_DOGS } from '../../../actions/dog_actions';
 import merge from 'lodash/merge';
 
 const dogsReducer = (state = {}, action) => {
@@ -7,6 +7,8 @@ const dogsReducer = (state = {}, action) => {
     case RECEIVE_DOG:
     const { dog } = action.payload;
       return merge({}, state, { [dog.id]: dog});
+    case RECEIVE_DOGS:
+      debugger;
     default:
       return state;
   }

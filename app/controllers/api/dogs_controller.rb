@@ -10,8 +10,8 @@ class Api::DogsController < ApplicationController
   end
 
   def index
-    @dogs = Dog.in_bounds(params[:bounds])
+    @dogs = Dog.take(4)
+    render "api/dogs/index"
   end
-
 
 end

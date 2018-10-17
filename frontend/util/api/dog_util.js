@@ -4,3 +4,10 @@ export const fetchDog = dogId => {
     url: `api/dogs/${dogId}`
   });
 };
+
+export const fetchDogs = () => {
+  return $.ajax ({
+    method: 'GET',
+    url: `api/dogs`
+  });
+};

@@ -31,5 +31,5 @@ class Dog < ApplicationRecord
       .where("lng > ?", bounds[:southWest][:lng])
       .where("lng < ?", bounds[:northEast][:lng])
   end
-
+  
 end

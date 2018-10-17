@@ -1,6 +1,7 @@
 import * as DogUtil from '../util/api/dog_util';
 
 export const RECEIVE_DOG = 'RECEIVE_DOG';
+export const RECEIVE_DOGS = 'RECEIVE_DOGS';
 
 // export const UPDATE_BOUNDS = 'UPDATE_BOUNDS';
 //
@@ -10,6 +11,14 @@ export const RECEIVE_DOG = 'RECEIVE_DOG';
 //     bounds
 //   };
 // };
+
+export const receiveDogs = payload => {
+  debugger;
+  return {
+    type: RECEIVE_DOGS,
+    payload
+  };
+};
 
 export const receiveDog = payload => {
   return {
@@ -22,6 +31,14 @@ export const retrieveDog = dogId => dispatch => {
   return (
     DogUtil.fetchDog(dogId).then(
       dogInfo => (dispatch(receiveDog(dogInfo)))
+    )
+  );
+};
+
+export const retrieveDogs = () => dispatch => {
+  return (
+    DogUtil.fetchDogs().then(
+      dogs => (dispatch(receiveDogs(dogs)))
     )
   );
 };

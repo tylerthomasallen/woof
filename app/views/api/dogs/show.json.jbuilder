@@ -1,6 +1,3 @@
-# json.dog @dog, :id, :name, :hypoallergenic, :sheds, :good_with_kids,
-# :address_line_one, :address_line_two, :zip_code, :state, :city, :lat, :lng, :temperment
-
 json.dog do
   json.extract! @dog, :id, :name, :hypoallergenic, :sheds, :good_with_kids,
   :address_line_one, :address_line_two, :zip_code, :state, :city, :lat, :lng, :temperment
