@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 
 class SearchDropdown extends React.Component {
 
+  componentDidMount() {
+    const { retrieveDog, dogs } = this.props;
+    const totalDogs = 5;
+    if (Object.values(dogs).length < 5) {
+      for (let i = 1; i <= totalDogs; i++) {
+        retrieveDog(i);
+      }
+    }
+
+  }
+
 
 
   filterDogs() {
@@ -33,7 +44,7 @@ class SearchDropdown extends React.Component {
   render() {
 
     const { formType, side, searchInfo, filtered } = this.props;
-    
+
 
     if (searchInfo.length >= 1) {
       return (
