@@ -45,9 +45,14 @@ class DogPreviewItem extends React.Component {
             {this.dogTypeText()}
           </span>
 
-          <span>
-            {dog.city}
+          <span className={`${cssClass}-dog-preview-types`}>
+            {dog.city}, {dog.state}
           </span>
+
+          <div className={`${cssClass}-dog-preview-fire`}>
+            <i class="fas fa-paw"></i>
+            <span>Popular dog in your area!</span>
+          </div>
 
         </div>
 

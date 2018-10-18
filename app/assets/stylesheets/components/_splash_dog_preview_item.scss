@@ -2,6 +2,8 @@ $yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
 $yelp-blue: #0073bb;
 $yelp-red: #d32323;
 $yelp-lighter-border: #e6e6e6;
+$yelp-grey: #666;
+$yelp-orange: #f15c00;
 
 .splash-dog-preview-item-container {
   display: flex;
@@ -48,6 +50,7 @@ $yelp-lighter-border: #e6e6e6;
   .splash-dog-preview-stars {
     display: flex;
 
+
     div {
       align-self: center;
     }
@@ -55,8 +58,27 @@ $yelp-lighter-border: #e6e6e6;
     img {
       width: 100px;
       height: 100%;
-      margin-right: 20px;
+      margin-right: 10px;
       align-content: center;
+    }
+
+    span {
+      color: #666;
+    }
+  }
+
+  .splash-dog-preview-types {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .splash-dog-preview-fire {
+    color: $yelp-orange;
+    font-size: 14px;
+    margin-top: 10px;
+    i {
+      margin-right: 5px;
+      font-size: 18px;
     }
   }
 }
