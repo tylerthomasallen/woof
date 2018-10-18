@@ -5,9 +5,12 @@ export const fetchDog = dogId => {
   });
 };
 
-export const fetchDogs = () => {
+export const fetchDogs = (searchInfo) => {
   return $.ajax ({
     method: 'GET',
-    url: `api/dogs`
+    url: `api/dogs`,
+    data: {
+      searchInfo
+    }
   });
 };

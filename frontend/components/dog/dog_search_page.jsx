@@ -28,7 +28,7 @@ class DogSearchPage extends React.Component {
         </div>
 
         <div className="dog-search-preview-container">
-          
+
         </div>
       </div>
     );

@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import SearchBar from './searchbar';
+import { retrieveDogs, retrieveDog } from '../../actions/dog_actions';
 
 const mapStateToProps = ( { entities }, ownProps ) => {
-  
+
   const { formType }  = ownProps;
   const { dogs, types } = entities;
 
@@ -14,7 +15,8 @@ const mapStateToProps = ( { entities }, ownProps ) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  // retrieveDog: (dogId) => dispatch(retrieveDog(dogId)),
+  retrieveDogs: (searchInfo) => dispatch(retrieveDogs(searchInfo)),
+  retrieveDog: (dogId) => dispatch(retrieveDog(dogId)),
   // processForm: (review) => fetchCreateReview(review)
 });
 

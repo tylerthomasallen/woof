@@ -7,9 +7,20 @@ class SearchBar extends ClickOutComponent {
     super(props);
     this.state = {
       leftActive: false,
-      rightActive: false
+      rightActive: false,
+      searchInfo: '',
+      location: ''
     };
     this.handleDropdown = this.handleDropdown.bind(this);
+  }
+
+  componentDidMount() {
+    const { retrieveDog } = this.props;
+    const totalDogs = 5;
+    for (let i = 0; i <= totalDogs; i++) {
+      retrieveDog(i);
+    }
+
   }
 
   handleDropdown(side) {
@@ -27,6 +38,12 @@ class SearchBar extends ClickOutComponent {
       this.setState({leftActive: false});
       this.setState({rightActive: true});
     }
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   onClickOut(e) {
@@ -48,8 +65,26 @@ class SearchBar extends ClickOutComponent {
   }
 
   render() {
-    const { formType } = this.props;
-    const { leftShow, rightShow } = this.state;
+    const { formType, dogs, types, retrieveDogs } = this.props;
+    const { leftShow, rightShow, searchInfo, location } = this.state;
+
+    let filtered = [];
+
+    if (searchInfo === '') {
+      filtered = [];
+    } else {
+      Object.values(dogs).forEach(dog => {
+        if (dog.name.toLowerCase().includes(searchInfo)) {
+          filtered.push(dog);
+        }
+      });
+
+      Object.values(types).forEach(type => {
+        if (type.name.toLowerCase().includes(searchInfo)) {
+          filtered.push(type);
+        }
+      });
+    }
 
     return (
       <div className={`${formType}-search-container`}>
@@ -60,10 +95,12 @@ class SearchBar extends ClickOutComponent {
             placeholder="labradors, pugs, poodles..."
             className="left-input"
             onClick={() => this.handleDropdown('left')}
+            onChange={this.update('searchInfo')}
           />
         </div>
 
-        <SearchDropdown formType={formType} side={'left'}/>
+        <SearchDropdown formType={formType} side={'left'} searchInfo={searchInfo}
+          filtered={filtered} />
 
 
 
@@ -72,6 +109,7 @@ class SearchBar extends ClickOutComponent {
           <input type="text"
             placeholder="San Francisco, CA"
             className="right-input"
+            onChange={this.update('location')}
           />
         </div>
 

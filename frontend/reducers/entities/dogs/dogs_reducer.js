@@ -8,7 +8,10 @@ const dogsReducer = (state = {}, action) => {
     const { dog } = action.payload;
       return merge({}, state, { [dog.id]: dog});
     case RECEIVE_DOGS:
-      debugger;
+    const { dogs } = action.payload;
+      const newState = {};
+      dogs.forEach(currDog => newState[currDog.id] = currDog);
+      return merge({}, state, newState);
     default:
       return state;
   }

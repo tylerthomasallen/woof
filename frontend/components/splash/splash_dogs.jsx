@@ -4,17 +4,30 @@ import DogPreviewItem from '../dog/dog_preview_item';
 class SplashDogs extends React.Component {
 
   componentDidMount() {
-    const { retrieveDog } = this.props;
-
-    retrieveDog(1);
-    retrieveDog(2);
-    retrieveDog(3);
+    // const { retrieveDog } = this.props;
+    //
+    // retrieveDog(1);
+    // retrieveDog(2);
+    // retrieveDog(3);
   }
 
   render() {
     let { dogs, reviews, dogTypes, types } = this.props;
 
-    Object.values(dogs).forEach(dog => {
+    const dogsArr = Object.values(dogs);
+
+    if (dogsArr.length >= 1) {
+
+
+    const dogLimit = [];
+
+    for (let i = 0; i < 3; i++) {
+      if (dogsArr[i]) {
+        dogLimit.push(dogsArr[i]);
+      }
+    }
+
+    dogLimit.forEach(dog => {
       dog['types'] = [];
 
       Object.values(dogTypes).forEach(dogType => {
@@ -28,22 +41,14 @@ class SplashDogs extends React.Component {
       });
     });
 
-    Object.values(dogs).forEach(dog => {
+    dogLimit.forEach(dog => {
       dog['reviewCount'] = 0;
       Object.values(reviews).forEach(review => {
         dog['reviewCount'] += 1;
       });
     });
 
-    const dogLimit = [];
-
-    const dogsArr = Object.values(dogs);
-
-    for (let i = 0; i < 3; i++) {
-      if (dogsArr[i]) {
-        dogLimit.push(dogsArr[i]);
-      }
-    }
+    debugger;
 
     return (
       <div className="splash-dogs-container">
@@ -55,6 +60,11 @@ class SplashDogs extends React.Component {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div></div>
+    );
+  }
   }
 }
 

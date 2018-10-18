@@ -72,18 +72,13 @@ bernese.photos.attach(io: bernese_photo_three, filename: 'bernese-three.jpg')
 Type.destroy_all
 
 sporting = Type.create(name: 'Sporting')
-lab = Type.create(name: 'Labrador Retriever')
 working = Type.create(name: 'Working')
-huskyType = Type.create(name: 'Husky')
 
 DogType.create(dog_id: yellow_lab.id, type_id: sporting.id)
-DogType.create(dog_id: yellow_lab.id, type_id: lab.id)
 
 DogType.create(dog_id: black_lab.id, type_id: sporting.id)
-DogType.create(dog_id: black_lab.id, type_id: lab.id)
 
 DogType.create(dog_id: husky.id, type_id: working.id)
-DogType.create(dog_id: husky.id, type_id: huskyType.id)
 
 DogType.create(dog_id: golden_retriever.id, type_id: sporting.id)
 

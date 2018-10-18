@@ -43,9 +43,9 @@ export const retrieveDog = dogId => dispatch => {
   );
 };
 
-export const retrieveDogs = () => dispatch => {
+export const retrieveDogs = (searchInfo) => dispatch => {
   return (
-    DogUtil.fetchDogs().then(
+    DogUtil.fetchDogs(searchInfo).then(
       dogs => (dispatch(receiveDogs(dogs)))
     )
   );
