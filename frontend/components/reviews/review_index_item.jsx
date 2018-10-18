@@ -2,7 +2,6 @@ import React from 'react';
 import Stars from '../stars/stars';
 import * as MapApi from '../../util/api/map_util';
 import { Link, Redirect } from 'react-router-dom';
-import { fetchDestroyReview } from '../../util/api/review_util';
 import { fetchDog } from '../../util/api/dog_util';
 
 class ReviewIndexItem extends React.Component {
@@ -56,10 +55,8 @@ class ReviewIndexItem extends React.Component {
   }
 
   destroyReview() {
-    const { currentReview, dog } = this.props;
-    fetchDestroyReview(currentReview.id).then(
-      () => this.setState({backToDogPage: true})
-    );
+    const { currentReview, dog, destroyReview } = this.props;
+    destroyReview(currentReview.id);
   }
 
   reviewItemButtons(currentUser) {

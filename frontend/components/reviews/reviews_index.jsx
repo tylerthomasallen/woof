@@ -7,7 +7,7 @@ class ReviewsIndex extends React.Component {
 
 
   render() {
-    let { currentDog, currentReviews, retrieveUser, users, session } = this.props;
+    let { currentDog, currentReviews, retrieveUser, users, session, destroyReview } = this.props;
 
     if (currentDog === undefined) {
       currentDog = {};
@@ -29,7 +29,7 @@ class ReviewsIndex extends React.Component {
             {currentReviews.map(review => (
               <ReviewIndexItem key={review.id} currentReview={review}
                 retrieveUser={retrieveUser} users={users} session={session}
-              dog={currentDog}/>
+              dog={currentDog} destroyReview={destroyReview}/>
             ))}
           </div>
 

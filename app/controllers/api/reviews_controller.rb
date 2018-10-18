@@ -23,7 +23,9 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
+    @dog = Dog.find(@review.dog_id)
     @review.destroy
+    render "api/dogs/show"
   end
 
   def review_params
