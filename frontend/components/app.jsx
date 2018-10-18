@@ -8,6 +8,7 @@ import SignUpFormContainer from './session/signup_form_container';
 import DogIndexContainer from './dog/dog_index_container';
 import ReviewCreateContainer from './reviews/review_create_container';
 import ReviewEditContainer from './reviews/review_edit_container';
+import DogSearchContainer from './dog/dog_search_container';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Route exact path="/dog/:dogId" component={DogIndexContainer}/>
         <ProtectedRoute exact path="/dog/:dogId/writeareview" component={ReviewCreateContainer} />
         <ProtectedRoute exact path="/dog/:dogId/editreview/:reviewId" component={ReviewEditContainer} />
+        <Route exact path="/search/:type" component={DogSearchContainer}/>
         <Route exact path="/" component={SplashContainer} />
         <Redirect to="/"/>
       </Switch>

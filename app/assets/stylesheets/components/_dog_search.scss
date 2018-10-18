@@ -1,0 +1,29 @@
+.dog-search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .dog-search-title {
+    font-size: 21px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 50px 0;
+    background: #f5f5f5;
+
+    div {
+      width: 60%;
+      display: flex;
+      justify-content: flex-start;
+
+      h1 {
+        font-weight: 700;
+        margin-right: 5px;
+      }
+
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+}

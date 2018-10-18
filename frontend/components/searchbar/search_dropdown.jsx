@@ -1,18 +1,5 @@
 import React from 'react';
-const ClickOutComponent = require('react-onclickout');
-
-// class ExampleComponent extends ClickOutComponent {
-//
-//   onClickOut(e) {
-//     alert('user clicked outside of the component!');
-//   }
-//
-//   render() {
-//     return (
-//       <div>Click outside of me!</div>
-//     );
-//   }
-// }
+import { Link } from 'react-router-dom';
 
 class SearchDropdown extends React.Component {
 
@@ -22,35 +9,48 @@ class SearchDropdown extends React.Component {
       <div className={`${formType}-search-dropdown-container`}
         id={`${side}-search-bar-dropdown`}>
 
-        <div className={`${formType}-search-dropdown-item`}>
-          <i class="fas fa-bone"></i>
-          <span>Hound</span>
-        </div>
+        <Link to="/search/hound">
+          <div className={`${formType}-search-dropdown-item`}>
+            <i className="fas fa-bone"></i>
+            <span>Hound</span>
+          </div>
+        </Link>
 
-        <div className={`${formType}-search-dropdown-item`}>
-          <i class="fas fa-bone"></i>
-          <span>Herding</span>
-        </div>
+        <Link to="/search/herding">
+          <div className={`${formType}-search-dropdown-item`}>
+            <i className="fas fa-bone"></i>
+            <span>Herding</span>
+          </div>
+        </Link>
 
-        <div className={`${formType}-search-dropdown-item`}>
-          <i class="fas fa-bone"></i>
-          <span>Sporting</span>
-        </div>
 
-        <div className={`${formType}-search-dropdown-item`}>
-          <i class="fas fa-bone"></i>
-          <span>Terrier</span>
-        </div>
+        <Link to="/search/sporting">
+          <div className={`${formType}-search-dropdown-item`}>
+            <i className="fas fa-bone"></i>
+            <span>Sporting</span>
+          </div>
+        </Link>
 
-        <div className={`${formType}-search-dropdown-item`}>
-          <i class="fas fa-bone"></i>
-          <span>Toy</span>
-        </div>
+        <Link to="/search/terrier">
+          <div className={`${formType}-search-dropdown-item`}>
+            <i className="fas fa-bone"></i>
+            <span>Terrier</span>
+          </div>
+        </Link>
 
-        <div className={`${formType}-search-dropdown-item`}>
-          <i class="fas fa-bone"></i>
-          <span>Working</span>
-        </div>
+        <Link to="/search/toy">
+          <div className={`${formType}-search-dropdown-item`}>
+            <i className="fas fa-bone"></i>
+            <span>Toy</span>
+          </div>
+        </Link>
+
+        <Link to="/search/working">
+          <div className={`${formType}-search-dropdown-item`}>
+            <i className="fas fa-bone"></i>
+            <span>Working</span>
+          </div>
+        </Link>
 
 
       </div>

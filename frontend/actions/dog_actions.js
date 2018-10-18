@@ -2,7 +2,7 @@ import * as DogUtil from '../util/api/dog_util';
 import * as ReviewUtil from '../util/api/review_util';
 
 export const RECEIVE_DOG = 'RECEIVE_DOG';
-// export const RECEIVE_DOGS = 'RECEIVE_DOGS';
+export const RECEIVE_DOGS = 'RECEIVE_DOGS';
 
 // export const UPDATE_BOUNDS = 'UPDATE_BOUNDS';
 //
@@ -13,12 +13,12 @@ export const RECEIVE_DOG = 'RECEIVE_DOG';
 //   };
 // };
 //
-// export const receiveDogs = payload => {
-//   return {
-//     type: RECEIVE_DOGS,
-//     payload
-//   };
-// };
+export const receiveDogs = payload => {
+  return {
+    type: RECEIVE_DOGS,
+    payload
+  };
+};
 
 export const receiveDog = payload => {
   return {
@@ -43,10 +43,10 @@ export const retrieveDog = dogId => dispatch => {
   );
 };
 
-// export const retrieveDogs = () => dispatch => {
-//   return (
-//     DogUtil.fetchDogs().then(
-//       dogs => (dispatch(receiveDogs(dogs)))
-//     )
-//   );
-// };
+export const retrieveDogs = () => dispatch => {
+  return (
+    DogUtil.fetchDogs().then(
+      dogs => (dispatch(receiveDogs(dogs)))
+    )
+  );
+};

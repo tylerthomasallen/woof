@@ -33,7 +33,10 @@ class DogNavIndex extends React.Component {
 
   render() {
     const { showTempsClass, showTypesClass, showCharsClass } = this.state;
-    const { dog } = this.props;
+    let { dog } = this.props;
+    if (!dog) {
+      dog = {};
+    }
 
     return (
       <div className="dog-show-nav-bar">
