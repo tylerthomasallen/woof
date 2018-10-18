@@ -45,8 +45,6 @@ class SplashDogs extends React.Component {
       }
     }
 
-    debugger;
-
     return (
       <div className="splash-dogs-container">
         <h2>Find the Best Dogs in Town</h2>

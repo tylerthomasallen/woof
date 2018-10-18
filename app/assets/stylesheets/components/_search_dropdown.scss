@@ -1,0 +1,16 @@
+.splash-search-dropdown-container {
+    position: absolute;
+    left: -2px;
+    top: 46px;
+    width: 50%;
+    border-top: 1px solid #666;
+    z-index: 1;
+    min-height: 240px;
+    border-radius: 0 0 3px 3px;
+    background: white;
+    display: none;
+}
+
+.search-bar-active {
+  display: block;
+}

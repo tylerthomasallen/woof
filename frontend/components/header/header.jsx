@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from '../searchbar/searchbar';
+import SearchBarContainer from '../searchbar/searchbar_container';
 import SessionButtonsContainer from '../session/session_buttons_container';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ class Header extends React.Component {
             <img src='https://i.imgur.com/RZ5UvrT.png' />
           </Link>
         </div>
-        <SearchBar formType={formType} />
+        <SearchBarContainer formType={formType} />
         <SessionButtonsContainer formType={formType}/>
       </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchBar from '../searchbar/searchbar';
+import SearchBarContainer from '../searchbar/searchbar_container';
 import SessionButtonsContainer from '../session/session_buttons_container';
 
 class SplashHeaderItem extends React.Component {
@@ -37,7 +37,7 @@ class SplashHeaderItem extends React.Component {
               </Link>
             </div>
 
-            <SearchBar formType={formType}/>
+            <SearchBarContainer formType={formType}/>
 
             <div className="splash-bottom-nav">
               <Link to="/dog/2" className="nav-items ">

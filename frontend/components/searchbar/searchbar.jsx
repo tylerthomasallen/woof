@@ -1,12 +1,50 @@
 import React from 'react';
+import SearchDropdown from './search_dropdown';
+const ClickOutComponent = require('react-onclickout');
 
-class SearchBar extends React.Component {
+class SearchBar extends ClickOutComponent {
   constructor(props) {
     super(props);
+    this.state = {
+      leftActive: false,
+      rightActive: false
+    };
+    this.handleDropdown = this.handleDropdown.bind(this);
+  }
+
+  handleDropdown(side) {
+    const left = document.getElementById('left-search-bar-dropdown');
+    const right = document.getElementById('right-search-bar-dropdown');
+
+    if (side === 'left') {
+      left.classList.add('search-bar-active');
+      this.setState({leftActive: true});
+      this.setState({rightShow: false});
+    } else {
+      right.classList.add('search-bar-active');
+      this.setState({leftActive: false});
+      this.setState({rightActive: true});
+    }
+  }
+
+  onClickOut(e) {
+    const { leftActive, rightActive } = this.state;
+    let active;
+
+    if (leftActive)  {
+      active = document.getElementById('left-search-bar-dropdown');
+      active.classList.remove('search-bar-active');
+      this.setState({leftActive: false});
+    } else if (rightActive) {
+      active = document.getElementById('right-search-bar-dropdown');
+      active.classList.remove('search-bar-active');
+      this.setState({rightActive: false});
+    }
   }
 
   render() {
     const { formType } = this.props;
+    const { leftShow, rightShow } = this.state;
 
     return (
       <div className={`${formType}-search-container`}>
@@ -16,16 +54,24 @@ class SearchBar extends React.Component {
           <input type="text"
             placeholder="labradors, pugs, poodles..."
             className="left-input"
+            onClick={() => this.handleDropdown('left')}
           />
         </div>
 
-        <div className={`${formType}-search-input ${formType}-right-bar`}>
+        <SearchDropdown formType={formType} side={'left'}/>
+
+
+
+        <div className={`${formType}-search-input ${formType}-right-bar`} id="right-search-bar">
           <span>Near</span>
           <input type="text"
             placeholder="San Francisco, CA"
             className="right-input"
+            onClick={() => this.handleDropdown('right')}
           />
         </div>
+
+        <SearchDropdown formType={formType} side={'right'}/>
 
         <div className={`${formType}-search-button`}>
           <i className="fas fa-search"></i>
