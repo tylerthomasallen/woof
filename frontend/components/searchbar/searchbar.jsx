@@ -14,10 +14,12 @@ class SearchBar extends ClickOutComponent {
 
   handleDropdown(side) {
     const left = document.getElementById('left-search-bar-dropdown');
+    const leftBar = document.getElementById('left-search-bar');
     const right = document.getElementById('right-search-bar-dropdown');
 
     if (side === 'left') {
       left.classList.add('search-bar-active');
+      leftBar.classList.add('search-bar-container-active');
       this.setState({leftActive: true});
       this.setState({rightShow: false});
     } else {
@@ -30,10 +32,13 @@ class SearchBar extends ClickOutComponent {
   onClickOut(e) {
     const { leftActive, rightActive } = this.state;
     let active;
+    let activeBar;
 
     if (leftActive)  {
       active = document.getElementById('left-search-bar-dropdown');
+      activeBar = document.getElementById('left-search-bar');
       active.classList.remove('search-bar-active');
+      activeBar.classList.remove('search-bar-container-active');
       this.setState({leftActive: false});
     } else if (rightActive) {
       active = document.getElementById('right-search-bar-dropdown');
@@ -49,7 +54,7 @@ class SearchBar extends ClickOutComponent {
     return (
       <div className={`${formType}-search-container`}>
 
-        <div className={`${formType}-search-input ${formType}-left-bar`}>
+        <div className={`${formType}-search-input ${formType}-left-bar` } id="left-search-bar">
           <span>Find</span>
           <input type="text"
             placeholder="labradors, pugs, poodles..."
@@ -67,11 +72,8 @@ class SearchBar extends ClickOutComponent {
           <input type="text"
             placeholder="San Francisco, CA"
             className="right-input"
-            onClick={() => this.handleDropdown('right')}
           />
         </div>
-
-        <SearchDropdown formType={formType} side={'right'}/>
 
         <div className={`${formType}-search-button`}>
           <i className="fas fa-search"></i>
