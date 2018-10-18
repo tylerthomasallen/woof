@@ -1,7 +1,9 @@
 class Dog < ApplicationRecord
   validates :name, :address_line_one, :zip_code, :state, :city, :lat, :lng, presence: true
   validates :name, :address_line_one, uniqueness: true
-  validates :hypoallergenic, :sheds, :good_with_kids, inclusion: { in: [true, false]}
+  validates :hypoallergenic, :sheds, :good_with_kids, :confident, :timid, :laidback,
+  :friendly, :adaptable, :independent, :small, :medium, :large, :high_energy,
+  inclusion: { in: [true, false]}
 
   has_many :dog_types,
     foreign_key: :dog_id,
@@ -31,5 +33,5 @@ class Dog < ApplicationRecord
       .where("lng > ?", bounds[:southWest][:lng])
       .where("lng < ?", bounds[:northEast][:lng])
   end
-  
+
 end

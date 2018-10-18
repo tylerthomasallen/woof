@@ -35,11 +35,23 @@ class SplashDogs extends React.Component {
       });
     });
 
+    const dogLimit = [];
+
+    const dogsArr = Object.values(dogs);
+
+    for (let i = 0; i < 3; i++) {
+      if (dogsArr[i]) {
+        dogLimit.push(dogsArr[i]);
+      }
+    }
+
+    debugger;
+
     return (
       <div className="splash-dogs-container">
         <h2>Find the Best Dogs in Town</h2>
         <div className="splash-dogs-preview-comp">
-          {Object.values(dogs).map(dog => (
+          {dogLimit.map(dog => (
             <DogPreviewItem dog={dog} key={dog.id} cssClass="splash"/>
           ))}
         </div>

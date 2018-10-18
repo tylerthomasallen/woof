@@ -50,7 +50,7 @@ class DogPreviewItem extends React.Component {
           </span>
 
           <div className={`${cssClass}-dog-preview-fire`}>
-            <i class="fas fa-paw"></i>
+            <i className="fas fa-paw"></i>
             <span>Popular dog in your area!</span>
           </div>
 

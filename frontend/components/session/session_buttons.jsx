@@ -24,7 +24,7 @@ class SessionButtons extends React.Component {
       return (
         <div className={`splash-top-nav-right`}>
           <a className={`nav-items not-signup logout`} onClick={() => logout()}>Log out</a>
-          <Link to="/signup" className={`nav-items ${formType}-sign-up-button`}>Sign Up</Link>
+          {/* <Link to="/signup" className={`nav-items ${formType}-sign-up-button`}>Sign Up</Link> */}
         </div>
       );
     }

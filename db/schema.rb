@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_204755) do
+ActiveRecord::Schema.define(version: 2018_10_18_003444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 2018_10_15_204755) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "temperment", null: false
+    t.boolean "confident", default: true
+    t.boolean "timid", default: true
+    t.boolean "laidback", default: true
+    t.boolean "friendly", default: true
+    t.boolean "adaptable", default: true
+    t.boolean "independent", default: true
+    t.boolean "small", default: false
+    t.boolean "medium", default: false
+    t.boolean "large", default: false
+    t.boolean "high_energy", default: true
     t.index ["address_line_one"], name: "index_dogs_on_address_line_one", unique: true
     t.index ["lat", "lng"], name: "index_dogs_on_lat_and_lng", unique: true
     t.index ["lng"], name: "index_dogs_on_lng"

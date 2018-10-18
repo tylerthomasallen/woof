@@ -57,6 +57,18 @@ golden_retriever.photos.attach(io: golden_retriever_photo_one, filename: 'golden
 golden_retriever.photos.attach(io: golden_retriever_photo_two, filename: 'golden-retriever-two.jpg')
 golden_retriever.photos.attach(io: golden_retriever_photo_three, filename: 'golden-retriever-three.jpg')
 
+bernese = Dog.create(name: 'Bernese Mountain Dog', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'AT&T Park', large: true,
+  zip_code: '94107', state: 'CA', city: 'San Francisco', lat: 37.780537, lng: -122.389133)
+
+bernese_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/bernese/bernese-one.jpg")
+bernese_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/bernese/bernese-two.jpg")
+bernese_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/bernese/bernese-three.jpg")
+
+bernese.photos.attach(io: bernese_photo_one, filename: 'bernese-one.jpg')
+bernese.photos.attach(io: bernese_photo_two, filename: 'bernese-two.jpg')
+bernese.photos.attach(io: bernese_photo_three, filename: 'bernese-three.jpg')
+
 Type.destroy_all
 
 sporting = Type.create(name: 'Sporting')
@@ -74,6 +86,8 @@ DogType.create(dog_id: husky.id, type_id: working.id)
 DogType.create(dog_id: husky.id, type_id: huskyType.id)
 
 DogType.create(dog_id: golden_retriever.id, type_id: sporting.id)
+
+DogType.create(dog_id: bernese.id, type_id: working.id)
 
 User.destroy_all
 
@@ -158,33 +172,43 @@ i = 0
 
 Review.destroy_all
 
-while i < 10
+while i <= 10
+  fake_body = "#{Faker::HarryPotter.unique.quote}" + " " + "#{Faker::StarWars.unique.quote}"
+  + " " + "#{Faker::ChuckNorris.unique.fact}" + " " + "#{Faker::GreekPhilosophers.unique.quote}"
+
   Review.create(
-    body: Faker::HarryPotter.unique.quote,
-    rating: Random.rand(1..5),
+    body: fake_body,
+    rating: Random.rand(3..5),
     user_id: i,
     dog_id: 1
   )
 
   Review.create(
-    body: Faker::StarWars.unique.quote,
-    rating: Random.rand(1..5),
+    body: fake_body,
+    rating: Random.rand(3..5),
     user_id: i,
     dog_id: 2
   )
 
   Review.create(
-    body: Faker::ChuckNorris.unique.fact,
-    rating: Random.rand(1..5),
+    body: fake_body,
+    rating: Random.rand(3..5),
     user_id: i,
     dog_id: 3
   )
 
   Review.create(
-    body: Faker::GreekPhilosophers.unique.quote,
-    rating: Random.rand(1..5),
+    body: fake_body,
+    rating: Random.rand(3..5),
     user_id: i,
     dog_id: 4
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 5
   )
 
   i += 1
