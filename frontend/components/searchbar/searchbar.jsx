@@ -15,10 +15,13 @@ class SearchBar extends ClickOutComponent {
   }
 
   componentDidMount() {
-    const { retrieveDog } = this.props;
+    const { retrieveDog, dogs } = this.props;
     const totalDogs = 5;
-    for (let i = 0; i <= totalDogs; i++) {
-      retrieveDog(i);
+    debugger;
+    if (Object.values(dogs).length < 5) {
+      for (let i = 0; i <= totalDogs; i++) {
+        retrieveDog(i);
+      }
     }
 
   }

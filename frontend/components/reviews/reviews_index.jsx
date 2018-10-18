@@ -13,8 +13,6 @@ class ReviewsIndex extends React.Component {
       currentDog = {};
     }
 
-
-
       return (
 
       <div className="reviews-container dog-show-body">
