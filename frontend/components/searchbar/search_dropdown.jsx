@@ -25,10 +25,10 @@ class SearchDropdown extends React.Component {
           ))}
 
           {filteredTypes.map(type => (
-            <Link to={`/search/${type.name}`} key={type.id}>
+            <Link to={`/search/${type.id}`} key={type.id}>
               <div className={`${formType}-search-dropdown-item`}>
                 <i className="fas fa-bone"></i>
-                <span>{type.name.toLowerCase()}</span>
+                <span>{type.name}</span>
               </div>
             </Link>
           ))}
