@@ -5,7 +5,6 @@ import MarkerManager from '../../util/map/marker_manager';
 class ShowMap extends React.Component {
 
   componentDidMount() {
-    // debugger;
     // const { dog } = this.props;
     // const map = ReactDOM.findDOMNode(this.refs.map);
     //

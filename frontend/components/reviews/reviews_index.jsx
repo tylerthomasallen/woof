@@ -8,6 +8,7 @@ class ReviewsIndex extends React.Component {
 
   render() {
     let { currentDog, currentReviews, retrieveUser, users, session, destroyReview } = this.props;
+    debugger;
 
     if (currentDog === undefined) {
       currentDog = {};

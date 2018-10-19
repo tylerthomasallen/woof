@@ -14,16 +14,6 @@ class SearchBar extends ClickOutComponent {
     this.handleDropdown = this.handleDropdown.bind(this);
   }
 
-  // componentDidMount() {
-  //   const { retrieveDog, dogs } = this.props;
-  //   const totalDogs = 5;
-  //   if (Object.values(dogs).length < 5) {
-  //     for (let i = 1; i <= totalDogs; i++) {
-  //       retrieveDog(i);
-  //     }
-  //   }
-  //
-  // }
 
   handleDropdown(side) {
     const left = document.getElementById('left-search-bar-dropdown');
@@ -49,7 +39,6 @@ class SearchBar extends ClickOutComponent {
   }
 
   onClickOut(e) {
-    debugger;
     const { leftActive, rightActive } = this.state;
     let active;
     let activeBar;
@@ -68,8 +57,12 @@ class SearchBar extends ClickOutComponent {
   }
 
   render() {
-    const { formType, dogs, types, retrieveDog } = this.props;
+    const { formType, dogs, types, retrieveDogs } = this.props;
     const { leftShow, rightShow, searchInfo, location } = this.state;
+
+    if (searchInfo.length >= 2) {
+      retrieveDogs(searchInfo);
+    }
 
     let filtered = [];
 

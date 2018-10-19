@@ -69,6 +69,18 @@ bernese.photos.attach(io: bernese_photo_one, filename: 'bernese-one.jpg')
 bernese.photos.attach(io: bernese_photo_two, filename: 'bernese-two.jpg')
 bernese.photos.attach(io: bernese_photo_three, filename: 'bernese-three.jpg')
 
+newf = Dog.create(name: 'Newfoundland', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Corona Heights Park', large: true,
+  zip_code: '94114', state: 'CA', city: 'San Francisco', lat: 37.768126, lng: -122.435963)
+
+newf_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/newf/newf-one.jpg")
+newf_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/newf/newf-two.jpg")
+newf_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/newf/newf-three.jpg")
+
+newf.photos.attach(io: newf_photo_one, filename: 'newf-one.jpg')
+newf.photos.attach(io: newf_photo_two, filename: 'newf-two.jpg')
+newf.photos.attach(io: newf_photo_three, filename: 'newf-three.jpg')
+
 Type.destroy_all
 
 sporting = Type.create(name: 'Sporting')
@@ -83,6 +95,9 @@ DogType.create(dog_id: husky.id, type_id: working.id)
 DogType.create(dog_id: golden_retriever.id, type_id: sporting.id)
 
 DogType.create(dog_id: bernese.id, type_id: working.id)
+
+DogType.create(dog_id: newf.id, type_id: working.id)
+
 
 User.destroy_all
 
@@ -204,6 +219,13 @@ while i <= 10
     rating: Random.rand(3..5),
     user_id: i,
     dog_id: 5
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 6
   )
 
   i += 1

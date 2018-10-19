@@ -4,11 +4,11 @@ import DogPreviewItem from '../dog/dog_preview_item';
 class SplashDogs extends React.Component {
 
   componentDidMount() {
-    // const { retrieveDog } = this.props;
-    //
-    // retrieveDog(1);
-    // retrieveDog(2);
-    // retrieveDog(3);
+    const { retrieveDog } = this.props;
+
+    retrieveDog(1);
+    retrieveDog(2);
+    retrieveDog(3);
   }
 
   render() {
