@@ -37,11 +37,6 @@ class ReviewsIndex extends React.Component {
 
         </div>
 
-
-
-
-
-
       </div>
     );
   }

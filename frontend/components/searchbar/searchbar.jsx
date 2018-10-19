@@ -16,19 +16,21 @@ class SearchBar extends ClickOutComponent {
 
 
   handleDropdown(side) {
-    const left = document.getElementById('left-search-bar-dropdown');
-    const leftBar = document.getElementById('left-search-bar');
-    const right = document.getElementById('right-search-bar-dropdown');
+    return () => {
+      const left = document.getElementById('left-search-bar-dropdown');
+      const leftBar = document.getElementById('left-search-bar');
+      const right = document.getElementById('right-search-bar-dropdown');
 
-    if (side === 'left') {
-      left.classList.add('search-bar-active');
-      leftBar.classList.add('search-bar-container-active');
-      this.setState({leftActive: true});
-      this.setState({rightShow: false});
-    } else {
-      right.classList.add('search-bar-active');
-      this.setState({leftActive: false});
-      this.setState({rightActive: true});
+      if (side === 'left') {
+        left.classList.add('search-bar-active');
+        leftBar.classList.add('search-bar-container-active');
+        this.setState({leftActive: true});
+        this.setState({rightShow: false});
+      } else {
+        right.classList.add('search-bar-active');
+        this.setState({leftActive: false});
+        this.setState({rightActive: true});
+      }
     }
   }
 
@@ -90,7 +92,7 @@ class SearchBar extends ClickOutComponent {
           <input type="text"
             placeholder="labradors, pugs, poodles..."
             className="left-input"
-            onClick={() => this.handleDropdown('left')}
+            onClick={this.handleDropdown('left')}
             onChange={this.update('searchInfo')}
           />
         </div>

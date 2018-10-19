@@ -31,4 +31,11 @@ class Api::ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:body, :rating, :dog_id, :user_id)
   end
+
+  def index
+    dog_id = params[:dogId].to_i
+    @reviews = Review.where('dog_id = ?', dog_id)
+    debugger;
+  end
+
 end

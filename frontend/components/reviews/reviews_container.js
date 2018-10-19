@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchReviews } from '../../actions/reviews_actions';
+import { retrieveReviews } from '../../actions/reviews_actions';
 import { destroyReview } from '../../actions/dog_actions';
 import { retrieveUser } from '../../actions/session_actions';
 import ReviewsIndex from './reviews_index';
@@ -23,13 +23,15 @@ const mapStateToProps = ( {entities, session}, ownProps ) => {
     currentDog,
     currentReviews,
     users,
-    session
+    session,
+    dogId
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   retrieveUser: (userId) => dispatch(retrieveUser(userId)),
-  destroyReview: (reviewId) => dispatch(destroyReview(reviewId))
+  destroyReview: (reviewId) => dispatch(destroyReview(reviewId)),
+  retrieveReviews: (dogId) => dispatch(retrieveReviews(dogId))
 });
 
 export default connect(

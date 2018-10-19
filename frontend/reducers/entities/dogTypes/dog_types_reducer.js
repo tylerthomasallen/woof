@@ -8,6 +8,7 @@ const dogTypesReducer = (state = {}, action) => {
       const { dogTypes } = action.payload;
       const newState = {};
       dogTypes.forEach(dogType => newState[dogType.id] = dogType);
+      
       return merge({}, state, newState);
     default:
       return state;

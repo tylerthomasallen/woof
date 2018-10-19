@@ -1,45 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { fetchDogs } from '../../util/api/dog_util';
 
 class SearchDropdown extends React.Component {
 
-  // componentDidMount() {
-  //   const { retrieveDog, dogs } = this.props;
-  //   debugger;
-  //   const totalDogs = 6;
-  //   if (Object.values(dogs).length < totalDogs) {
-  //     for (let i = 1; i <= totalDogs; i++) {
-  //       retrieveDog(i);
-  //     }
-  //   }
-  // }
 
-
-  filterDogs() {
-    const { dogs, searchInfo, types, retrieveDogs } = this.props;
-    const filtered = [];
-    Object.values(dogs).forEach(dog => {
-      if (dog.name.toLowerCase().includes(searchInfo)) {
-        filtered.push(dog);
-      }
-    });
-
-    if (filtered.length <= 5) {
-      Object.values(types).forEach(type => {
-        if (type.name.toLowerCase().includes(searchInfo)) {
-          filtered.push(type);
-        }
-      });
-     }
-
-
-    return filtered;
-  }
 
   render() {
 
     const { formType, side, searchInfo, filtered } = this.props;
-
 
     if (searchInfo.length >= 1) {
       return (

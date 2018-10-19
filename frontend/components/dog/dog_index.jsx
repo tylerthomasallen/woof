@@ -11,7 +11,7 @@ import Footer from '../footer/footer';
 class DogIndex extends React.Component {
 
   componentDidMount() {
-    const { dogs, dogId } = this.props;
+    const { dogId, retrieveDog } = this.props;
     this.props.retrieveDog(dogId);
   }
 
@@ -37,7 +37,6 @@ class DogIndex extends React.Component {
   }
 
   removeClass(num) {
-    // onMouseLeave={() => this.removeClass(idx)}
     let curr = document.getElementById(`dog-image-${num}`);
   }
 
@@ -60,10 +59,6 @@ class DogIndex extends React.Component {
   render() {
     const { dogs, dogId, dogTypes, types, reviews } = this.props;
 
-    if ( !dogs[dogId] ) {
-      this.props.retrieveDog(dogId);
-    }
-
     const currentDog = dogs[dogId] || {};
 
     const currentDogReviews = {};
@@ -73,8 +68,8 @@ class DogIndex extends React.Component {
       }
     });
 
+    debugger;
 
-    // const currentDogTypes = Object.values(dogTypes).filter(dogType => dogType.dog_id = dogId);
     const currentDogTypes = [];
 
     Object.values(dogTypes).forEach(dogType => {

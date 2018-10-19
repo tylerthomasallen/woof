@@ -11,6 +11,10 @@ class DogSearchPage extends React.Component {
     return `Best ${type.charAt(0).toUpperCase() + type.slice(1)} Dogs`;
   }
 
+  componentDidMount() {
+    
+  }
+
 
   render() {
     const { type } = this.props;
