@@ -66,20 +66,21 @@ class SearchBar extends ClickOutComponent {
       retrieveDogs(searchInfo);
     }
 
-    let filtered = [];
+    let filteredDogs = [];
+    let filteredTypes = [];
 
     if (searchInfo === '') {
-      filtered = [];
+      filteredDogs = [];
     } else {
       Object.values(dogs).forEach(dog => {
         if (dog.name.toLowerCase().includes(searchInfo)) {
-          filtered.push(dog);
+          filteredDogs.push(dog);
         }
       });
 
       Object.values(types).forEach(type => {
         if (type.name.toLowerCase().includes(searchInfo)) {
-          filtered.push(type);
+          filteredTypes.push(type);
         }
       });
     }
@@ -98,7 +99,7 @@ class SearchBar extends ClickOutComponent {
         </div>
 
         <SearchDropdown formType={formType} side={'left'} searchInfo={searchInfo}
-          filtered={filtered}/>
+          filteredDogs={filteredDogs} filteredTypes={filteredTypes}/>
 
 
 

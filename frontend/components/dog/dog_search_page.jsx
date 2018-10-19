@@ -6,13 +6,23 @@ import DogPreviewItem from './dog_preview_item';
 class DogSearchPage extends React.Component {
 
   dogTitle() {
-    let { type } = this.props;
-    return `Best ${type.charAt(0).toUpperCase() + type.slice(1)} Dogs`;
+    let { typeId } = this.props;
+
+    // return `Best ${type.charAt(0).toUpperCase() + type.slice(1)} Dogs`;
+  }
+
+  componentDidMount() {
+    const { typeId, retrieveType } = this.props;
+    debugger;
+    retrieveType(typeId);
   }
 
 
   render() {
 
+    const { dogs, dogTypes, types, typeId } = this.props;
+
+    const currentType = types[parseInt(typeId)];
 
     return (
       <div className="dog-search-container">

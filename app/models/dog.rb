@@ -38,4 +38,13 @@ class Dog < ApplicationRecord
     self.reviews.count
   end
 
+  def rating
+    totalRating = 0
+    self.reviews.each do |review|
+      totalRating += review.rating
+    end
+
+    totalRating / self.review_count
+  end
+
 end

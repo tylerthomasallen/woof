@@ -1,20 +1,22 @@
 import { connect } from 'react-redux';
 import DogSearchPage from './dog_search_page';
-import { retrieveDogs } from '../../actions/dog_actions';
+import { retrieveType } from '../../actions/dog_actions';
 
 const mapStateToProps = ({ entities }, ownProps) => {
-  const { dogs, types } = entities;
+  const { dogs, types, dogTypes } = entities;
 
   return {
-    type: ownProps.match.params.type,
+    typeId: ownProps.match.params.typeId,
     dogs,
-    types
+    types,
+    dogTypes,
+    key: ownProps.location.pathname
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    retrieveDogs: (searchInfo) => dispatch(retrieveDogs(searchInfo))
+    retrieveType: (typeId) => dispatch(retrieveType(typeId))
   };
 };
 

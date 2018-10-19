@@ -8,18 +8,27 @@ class SearchDropdown extends React.Component {
 
   render() {
 
-    const { formType, side, searchInfo, filtered } = this.props;
+    const { formType, side, searchInfo, filteredDogs, filteredTypes } = this.props;
 
     if (searchInfo.length >= 1) {
       return (
         <div className={`${formType}-search-dropdown-container`}
           id={`${side}-search-bar-dropdown`}>
 
-          {filtered.map(dog => (
+          {filteredDogs.map(dog => (
             <Link to={`/dog/${dog.id}`} key={dog.id}>
               <div className={`${formType}-search-dropdown-item`}>
                 <i className="fas fa-bone"></i>
                 <span>{dog.name}</span>
+              </div>
+            </Link>
+          ))}
+
+          {filteredTypes.map(type => (
+            <Link to={`/search/${type.name}`} key={type.id}>
+              <div className={`${formType}-search-dropdown-item`}>
+                <i className="fas fa-bone"></i>
+                <span>{type.name.toLowerCase()}</span>
               </div>
             </Link>
           ))}
@@ -33,14 +42,14 @@ class SearchDropdown extends React.Component {
         <div className={`${formType}-search-dropdown-container`}
           id={`${side}-search-bar-dropdown`}>
 
-          <Link to="/search/hound">
+          <Link to={`/search/${1}`}>
             <div className={`${formType}-search-dropdown-item`}>
               <i className="fas fa-bone"></i>
               <span>Hound</span>
             </div>
           </Link>
 
-          <Link to="/search/herding">
+          <Link to={`/search/${2}`}>
             <div className={`${formType}-search-dropdown-item`}>
               <i className="fas fa-bone"></i>
               <span>Herding</span>
@@ -48,28 +57,28 @@ class SearchDropdown extends React.Component {
           </Link>
 
 
-          <Link to="/search/sporting">
+          <Link to={`/search/${3}`}>
             <div className={`${formType}-search-dropdown-item`}>
               <i className="fas fa-bone"></i>
               <span>Sporting</span>
             </div>
           </Link>
 
-          <Link to="/search/terrier">
+          <Link to={`/search/${4}`}>
             <div className={`${formType}-search-dropdown-item`}>
               <i className="fas fa-bone"></i>
               <span>Terrier</span>
             </div>
           </Link>
 
-          <Link to="/search/toy">
+          <Link to={`/search/${5}`}>
             <div className={`${formType}-search-dropdown-item`}>
               <i className="fas fa-bone"></i>
               <span>Toy</span>
             </div>
           </Link>
 
-          <Link to="/search/working">
+          <Link to={`/search/${6}`}>
             <div className={`${formType}-search-dropdown-item`}>
               <i className="fas fa-bone"></i>
               <span>Working</span>

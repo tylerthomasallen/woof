@@ -107,7 +107,11 @@ cocker.photos.attach(io: cocker_photo_three, filename: 'cocker-three.jpg')
 
 Type.destroy_all
 
+hound = Type.create(name: 'Hound')
+herding = Type.create(name: 'Herding')
 sporting = Type.create(name: 'Sporting')
+toy = Type.create(name: 'Toy')
+terrier = Type.create(name: 'Terrier')
 working = Type.create(name: 'Working')
 
 DogType.create(dog_id: yellow_lab.id, type_id: sporting.id)

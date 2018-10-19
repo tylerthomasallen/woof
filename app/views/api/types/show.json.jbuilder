@@ -1,4 +1,4 @@
-json.types @types, :id, :name
+json.types @type, :id, :name
 
 json.dogs do
   json.array! @dogs do |dog|
@@ -19,3 +19,5 @@ json.dogs do
     end
   end
 end
+
+json.dogTypes @dogTypes, :id, :dog_id, :type_id
