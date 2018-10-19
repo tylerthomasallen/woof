@@ -189,7 +189,7 @@ irish.photos.attach(io: irish_photo_one, filename: 'irish-one.jpg')
 irish.photos.attach(io: irish_photo_two, filename: 'irish-two.jpg')
 irish.photos.attach(io: irish_photo_three, filename: 'irish-three.jpg')
 
-russ = Dog.create(name: 'Irish Terrier', sheds: true, good_with_kids: true,
+russ = Dog.create(name: 'Russell Terrier', sheds: true, good_with_kids: true,
   temperment: 'Friendly, Active, Outgoing', address_line_one: 'Esprit Park', small: true,
   zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.761313, lng: -122.390879)
 
@@ -237,6 +237,7 @@ DogType.create(dog_id: king.id, type_id: toy.id)
 DogType.create(dog_id: chi.id, type_id: toy.id)
 
 DogType.create(dog_id: irish.id, type_id: terrier.id)
+DogType.create(dog_id: russ.id, type_id: terrier.id)
 
 User.destroy_all
 
@@ -412,6 +413,13 @@ while i <= 10
     rating: Random.rand(3..5),
     user_id: i,
     dog_id: 15
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 16
   )
 
   i += 1
