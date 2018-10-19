@@ -13,9 +13,9 @@ yellow_lab = Dog.create(name: 'Yellow Lab', sheds: true, good_with_kids: true,
   temperment: 'Friendly, Active, Outgoing', address_line_one: '2713 Folsom St.',
   zip_code: '94110', state: 'CA', city: 'San Francisco', lat: 37.754031, lng: -122.413923)
 
-yellow_lab_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/yellow-lab/yellow-lab-one.jpg")
-yellow_lab_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/yellow-lab/yellow-lab-two.jpg")
-yellow_lab_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/yellow-lab/yellow-lab-three.jpg")
+yellow_lab_photo_one = File.open("app/assets/images/photos/dogs/yellow-lab/yellow-lab-one.jpg")
+yellow_lab_photo_two = File.open("app/assets/images/photos/dogs/yellow-lab/yellow-lab-two.jpg")
+yellow_lab_photo_three = File.open("app/assets/images/photos/dogs/yellow-lab/yellow-lab-three.jpg")
 
 yellow_lab.photos.attach(io: yellow_lab_photo_one, filename: 'yellow-lab-one.jpg')
 yellow_lab.photos.attach(io: yellow_lab_photo_two, filename: 'yellow-lab-two.jpg')
@@ -25,9 +25,9 @@ black_lab = Dog.create(name: 'Black Lab', sheds: true, good_with_kids: true,
   temperment: 'Friendly, Active, Outgoing', address_line_one: 'Mission Dolores Park',
   zip_code: '94110', state: 'CA', city: 'San Francisco', lat: 37.759863, lng: -122.426925)
 
-black_lab_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/black-lab/black-lab-one.jpg")
-black_lab_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/black-lab/black-lab-two.jpg")
-black_lab_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/black-lab/black-lab-three.jpg")
+black_lab_photo_one = File.open("app/assets/images/photos/dogs/black-lab/black-lab-one.jpg")
+black_lab_photo_two = File.open("app/assets/images/photos/dogs/black-lab/black-lab-two.jpg")
+black_lab_photo_three = File.open("app/assets/images/photos/dogs/black-lab/black-lab-three.jpg")
 
 black_lab.photos.attach(io: black_lab_photo_one, filename: 'black-lab-one.jpg')
 black_lab.photos.attach(io: black_lab_photo_two, filename: 'black-lab-two.jpg')
@@ -37,9 +37,9 @@ husky = Dog.create(name: 'Siberian Husky', sheds: true, good_with_kids: true,
   temperment: 'Friendly, Active, Outgoing', address_line_one: 'Bernal Heights Park',
   zip_code: '94110', state: 'CA', city: 'San Francisco', lat: 37.743838, lng: -122.414094)
 
-husky_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/husky/husky-one.jpg")
-husky_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/husky/husky-two.jpg")
-husky_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/husky/husky-three.jpg")
+husky_photo_one = File.open("app/assets/images/photos/dogs/husky/husky-one.jpg")
+husky_photo_two = File.open("app/assets/images/photos/dogs/husky/husky-two.jpg")
+husky_photo_three = File.open("app/assets/images/photos/dogs/husky/husky-three.jpg")
 
 husky.photos.attach(io: husky_photo_one, filename: 'husky-one.jpg')
 husky.photos.attach(io: husky_photo_two, filename: 'husky-two.jpg')
@@ -49,9 +49,9 @@ golden_retriever = Dog.create(name: 'Golden Retriever', sheds: true, good_with_k
   temperment: 'Friendly, Active, Outgoing', address_line_one: 'Precita Park',
   zip_code: '94110', state: 'CA', city: 'San Francisco', lat: 37.748067, lng: -122.412120)
 
-golden_retriever_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/golden-retriever/golden-retriever-one.jpg")
-golden_retriever_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/golden-retriever/golden-retriever-two.jpg")
-golden_retriever_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/golden-retriever/golden-retriever-three.jpg")
+golden_retriever_photo_one = File.open("app/assets/images/photos/dogs/golden-retriever/golden-retriever-one.jpg")
+golden_retriever_photo_two = File.open("app/assets/images/photos/dogs/golden-retriever/golden-retriever-two.jpg")
+golden_retriever_photo_three = File.open("app/assets/images/photos/dogs/golden-retriever/golden-retriever-three.jpg")
 
 golden_retriever.photos.attach(io: golden_retriever_photo_one, filename: 'golden-retriever-one.jpg')
 golden_retriever.photos.attach(io: golden_retriever_photo_two, filename: 'golden-retriever-two.jpg')
@@ -61,9 +61,9 @@ bernese = Dog.create(name: 'Bernese Mountain Dog', sheds: true, good_with_kids: 
   temperment: 'Friendly, Active, Outgoing', address_line_one: 'AT&T Park', large: true,
   zip_code: '94107', state: 'CA', city: 'San Francisco', lat: 37.780537, lng: -122.389133)
 
-bernese_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/bernese/bernese-one.jpg")
-bernese_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/bernese/bernese-two.jpg")
-bernese_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/bernese/bernese-three.jpg")
+bernese_photo_one = File.open("app/assets/images/photos/dogs/bernese/bernese-one.jpg")
+bernese_photo_two = File.open("app/assets/images/photos/dogs/bernese/bernese-two.jpg")
+bernese_photo_three = File.open("app/assets/images/photos/dogs/bernese/bernese-three.jpg")
 
 bernese.photos.attach(io: bernese_photo_one, filename: 'bernese-one.jpg')
 bernese.photos.attach(io: bernese_photo_two, filename: 'bernese-two.jpg')
@@ -73,9 +73,9 @@ newf = Dog.create(name: 'Newfoundland', sheds: true, good_with_kids: true,
   temperment: 'Friendly, Active, Outgoing', address_line_one: 'Corona Heights Park', large: true,
   zip_code: '94114', state: 'CA', city: 'San Francisco', lat: 37.768126, lng: -122.435963)
 
-newf_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/newf/newf-one.jpg")
-newf_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/newf/newf-two.jpg")
-newf_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/newf/newf-three.jpg")
+newf_photo_one = File.open("app/assets/images/photos/dogs/newf/newf-one.jpg")
+newf_photo_two = File.open("app/assets/images/photos/dogs/newf/newf-two.jpg")
+newf_photo_three = File.open("app/assets/images/photos/dogs/newf/newf-three.jpg")
 
 newf.photos.attach(io: newf_photo_one, filename: 'newf-one.jpg')
 newf.photos.attach(io: newf_photo_two, filename: 'newf-two.jpg')
@@ -85,9 +85,9 @@ akita = Dog.create(name: 'Akita', sheds: true, good_with_kids: true,
   temperment: 'Friendly, Active, Outgoing', address_line_one: 'Franklin Square', small: true,
   zip_code: '94110', state: 'CA', city: 'San Francisco', lat: 37.765699, lng: -122.409290)
 
-akita_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/akita/akita-one.jpg")
-akita_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/akita/akita-two.jpg")
-akita_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/akita/akita-three.jpg")
+akita_photo_one = File.open("app/assets/images/photos/dogs/akita/akita-one.jpg")
+akita_photo_two = File.open("app/assets/images/photos/dogs/akita/akita-two.jpg")
+akita_photo_three = File.open("app/assets/images/photos/dogs/akita/akita-three.jpg")
 
 akita.photos.attach(io: akita_photo_one, filename: 'akita-one.jpg')
 akita.photos.attach(io: akita_photo_two, filename: 'akita-two.jpg')
@@ -97,9 +97,9 @@ cocker = Dog.create(name: 'Cocker Spaniel', sheds: true, good_with_kids: true,
   temperment: 'Friendly, Active, Outgoing', address_line_one: 'Mt. Davidson', small: true,
   zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.741269, lng: -122.453493)
 
-cocker_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/cocker/cocker-one.jpg")
-cocker_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/cocker/cocker-two.jpg")
-cocker_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/cocker/cocker-three.jpg")
+cocker_photo_one = File.open("app/assets/images/photos/dogs/cocker/cocker-one.jpg")
+cocker_photo_two = File.open("app/assets/images/photos/dogs/cocker/cocker-two.jpg")
+cocker_photo_three = File.open("app/assets/images/photos/dogs/cocker/cocker-three.jpg")
 
 cocker.photos.attach(io: cocker_photo_one, filename: 'cocker-one.jpg')
 cocker.photos.attach(io: cocker_photo_two, filename: 'cocker-two.jpg')
@@ -164,34 +164,34 @@ lord = User.create(first_name: 'Lord', last_name: 'Voldemort', email: 'lord@hogw
 password: 'password', zipcode: '94110')
 
 
-dumbledore_photo = File.open("/Users/tylerallen/Desktop/Photos/users/dumbledore.jpg")
+dumbledore_photo = File.open("app/assets/images/photos/users/dumbledore.jpg")
 dumbledore.photo.attach(io: dumbledore_photo, filename: 'dumbledore.jpg')
 
-harry_photo = File.open("/Users/tylerallen/Desktop/Photos/users/harry.jpg")
+harry_photo = File.open("app/assets/images/photos/users/harry.jpg")
 harry.photo.attach(io: harry_photo, filename: 'harry.jpg')
 
-hermione_photo = File.open("/Users/tylerallen/Desktop/Photos/users/hermione.jpg")
+hermione_photo = File.open("app/assets/images/photos/users/hermione.jpg")
 hermione.photo.attach(io: hermione_photo, filename: 'hermione.jpg')
 
-tyler_photo = File.open("/Users/tylerallen/Desktop/Photos/users/tyler.jpg")
+tyler_photo = File.open("app/assets/images/photos/users/tyler.jpg")
 tyler.photo.attach(io: tyler_photo, filename: 'tyler.jpg')
 
-ron_photo = File.open("/Users/tylerallen/Desktop/Photos/users/ron.jpg")
+ron_photo = File.open("app/assets/images/photos/users/ron.jpg")
 ron.photo.attach(io: ron_photo, filename: 'ron.jpg')
 
-draco_photo = File.open("/Users/tylerallen/Desktop/Photos/users/draco.jpg")
+draco_photo = File.open("app/assets/images/photos/users/draco.jpg")
 draco.photo.attach(io: draco_photo, filename: 'draco.jpg')
 
-hagrid_photo = File.open("/Users/tylerallen/Desktop/Photos/users/hagrid.jpg")
+hagrid_photo = File.open("app/assets/images/photos/users/hagrid.jpg")
 hagrid.photo.attach(io: hagrid_photo, filename: 'hagrid.jpg')
 
-snape_photo = File.open("/Users/tylerallen/Desktop/Photos/users/snape.jpg")
+snape_photo = File.open("app/assets/images/photos/users/snape.jpg")
 snape.photo.attach(io: snape_photo, filename: 'snape.jpg')
 
-sirius_photo = File.open("/Users/tylerallen/Desktop/Photos/users/sirius.jpg")
+sirius_photo = File.open("app/assets/images/photos/users/sirius.jpg")
 sirius.photo.attach(io: sirius_photo, filename: 'sirius.jpg')
 
-lord_photo = File.open("/Users/tylerallen/Desktop/Photos/users/lord.jpg")
+lord_photo = File.open("app/assets/images/photos/users/lord.jpg")
 lord.photo.attach(io: lord_photo, filename: 'lord.jpg')
 
 Review.destroy_all
