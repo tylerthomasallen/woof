@@ -11,7 +11,6 @@ import Footer from '../footer/footer';
 class DogIndex extends React.Component {
 
   componentDidMount() {
-    debugger;
     const { dogId, retrieveDog } = this.props;
     this.props.retrieveDog(dogId);
   }
