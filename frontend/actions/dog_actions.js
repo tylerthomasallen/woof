@@ -6,7 +6,6 @@ export const RECEIVE_DOG = 'RECEIVE_DOG';
 export const RECEIVE_DOGS = 'RECEIVE_DOGS';
 
 export const receiveDogs = payload => {
-  debugger;
   return {
     type: RECEIVE_DOGS,
     payload
@@ -47,7 +46,6 @@ export const retrieveDogs = (searchInfo) => dispatch => {
 };
 
 export const retrieveType = (typeId) => dispatch => {
-  debugger;
   return (
     TypeUtil.fetchType(typeId).then(
       dogs => dispatch(receiveDogs(dogs))

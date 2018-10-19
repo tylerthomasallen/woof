@@ -9,7 +9,6 @@ class Api::TypesController < ApplicationController
     @type = []
     @type << @temp_type
     
-    debugger;
     if @temp_type
       render "api/types/show"
     else

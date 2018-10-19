@@ -1,0 +1,91 @@
+$yelp-font: Helvetica Neue,Helvetica,Arial,sans-serif;
+$yelp-blue: #0073bb;
+$yelp-red: #d32323;
+$yelp-lighter-border: #e6e6e6;
+$yelp-grey: #666;
+$yelp-orange: #f15c00;
+
+.dog-search-preview-container {
+  display: flex;
+  font-family: $yelp-font;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+  border-radius: 3px;
+  align-items: center;
+
+  .search-dog-preview-item-container {
+    width: 100%;
+    border-top: 1px solid $yelp-lighter-border;
+    margin-top: 20px;
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+  img {
+    object-fit: cover;
+    height: 200px;
+    width: 250px;
+    cursor: pointer;
+  }
+}
+
+.search-dog-preview-item-text {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+  a {
+    width: 50%;
+  }
+
+  h3 {
+    color: $yelp-blue;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  h3:hover {
+    text-decoration: underline;
+  }
+
+  .search-dog-preview-stars {
+    display: flex;
+
+
+    div {
+      align-self: center;
+    }
+
+    img {
+      width: 100px;
+      height: 100%;
+      margin-right: 10px;
+      align-content: center;
+    }
+
+    span {
+      color: #666;
+    }
+  }
+
+  .search-dog-preview-types {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .search-dog-preview-fire {
+    color: $yelp-orange;
+    font-size: 14px;
+    margin-top: 10px;
+    i {
+      margin-right: 5px;
+      font-size: 18px;
+    }
+  }
+}
