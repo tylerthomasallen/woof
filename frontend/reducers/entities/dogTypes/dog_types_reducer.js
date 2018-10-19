@@ -5,10 +5,16 @@ const dogTypesReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_DOG:
-      const { dogTypes } = action.payload;
-      const newState = {};
-      dogTypes.forEach(dogType => newState[dogType.id] = dogType);
-      return merge({}, state, newState);
+    case RECEIVE_DOGS:
+
+      if (action.payload.dogTypes) {
+        const { dogTypes } = action.payload;
+        const newState = {};
+        dogTypes.forEach(dogType => newState[dogType.id] = dogType);
+        return merge({}, state, newState);
+      } else {
+        return state;
+      }
     default:
       return state;
   }

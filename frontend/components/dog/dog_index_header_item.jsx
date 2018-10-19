@@ -53,13 +53,13 @@ class DogIndexHeaderItem extends React.Component {
           if (idx < arrTypes.length -1) {
             return (
               <div className="" key={type.id}>
-                <a key={type.id + 1}>{type.name}</a>
+                <Link to={`/search/${type.id}`} key={type.id + 1}>{type.name}</Link>
                 <span key={type.id + 2}>, </span>
               </div>
             );
           } else {
             return (
-              <a key={type.id}>{type.name}</a>
+              <Link to={`/search/${type.id}`} key={type.id}>{type.name}</Link>
             );
           }
         })}
@@ -98,7 +98,7 @@ class DogIndexHeaderItem extends React.Component {
               <i className="fa fa-star" aria-hidden="true"></i>
               <span>Write a Review</span>
             </Link>
-            
+
           <div className="dog-show-header-right-buttons">
             <div>
               <i className="fa fa-camera" aria-hidden="true"></i>

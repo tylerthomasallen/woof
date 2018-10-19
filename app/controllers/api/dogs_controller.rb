@@ -13,7 +13,7 @@ class Api::DogsController < ApplicationController
     @search_info = params['searchInfo']
     @dogs = Dog.where("lower(name) like lower(?)", "%#{@search_info}%")
     @types = Type.where("lower(name) like lower(?)", "%#{@search_info}%")
-    
+
     render "api/dogs/index"
   end
 

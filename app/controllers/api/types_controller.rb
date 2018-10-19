@@ -8,7 +8,7 @@ class Api::TypesController < ApplicationController
 
     @type = []
     @type << @temp_type
-    
+
     if @temp_type
       render "api/types/show"
     else

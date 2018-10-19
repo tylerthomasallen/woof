@@ -105,6 +105,102 @@ cocker.photos.attach(io: cocker_photo_one, filename: 'cocker-one.jpg')
 cocker.photos.attach(io: cocker_photo_two, filename: 'cocker-two.jpg')
 cocker.photos.attach(io: cocker_photo_three, filename: 'cocker-three.jpg')
 
+beagle = Dog.create(name: 'Beagle', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Lake Merced Park', small: true,
+  zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.724496, lng: -122.494695)
+
+beagle_photo_one = File.open("app/assets/images/photos/dogs/beagle/beagle-one.jpg")
+beagle_photo_two = File.open("app/assets/images/photos/dogs/beagle/beagle-two.jpg")
+beagle_photo_three = File.open("app/assets/images/photos/dogs/beagle/beagle-three.jpg")
+
+beagle.photos.attach(io: beagle_photo_one, filename: 'beagle-one.jpg')
+beagle.photos.attach(io: beagle_photo_two, filename: 'beagle-two.jpg')
+beagle.photos.attach(io: beagle_photo_three, filename: 'beagle-three.jpg')
+
+rho = Dog.create(name: 'Rhodesian Ridgeback', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Golden Gate Park', large: true,
+  zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.769296, lng: -122.484739)
+
+rho_photo_one = File.open("app/assets/images/photos/dogs/rho/rho-one.jpg")
+rho_photo_two = File.open("app/assets/images/photos/dogs/rho/rho-two.jpg")
+rho_photo_three = File.open("app/assets/images/photos/dogs/rho/rho-three.jpg")
+
+rho.photos.attach(io: rho_photo_one, filename: 'rho-one.jpg')
+rho.photos.attach(io: rho_photo_two, filename: 'rho-two.jpg')
+rho.photos.attach(io: rho_photo_three, filename: 'rho-three.jpg')
+
+aus = Dog.create(name: 'Australian Shepard', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Presidio', large: true,
+  zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.798940, lng: -122.466230)
+
+aus_photo_one = File.open("app/assets/images/photos/dogs/aus/aus-one.jpg")
+aus_photo_two = File.open("app/assets/images/photos/dogs/aus/aus-two.jpg")
+aus_photo_three = File.open("app/assets/images/photos/dogs/aus/aus-three.jpg")
+
+aus.photos.attach(io: aus_photo_one, filename: 'aus-one.jpg')
+aus.photos.attach(io: aus_photo_two, filename: 'aus-two.jpg')
+aus.photos.attach(io: aus_photo_three, filename: 'aus-three.jpg')
+
+border = Dog.create(name: 'Border Collie', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Marin Headlands', large: true,
+  zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.826884, lng: -122.501923)
+
+border_photo_one = File.open("app/assets/images/photos/dogs/border/border-one.jpg")
+border_photo_two = File.open("app/assets/images/photos/dogs/border/border-two.jpg")
+border_photo_three = File.open("app/assets/images/photos/dogs/border/border-three.jpg")
+
+border.photos.attach(io: border_photo_one, filename: 'border-one.jpg')
+border.photos.attach(io: border_photo_two, filename: 'border-two.jpg')
+border.photos.attach(io: border_photo_three, filename: 'border-three.jpg')
+
+king = Dog.create(name: 'King Cavalier', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Treasure Island', small: true,
+  zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.823640, lng: -122.370446)
+
+king_photo_one = File.open("app/assets/images/photos/dogs/king/king-one.jpg")
+king_photo_two = File.open("app/assets/images/photos/dogs/king/king-two.jpg")
+king_photo_three = File.open("app/assets/images/photos/dogs/king/king-three.jpg")
+
+king.photos.attach(io: king_photo_one, filename: 'king-one.jpg')
+king.photos.attach(io: king_photo_two, filename: 'king-two.jpg')
+king.photos.attach(io: king_photo_three, filename: 'king-three.jpg')
+
+chi = Dog.create(name: 'Chihuahua', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Mission District', small: true,
+  zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.759632, lng: -122.414615)
+
+chi_photo_one = File.open("app/assets/images/photos/dogs/chi/chi-one.jpg")
+chi_photo_two = File.open("app/assets/images/photos/dogs/chi/chi-two.jpg")
+chi_photo_three = File.open("app/assets/images/photos/dogs/chi/chi-three.jpg")
+
+chi.photos.attach(io: chi_photo_one, filename: 'chi-one.jpg')
+chi.photos.attach(io: chi_photo_two, filename: 'chi-two.jpg')
+chi.photos.attach(io: chi_photo_three, filename: 'chi-three.jpg')
+
+irish = Dog.create(name: 'Irish Terrier', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Dogpatch', small: true,
+  zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.759226, lng: -122.390160)
+
+irish_photo_one = File.open("app/assets/images/photos/dogs/irish/irish-one.jpg")
+irish_photo_two = File.open("app/assets/images/photos/dogs/irish/irish-two.jpg")
+irish_photo_three = File.open("app/assets/images/photos/dogs/irish/irish-three.jpg")
+
+irish.photos.attach(io: irish_photo_one, filename: 'irish-one.jpg')
+irish.photos.attach(io: irish_photo_two, filename: 'irish-two.jpg')
+irish.photos.attach(io: irish_photo_three, filename: 'irish-three.jpg')
+
+russ = Dog.create(name: 'Irish Terrier', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Esprit Park', small: true,
+  zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.761313, lng: -122.390879)
+
+russ_photo_one = File.open("app/assets/images/photos/dogs/russ/russ-one.jpg")
+russ_photo_two = File.open("app/assets/images/photos/dogs/russ/russ-two.jpg")
+russ_photo_three = File.open("app/assets/images/photos/dogs/russ/russ-three.jpg")
+
+russ.photos.attach(io: russ_photo_one, filename: 'russ-one.jpg')
+russ.photos.attach(io: russ_photo_two, filename: 'russ-two.jpg')
+russ.photos.attach(io: russ_photo_three, filename: 'russ-three.jpg')
+
 Type.destroy_all
 
 hound = Type.create(name: 'Hound')
@@ -130,6 +226,17 @@ DogType.create(dog_id: akita.id, type_id: working.id)
 
 DogType.create(dog_id: cocker.id, type_id: sporting.id)
 
+DogType.create(dog_id: beagle.id, type_id: hound.id)
+
+DogType.create(dog_id: rho.id, type_id: hound.id)
+
+DogType.create(dog_id: aus.id, type_id: herding.id)
+DogType.create(dog_id: border.id, type_id: herding.id)
+
+DogType.create(dog_id: king.id, type_id: toy.id)
+DogType.create(dog_id: chi.id, type_id: toy.id)
+
+DogType.create(dog_id: irish.id, type_id: terrier.id)
 
 User.destroy_all
 
@@ -256,6 +363,55 @@ while i <= 10
     rating: Random.rand(3..5),
     user_id: i,
     dog_id: 8
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 9
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 10
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 11
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 12
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 13
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 14
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 15
   )
 
   i += 1

@@ -23,7 +23,6 @@ class NavModal extends React.Component {
       this.setState({four: 'Laidback'});
       this.setState({five: 'Adaptable'});
       this.setState({six: 'Friendly'});
-
     } else if (this.props.formType === 'types') {
       this.setState({one: 'Hound'});
       this.setState({two: 'Herding'});

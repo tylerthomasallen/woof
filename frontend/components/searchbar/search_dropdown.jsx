@@ -67,14 +67,14 @@ class SearchDropdown extends React.Component {
           <Link to={`/search/${4}`}>
             <div className={`${formType}-search-dropdown-item`}>
               <i className="fas fa-bone"></i>
-              <span>Terrier</span>
+              <span>Toy</span>
             </div>
           </Link>
 
           <Link to={`/search/${5}`}>
             <div className={`${formType}-search-dropdown-item`}>
               <i className="fas fa-bone"></i>
-              <span>Toy</span>
+              <span>Terrier</span>
             </div>
           </Link>
 

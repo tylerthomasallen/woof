@@ -33,6 +33,7 @@ class DogSearchPage extends React.Component {
         if (dogType.type_id === currentType.id) {
           Object.values(dogs).forEach(dog => {
             if (dog.id === dogType.dog_id) {
+              debugger;
               dog['types'] = [currentType];
               currentDogs.push(dog);
             }
