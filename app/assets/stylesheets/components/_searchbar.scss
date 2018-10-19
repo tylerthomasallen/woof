@@ -108,6 +108,10 @@ $yelp-grey: #666;
     }
   }
 
+  .search-bar-container-active {
+    border-bottom-left-radius: 0px;
+  }
+
   .show-right-bar {
     padding-right: 10px;
 

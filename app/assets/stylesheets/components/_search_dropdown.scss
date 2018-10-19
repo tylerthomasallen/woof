@@ -6,7 +6,7 @@ $yelp-grey: #666;
     left: -1px;
     top: 46px;
     width: 50.2%;
-    border-top: 1px solid #666;
+    border-top: 1px solid #e6e6e6;
     z-index: 1;
     min-height: 240px;
     border-radius: 0 0 3px 3px;
@@ -42,10 +42,52 @@ $yelp-grey: #666;
     }
 }
 
-.search-bar-active {
-  display: block;
+.show-search-dropdown-container {
+  position: absolute;
+  left: 0px;
+  top: 36px;
+  width: 46.3%;
+  border-top: 1px solid #e6e6e6;
+  z-index: 1;
+  min-height: 240px;
+  border-radius: 0 0 3px 3px;
+  background: white;
+  display: none;
+
+  .show-search-dropdown-item {
+    color: $yelp-grey;
+    padding: 12px 0 12px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    i {
+      margin-right: 15px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    span {
+      color: black;
+      font-size: 14px;
+    }
+  }
+
+  .show-search-dropdown-item:hover {
+    color: white;
+    background: $yelp-blue;
+
+    span {
+      color: white;
+    }
+  }
 }
 
-.show-search-dropdown-container {
-  display: none;
+.show-search-container {
+  position: relative;
+}
+
+
+.search-bar-active {
+  display: block;
 }

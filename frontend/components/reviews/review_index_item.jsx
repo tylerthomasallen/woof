@@ -40,7 +40,6 @@ class ReviewIndexItem extends React.Component {
     const userId = currentReview.user_id;
 
     if (!users[userId]) {
-      debugger;
       retrieveUser(currentReview.user_id);
     }
   }
