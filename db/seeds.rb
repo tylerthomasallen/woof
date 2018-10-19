@@ -194,9 +194,9 @@ sirius.photo.attach(io: sirius_photo, filename: 'sirius.jpg')
 lord_photo = File.open("/Users/tylerallen/Desktop/Photos/users/lord.jpg")
 lord.photo.attach(io: lord_photo, filename: 'lord.jpg')
 
-i = 0
-
 Review.destroy_all
+
+i = 0
 
 while i <= 10
   fake_body = "#{Faker::HarryPotter.unique.quote}" + " " + "#{Faker::StarWars.unique.quote}"
@@ -257,8 +257,6 @@ while i <= 10
     user_id: i,
     dog_id: 8
   )
-
-
 
   i += 1
 end

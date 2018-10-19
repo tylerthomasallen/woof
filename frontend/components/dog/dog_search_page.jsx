@@ -7,9 +7,12 @@ import Footer from '../footer/footer';
 class DogSearchPage extends React.Component {
 
   dogTitle() {
-    let { typeId } = this.props;
+    let { typeId, types } = this.props;
+    const currentType = types[typeId];
 
-    // return `Best ${type.charAt(0).toUpperCase() + type.slice(1)} Dogs`;
+    if (currentType) {
+      return `Best ${currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1)} Dogs`;
+    }
   }
 
   componentDidMount() {
@@ -19,15 +22,6 @@ class DogSearchPage extends React.Component {
 
 
   render() {
-
-    // Object.values(dogTypes).forEach(dogType => {
-    //   if (dogType.dog_id === dog.id) {
-    //     Object.values(types).forEach(type => {
-    //       if (type.id === dogType.type_id) {
-    //         dog['types'].push(type);
-    //       }
-    //     });
-    //   }
 
     const { dogs, dogTypes, types, typeId } = this.props;
     const currentType = types[parseInt(typeId)];
