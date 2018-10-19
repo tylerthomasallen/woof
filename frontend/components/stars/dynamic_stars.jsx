@@ -4,7 +4,6 @@ import React from 'react';
 class DynamicStars extends React.Component {
 
   roundRating(score) {
-    // simple but giving credit to stackoverflow post https://stackoverflow.com/questions/6137986/javascript-roundoff-number-to-nearest-0-5
     return Math.round(parseInt(score) * 2) / 2;
   }
 

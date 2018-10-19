@@ -11,6 +11,7 @@ import Footer from '../footer/footer';
 class DogIndex extends React.Component {
 
   componentDidMount() {
+    debugger;
     const { dogId, retrieveDog } = this.props;
     this.props.retrieveDog(dogId);
   }
@@ -67,8 +68,6 @@ class DogIndex extends React.Component {
         currentDogReviews[review.id] = review;
       }
     });
-
-    debugger;
 
     const currentDogTypes = [];
 
@@ -144,12 +143,6 @@ class DogIndex extends React.Component {
               </div>
 
               {this.dogPhotos()}
-
-              {/* <div className="dog-photos-container">
-                <img src="http://www.hollywoodanimals.com/images/portfolio/popup/Dogs/Jax/Jax-snow.jpg" />
-                <img src="https://lvlabrescue.com/wedoitforthelabs/wp-content/uploads/2017/03/LVLR-Puppies-13-800x400.jpg" />
-                <img src="https://ybxzcgnc7b-flywheel.netdna-ssl.com/wp-content/uploads/2018/06/neem-oil-for-dogs.jpg" />
-              </div> */}
 
             </div>
           </div>

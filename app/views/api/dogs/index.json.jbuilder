@@ -11,6 +11,7 @@ json.dogs do
     json.city dog.city
     json.lat dog.lat
     json.lng dog.lng
+    json.reviewCount dog.review_count
     json.temperment dog.temperment
     json.dogPhotos dog.photos do |photo|
       json.url url_for(photo)

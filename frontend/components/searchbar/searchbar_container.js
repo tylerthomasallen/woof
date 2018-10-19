@@ -17,7 +17,6 @@ const mapStateToProps = ( { entities }, ownProps ) => {
 const mapDispatchToProps = dispatch => ({
   retrieveDogs: (searchInfo) => dispatch(retrieveDogs(searchInfo)),
   retrieveDog: (dogId) => dispatch(retrieveDog(dogId)),
-  // processForm: (review) => fetchCreateReview(review)
 });
 
 export default connect(

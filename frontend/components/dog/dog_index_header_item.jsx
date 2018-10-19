@@ -5,7 +5,6 @@ class DogIndexHeaderItem extends React.Component {
 
 
   roundRating(score) {
-    // simple but giving credit to stackoverflow post https://stackoverflow.com/questions/6137986/javascript-roundoff-number-to-nearest-0-5
     return Math.round(score * 2) / 2;
   }
 
@@ -95,13 +94,11 @@ class DogIndexHeaderItem extends React.Component {
 
         <div className="dog-show-header-right">
 
-          {/* <div className="dog-show-write-review"> */}
             <Link to={`/dog/${dog.id}/writeareview`} className="dog-show-write-review">
               <i className="fa fa-star" aria-hidden="true"></i>
               <span>Write a Review</span>
             </Link>
-
-          {/* </div> */}
+            
           <div className="dog-show-header-right-buttons">
             <div>
               <i className="fa fa-camera" aria-hidden="true"></i>

@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     dogs: state.entities.dogs,
     types: state.entities.types,
     dogTypes: state.entities.dogTypes,
-    reviews: state.entities.reviews
+    reviews: state.entities.reviews,
+    key: ownProps.location.pathname
   };
 };
 

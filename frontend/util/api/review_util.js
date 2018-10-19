@@ -24,14 +24,3 @@ export const fetchDestroyReview = (reviewId) => {
     url: `api/reviews/${reviewId}`,
   });
 };
-
-export const fetchReviews = (dogId) => {
-  return $.ajax ({
-    method: 'GET',
-    url: `api/reviews`,
-    data: {
-      dogId
-    }
-  });
-
-};

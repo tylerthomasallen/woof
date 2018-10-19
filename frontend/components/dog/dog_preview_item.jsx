@@ -1,5 +1,5 @@
 import React from 'react';
-import Stars from '../stars/stars';
+import DynamicStars from '../stars/dynamic_stars';
 import { Link, Redirect } from 'react-router-dom';
 
 class DogPreviewItem extends React.Component {
@@ -37,7 +37,7 @@ class DogPreviewItem extends React.Component {
 
 
           <div className={`${cssClass}-dog-preview-stars`}>
-            <Stars rating={dog.rating} />
+            <DynamicStars rating={dog.rating} />
               <span>{dog.reviewCount} reviews</span>
           </div>
 

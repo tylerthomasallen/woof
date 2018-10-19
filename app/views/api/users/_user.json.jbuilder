@@ -1,8 +1,3 @@
-#
-# json.extract! user, :id, :email, :first_name, :last_name, :state, :city
-#
-# json.photoUrl url_for(user.photo)
-
 json.currentUser do
   json.id user.id
   json.email user.email

@@ -31,7 +31,7 @@ class SearchBar extends ClickOutComponent {
         this.setState({leftActive: false});
         this.setState({rightActive: true});
       }
-    }
+    };
   }
 
   update(field) {
@@ -98,7 +98,7 @@ class SearchBar extends ClickOutComponent {
         </div>
 
         <SearchDropdown formType={formType} side={'left'} searchInfo={searchInfo}
-          filtered={filtered} dogs={dogs} retrieveDog={retrieveDog}/>
+          filtered={filtered}/>
 
 
 

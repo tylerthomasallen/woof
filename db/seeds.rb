@@ -81,6 +81,30 @@ newf.photos.attach(io: newf_photo_one, filename: 'newf-one.jpg')
 newf.photos.attach(io: newf_photo_two, filename: 'newf-two.jpg')
 newf.photos.attach(io: newf_photo_three, filename: 'newf-three.jpg')
 
+akita = Dog.create(name: 'Akita', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Franklin Square', small: true,
+  zip_code: '94110', state: 'CA', city: 'San Francisco', lat: 37.765699, lng: -122.409290)
+
+akita_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/akita/akita-one.jpg")
+akita_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/akita/akita-two.jpg")
+akita_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/akita/akita-three.jpg")
+
+akita.photos.attach(io: akita_photo_one, filename: 'akita-one.jpg')
+akita.photos.attach(io: akita_photo_two, filename: 'akita-two.jpg')
+akita.photos.attach(io: akita_photo_three, filename: 'akita-three.jpg')
+
+cocker = Dog.create(name: 'Cocker Spaniel', sheds: true, good_with_kids: true,
+  temperment: 'Friendly, Active, Outgoing', address_line_one: 'Mt. Davidson', small: true,
+  zip_code: '94127', state: 'CA', city: 'San Francisco', lat: 37.741269, lng: -122.453493)
+
+cocker_photo_one = File.open("/Users/tylerallen/Desktop/Photos/dogs/cocker/cocker-one.jpg")
+cocker_photo_two = File.open("/Users/tylerallen/Desktop/Photos/dogs/cocker/cocker-two.jpg")
+cocker_photo_three = File.open("/Users/tylerallen/Desktop/Photos/dogs/cocker/cocker-three.jpg")
+
+cocker.photos.attach(io: cocker_photo_one, filename: 'cocker-one.jpg')
+cocker.photos.attach(io: cocker_photo_two, filename: 'cocker-two.jpg')
+cocker.photos.attach(io: cocker_photo_three, filename: 'cocker-three.jpg')
+
 Type.destroy_all
 
 sporting = Type.create(name: 'Sporting')
@@ -97,6 +121,10 @@ DogType.create(dog_id: golden_retriever.id, type_id: sporting.id)
 DogType.create(dog_id: bernese.id, type_id: working.id)
 
 DogType.create(dog_id: newf.id, type_id: working.id)
+
+DogType.create(dog_id: akita.id, type_id: working.id)
+
+DogType.create(dog_id: cocker.id, type_id: sporting.id)
 
 
 User.destroy_all
@@ -132,7 +160,6 @@ lord = User.create(first_name: 'Lord', last_name: 'Voldemort', email: 'lord@hogw
 password: 'password', zipcode: '94110')
 
 
-
 dumbledore_photo = File.open("/Users/tylerallen/Desktop/Photos/users/dumbledore.jpg")
 dumbledore.photo.attach(io: dumbledore_photo, filename: 'dumbledore.jpg')
 
@@ -162,21 +189,6 @@ sirius.photo.attach(io: sirius_photo, filename: 'sirius.jpg')
 
 lord_photo = File.open("/Users/tylerallen/Desktop/Photos/users/lord.jpg")
 lord.photo.attach(io: lord_photo, filename: 'lord.jpg')
-
-# 10.times do
-#   name = Faker::HarryPotter.unique.character.split(' ');
-#   first = name.first;
-#   last = name.last;
-#   User.create(
-#     first_name: first,
-#     last_name: last,
-#     email: first + '@hogwarts.magic',
-#     password: 'password',
-#     zipcode: '94110',
-#     state: Faker::Address.state_abbr,
-#     city: Faker::Address.city
-#   )
-# end
 
 i = 0
 
@@ -228,41 +240,21 @@ while i <= 10
     dog_id: 6
   )
 
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 7
+  )
+
+  Review.create(
+    body: fake_body,
+    rating: Random.rand(3..5),
+    user_id: i,
+    dog_id: 8
+  )
+
+
+
   i += 1
 end
-
-# 10.times do
-#   Review.create(
-#     body: Faker::HarryPotter.unique.quote,
-#     rating: Random.rand(1..5),
-#     user_id: Random.rand(1..4),
-#     dog_id: 1
-#   )
-# end
-
-# 10.times do
-#   Review.create(
-#     body: Faker::StarWars.unique.quote,
-#     rating: Random.rand(1..5),
-#     user_id: Random.rand(1..4),
-#     dog_id: 2
-#   )
-# end
-
-# 10.times do
-#   Review.create(
-#     body: Faker::ChuckNorris.unique.fact,
-#     rating: Random.rand(1..5),
-#     user_id: Random.rand(1..4),
-#     dog_id: 3
-#   )
-# end
-
-# 10.times do
-#   Review.create(
-#     body: Faker::GreekPhilosophers.unique.quote,
-#     rating: Random.rand(1..5),
-#     user_id: Random.rand(1..4),
-#     dog_id: 4
-#   )
-# end

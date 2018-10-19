@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import SessionButtons from './session_buttons';
 
-// {session, entities}
 
 const mapStateToProps = ({ entities, session}, { formType }) => {
   return {

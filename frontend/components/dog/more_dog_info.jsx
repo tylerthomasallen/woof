@@ -2,8 +2,6 @@ import React from 'react';
 
 class MoreDogInfo extends React.Component {
 
-
-
   render() {
     const { dog } = this.props;
     return (

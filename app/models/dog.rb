@@ -34,4 +34,8 @@ class Dog < ApplicationRecord
       .where("lng < ?", bounds[:northEast][:lng])
   end
 
+  def review_count
+    self.reviews.count
+  end
+
 end

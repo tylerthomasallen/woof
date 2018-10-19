@@ -1,6 +1,5 @@
 import React from 'react';
-import Stars from '../stars/stars';
-import * as MapApi from '../../util/api/map_util';
+import DynamicStars from '../stars/dynamic_stars';
 import { Link, Redirect } from 'react-router-dom';
 import { fetchDog } from '../../util/api/dog_util';
 
@@ -159,7 +158,6 @@ class ReviewIndexItem extends React.Component {
 
         <div className="review-item-user">
 
-          {/* {this.userPhoto(currentUser)} */}
 
           <div className="user-photo">
             <img src={currentUser.photoUrl} />
@@ -182,7 +180,7 @@ class ReviewIndexItem extends React.Component {
 
         <div className="review-item-review">
           <div className="review-rating">
-            <Stars rating={currentReview.rating} cssClass="review-stars"/>
+            <DynamicStars rating={currentReview.rating} cssClass="review-stars"/>
             <span>{this.todaysDate()}</span>
           </div>
 
