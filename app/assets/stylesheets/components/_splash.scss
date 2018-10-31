@@ -49,6 +49,12 @@ $yelp-grey: #666;
       }
     }
 
+    @media screen and (max-width: 600px) {
+      .splash-body {
+        width: 90%;
+      }
+    }
+
   .splash-top-nav {
     display: flex;
     justify-content: space-between;
@@ -58,7 +64,13 @@ $yelp-grey: #666;
 
   @media screen and (max-width: 1300px) {
       .splash-top-nav {
-       justify-content: flex-end
+       justify-content: flex-end;
+      }
+    }
+
+     @media screen and (max-width: 650px) {
+      .splash-top-nav {
+       justify-content: space-evenly;
       }
     }
 

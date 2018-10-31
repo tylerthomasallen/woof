@@ -9,22 +9,18 @@ $yelp-orange: #f15c00;
   display: flex;
   font-family: $yelp-font;
   flex-direction: column;
-  height: 100%;
-  width: 95%;
+  height: 350px;
+  width: 300px;
   border: 1px solid $yelp-lighter-border;
-  border-radius: 3px;
-  margin-right: 30px;
+  border-radius: 4px;
+  margin: 30px;
 
   img {
     object-fit: cover;
-    height: 180px;
+    height: 215px;
     width: 100%;
     cursor: pointer;
   }
-}
-
-.splash-dog-preview-item-container:last-child {
-  margin-right: 0px;
 }
 
 .splash-dog-preview-item-text {
@@ -81,4 +77,10 @@ $yelp-orange: #f15c00;
       font-size: 18px;
     }
   }
+}
+
+.splash-dog-preview-item-container:hover {
+  background: #EAEAEA;
+  z-index: 1;
+  transition: all .3s ease-out;
 }
