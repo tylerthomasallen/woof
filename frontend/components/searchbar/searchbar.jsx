@@ -91,7 +91,7 @@ class SearchBar extends ClickOutComponent {
         <div className={`${formType}-search-input ${formType}-left-bar` } id="left-search-bar">
           <span>Find</span>
           <input type="text"
-            placeholder="labradors, pugs, poodles..."
+            placeholder="Labradors, pugs, poodles..."
             className="left-input"
             onClick={this.handleDropdown('left')}
             onChange={this.update('searchInfo')}

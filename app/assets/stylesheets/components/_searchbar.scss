@@ -75,7 +75,7 @@ $yelp-grey: #666;
     
     @media screen and (max-width: 650px) {
       .left-input {
-        width: 95%;
+        width: 100%;
         margin-left: 10px;
       }
     }
@@ -89,9 +89,12 @@ $yelp-grey: #666;
       }
     }
 
-  .search-bar-container-active {
-    border-bottom-left-radius: 0px;
-  }
+    @media screen and (max-width: 650px) {
+      .splash-left-bar {
+        width: 100%;
+        border-radius: 4px;
+      }
+    }
 
   .splash-right-bar {
     padding-right: 10px;
@@ -125,6 +128,12 @@ $yelp-grey: #666;
       font-size: 18px;
     }
   }
+
+    @media screen and (max-width: 650px) {
+      .splash-search-button {
+        display: none;
+      }
+    }
 
   .splash-search-button:hover {
     background: #AF1E1E;
@@ -165,11 +174,6 @@ $yelp-grey: #666;
       width: 275px;
     }
   }
-
-  .search-bar-container-active {
-    border-bottom-left-radius: 0px;
-  }
-
   .show-right-bar {
     padding-right: 10px;
 
@@ -202,3 +206,8 @@ $yelp-grey: #666;
     background: #AF1E1E;
   }
 }
+
+  .search-bar-container-active {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+  }
