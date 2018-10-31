@@ -50,17 +50,30 @@ $yelp-grey: #666;
       }
     }
 
-     @media screen and (max-width: 650px) {
+     @media screen and (max-width: 1100px) {
       .splash-search-dropdown-container {
         left: 4px;
       }
     }
 
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 900px) {
       .splash-search-dropdown-container {
-        left: 3px;
+        left: 6px;
       }
     }
+
+    @media screen and (max-width: 800px) {
+      .splash-search-dropdown-container {
+        left: 5px;
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      .splash-search-dropdown-container {
+        left: 4px;
+      }
+    }
+
 
 .show-search-dropdown-container {
   position: absolute;
