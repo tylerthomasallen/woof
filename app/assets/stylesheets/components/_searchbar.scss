@@ -10,11 +10,12 @@ $yelp-grey: #666;
   align-items: center;
   position: relative;
   width: 100%;
+  height: 50px;
 
   .splash-search-input {
     background: white;
-    padding: 8px 0;
     width: 45%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -22,12 +23,32 @@ $yelp-grey: #666;
     span {
       color: #666;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 1.1vw;
       width: 10%;
       display: flex;
       align-items: center;
       justify-content: center;
+      height: 100%;
     }
+
+    @media screen and (max-width: 1300px) {
+      span {
+       font-size: 1.5vw;
+      }
+    }
+
+     @media screen and (max-width: 900px) {
+      span {
+        font-size: 2.5vw;
+      }
+    }
+
+      @media screen and (max-width: 650px) {
+      span {
+        display: none;
+      }
+    }
+
 
     //  Mobile media queries
 
@@ -40,19 +61,29 @@ $yelp-grey: #666;
 
   .splash-left-bar {
     border-radius: 4px 0 0 4px;
+    width: 50%;
 
     .left-input {
       border-right: 1px solid #999;
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1300px) {
       .left-input {
         border-right: none;
       }
     }
+    
+    @media screen and (max-width: 650px) {
+      .left-input {
+        width: 95%;
+        margin-left: 10px;
+      }
+    }
   }
 
-  @media screen and (max-width: 1200px) {
+
+
+  @media screen and (max-width: 1300px) {
       .splash-left-bar {
         width: 90%;
       }
@@ -70,7 +101,7 @@ $yelp-grey: #666;
     }
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1300px) {
       .splash-right-bar {
         display: none;
       }
@@ -83,9 +114,11 @@ $yelp-grey: #666;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 14px 23px;
+    width: 8%;
+    height: 100%;
     cursor: pointer;
-    border: .2px solid #8d0005;
+    border: 1px solid #8d0005;
+    height: 100%;
 
     i {
       color: white;

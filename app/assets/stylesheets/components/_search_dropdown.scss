@@ -3,9 +3,9 @@ $yelp-grey: #666;
 
 .splash-search-dropdown-container {
     position: absolute;
-    left: -1px;
-    top: 46px;
-    width: 50.2%;
+    left: 0px;
+    top: 50px;
+    width: 47.2%;
     border-top: 1px solid #e6e6e6;
     z-index: 1;
     min-height: 240px;
@@ -41,6 +41,26 @@ $yelp-grey: #666;
       }
     }
 }
+
+
+  @media screen and (max-width: 1300px) {
+      .splash-search-dropdown-container {
+        left: 6px;
+        width: 90%;
+      }
+    }
+
+     @media screen and (max-width: 650px) {
+      .splash-search-dropdown-container {
+        left: 4px;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      .splash-search-dropdown-container {
+        left: 3px;
+      }
+    }
 
 .show-search-dropdown-container {
   position: absolute;
