@@ -9,21 +9,32 @@ $yelp-grey: #666;
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 960px;
+  width: 100%;
 
   .splash-search-input {
     background: white;
     padding: 8px 0;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 
     span {
       color: #666;
-      margin: 0 12px;
       font-weight: 700;
       font-size: 18px;
+      width: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
+    //  Mobile media queries
+
 
     input {
       height: 30px;
+      width: 85%;
     }
   }
 
@@ -32,9 +43,20 @@ $yelp-grey: #666;
 
     .left-input {
       border-right: 1px solid #999;
-      width: 420px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .left-input {
+        border-right: none;
+      }
     }
   }
+
+  @media screen and (max-width: 1200px) {
+      .splash-left-bar {
+        width: 90%;
+      }
+    }
 
   .search-bar-container-active {
     border-bottom-left-radius: 0px;
@@ -43,14 +65,17 @@ $yelp-grey: #666;
   .splash-right-bar {
     padding-right: 10px;
 
-    .right-input {
-      width: 340px;
-    }
-
     .right-input::placeholder {
       color: #272727;
     }
   }
+
+  @media screen and (max-width: 1200px) {
+      .splash-right-bar {
+        display: none;
+      }
+    }
+
 
   .splash-search-button {
     background: $yelp-red;

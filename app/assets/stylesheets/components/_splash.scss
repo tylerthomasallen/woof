@@ -4,6 +4,13 @@ $yelp-blue: #0073bb;
 $yelp-red: #d32323;
 $yelp-grey: #666;
 
+.splash-parent-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .nav-items {
   color: white;
   font-weight: 700;
@@ -17,7 +24,7 @@ $yelp-grey: #666;
 }
 
 .splash-header-container {
-  height: 600px;
+  height: 60%;
   width: 100%;
   font-family: $yelp-font;
   background: linear-gradient(
@@ -26,10 +33,13 @@ $yelp-grey: #666;
     url('https://images2.alphacoders.com/588/588305.jpg');
   background-size: cover;
   background-position: 50%;
+  display: flex;
+  justify-content: center;
 
   .splash-body {
     width: 57%;
-    margin: 0 auto;
+    height: 100%;
+    padding: 20px;
 
   }
 
@@ -37,7 +47,7 @@ $yelp-grey: #666;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 39px;
+    padding: 20px;
   }
 
     .splash-top-nav-left {
