@@ -4,6 +4,13 @@ $yelp-blue: #0073bb;
 $yelp-red: #d32323;
 $yelp-grey: #666;
 
+.splash-parent-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .nav-items {
   color: white;
   font-weight: 700;
@@ -17,7 +24,7 @@ $yelp-grey: #666;
 }
 
 .splash-header-container {
-  height: 600px;
+  height: 60%;
   width: 100%;
   font-family: $yelp-font;
   background: linear-gradient(
@@ -26,23 +33,57 @@ $yelp-grey: #666;
     url('https://images2.alphacoders.com/588/588305.jpg');
   background-size: cover;
   background-position: 50%;
+  display: flex;
+  justify-content: center;
 
   .splash-body {
     width: 57%;
-    margin: 0 auto;
+    height: 100%;
+    padding: 20px 0 0 0;
 
   }
+
+  @media screen and (max-width: 900px) {
+      .splash-body {
+        width: 80%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .splash-body {
+        width: 90%;
+      }
+    }
 
   .splash-top-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 39px;
+    padding: 20px;
   }
+
+  @media screen and (max-width: 1300px) {
+      .splash-top-nav {
+       justify-content: flex-end;
+      }
+    }
+
+     @media screen and (max-width: 650px) {
+      .splash-top-nav {
+       justify-content: space-evenly;
+      }
+    }
 
     .splash-top-nav-left {
       display: flex;
     }
+
+    @media screen and (max-width: 1300px) {
+      .splash-top-nav-left {
+       display: none;
+      }
+    }
+
 
     .splash-login {
       padding-left: 11px;
@@ -86,23 +127,36 @@ $yelp-grey: #666;
 }
 
 
-
 .splash-bottom-nav {
   display: flex;
-  justify-content: center;
-  margin-top: 22px;
+  justify-content: space-evenly;
+  padding: 30px 0;
+  width: 100%;
 
   .nav-items {
     color: white;
     font-weight: 700;
-    font-size: 14px;
-    margin-right: 9px;
-    padding-left: 11px;
-    padding-right: 11px;
+    font-size: 1.0vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 40px;
 
     i {
-      padding-right: 5px;
+      padding-right: 10px;
+      font-size: 18px;
+      width: 10%;
     }
+
+    span {
+      width: 90%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+    }
+    
 
     .yellow-lab {
       color: yellow;
@@ -124,6 +178,43 @@ $yelp-grey: #666;
       text-decoration: underline;
     }
   }
+
+  @media screen and (max-width: 1300px) {
+      .nav-items {
+        font-size: 1.5vw;
+        width: 30%;
+      }
+    }
+
+    @media screen and (max-width: 1300px) {
+      .nav-items:last-child {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .nav-items {
+        font-size: 16px;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      .nav-items:last-child {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      .siberian-item {
+        display: none;
+      }
+    }
+
+     @media screen and (max-width: 650px) {
+      .nav-items {
+        width: 40%;
+      }
+    }
 }
 
 .logout {

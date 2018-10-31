@@ -34,15 +34,17 @@
  }
 
  html, body{
-    margin: 0;
-    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 #root {
-  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 .app-body {
-  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
 }

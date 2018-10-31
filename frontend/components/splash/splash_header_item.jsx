@@ -48,11 +48,11 @@ class SplashHeaderItem extends React.Component {
                 <i className="fas fa-paw yellow-lab"></i>
                 <span>Yellow Lab</span>
               </Link>
-              <Link to="/dog/3" className="nav-items ">
+              <Link to="/dog/3" className="nav-items siberian-item">
                 <i className="fas fa-paw choc-lab"></i>
                 <span>Siberian Husky</span>
               </Link>
-              <Link to="/dog/4" className="nav-items ">
+              <Link to="/dog/4" className="nav-items golden-item">
                 <i className="fas fa-paw golden"></i>
                 <span>Golden Retriever</span>
               </Link>
