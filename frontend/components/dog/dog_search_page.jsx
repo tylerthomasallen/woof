@@ -48,7 +48,7 @@ class DogSearchPage extends React.Component {
         <DogNavIndex />
 
         <div className="dog-search-title">
-          <div>
+          <div className="dog-search-title-text">
             <h1>{this.dogTitle()}</h1>
             <span>in San Francisco, CA</span>
           </div>
