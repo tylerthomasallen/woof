@@ -8,6 +8,7 @@ $yelp-red: #d32323;
   display: flex;
   justify-content: center;
   background: #fafafa;
+  display: none;
 
 }
 
@@ -139,11 +140,11 @@ $yelp-red: #d32323;
 .dog-show-upper-half {
   background: #f5f5f5;
   height: 450px;
+  display: flex;
+  justify-content: center;
 }
 
 .dog-show-body {
-  width: 60%;
-  margin: 0 auto;
 }
 
 .dog-show-header {
@@ -154,6 +155,7 @@ $yelp-red: #d32323;
   font-family: $yelp-font;
 
   .dog-show-header-left {
+    margin-left: 8px;
 
     .dog-show-left-title {
       display: flex;
@@ -216,30 +218,6 @@ $yelp-red: #d32323;
     display: flex;
     align-items: center;
 
-    .dog-show-write-review {
-      display: flex;
-      background: $yelp-red;
-      color: white;
-      margin-right: 12px;
-      height: 37px;
-      align-items: center;
-      padding: 0 10px;
-      border-radius: 3px;
-      font-family: $yelp-font;
-      border: .5px solid #8d0005;
-      cursor: pointer;
-
-      i {
-        margin-right: 10px;
-      }
-
-      span {
-        font-weight: bold;
-        font-size: 14px;
-
-      }
-    }
-
     .dog-show-write-review:hover {
       background: #EC1414;
     }
@@ -249,6 +227,7 @@ $yelp-red: #d32323;
       color: #666;
       font-size: 12px;
       font-weight: 600;
+      display: none;
 
       div:first-child {
         border-radius: 3px 0 0 3px;
@@ -284,8 +263,74 @@ $yelp-red: #d32323;
       }
     }
   }
+
+   .dog-show-write-review {
+      display: flex;
+      background: $yelp-red;
+      color: white;
+      margin-right: 12px;
+      height: 37px;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 3px;
+      font-family: $yelp-font;
+      border: .5px solid #8d0005;
+      cursor: pointer;
+
+      i {
+        margin-right: 10px;
+      }
+
+      span {
+        font-weight: bold;
+        font-size: 14px;
+
+      }
+    }
+
+  @media screen and (max-width: 600px) {
+    .dog-show-header-right {
+      display: none;
+    }
+  }
 }
 
 .show-login {
   color: black;
 }
+
+.dog-show-header-mobile {
+  display: none;
+
+  .dog-show-write-review-mobile {
+      display: flex;
+      background: $yelp-red;
+      color: white;
+      margin-right: 12px;
+      height: 37px;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 3px;
+      font-family: $yelp-font;
+      border: .5px solid #8d0005;
+      cursor: pointer;
+
+       i {
+        margin-right: 10px;
+      }
+
+      span {
+        font-weight: bold;
+        font-size: 14px;
+
+      }
+  }
+}
+
+  @media screen and (max-width: 600px) {
+    .dog-show-header-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }

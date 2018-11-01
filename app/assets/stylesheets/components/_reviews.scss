@@ -8,7 +8,24 @@ $yelp-light-gray: #999999;
 $yelp-orange: #f15c00;
 
 .reviews-container {
+  margin: auto;
   margin-top: 100px;
+  display: flex;
+  width: 64%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1080px) {
+  .reviews-container {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .reviews-container {
+    width: 90%;
+  }
 }
 
 .reviews-title {
@@ -17,7 +34,7 @@ $yelp-orange: #f15c00;
   justify-content: flex-start;
   border-bottom: 1px solid $light-grey-border;
   padding-bottom: 10px;
-  width: 66%;
+  width: 100%;
 
   span {
     padding: 0, 5px;
@@ -28,6 +45,12 @@ $yelp-orange: #f15c00;
     font-weight: bold;
     color: $yelp-red;
     padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .reviews-title {
+    flex-direction: column;
   }
 }
 
@@ -60,6 +83,10 @@ $yelp-orange: #f15c00;
     padding-top: 10px;
     padding-right: 50px;
 
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
+
 
     .review-item-container {
       padding-bottom: 20px;
@@ -72,6 +99,13 @@ $yelp-orange: #f15c00;
         margin-right: 20px;
         display: flex;
         width: 36%;
+
+        @media screen and (max-width: 600px) {
+            .user-info {
+            margin-left: none;
+            margin-top: 5px;
+            }
+          }
 
         .user-info {
           display: flex;
@@ -91,6 +125,21 @@ $yelp-orange: #f15c00;
             padding-bottom: 2px;
           }
         }
+
+        @media screen and (max-width: 600px) {
+            .user-info {
+            margin-left: none;
+            margin-top: 5px;
+            }
+          }
+
+      }
+
+      @media screen and (max-width: 600px) {
+        .review-item-user {
+          flex-direction: column;
+
+        }
       }
 
       .review-item-review {
@@ -109,6 +158,12 @@ $yelp-orange: #f15c00;
   .reviews-right-container {
     border-left: 1px solid $light-grey-border;
     width: 31%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .reviews-right-container {
+    display: none;
   }
 }
 
@@ -232,5 +287,11 @@ $yelp-orange: #f15c00;
     .edit-delete:hover {
       background: #EC1414;
     }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .review-item-buttons {
+    display: none;
   }
 }
