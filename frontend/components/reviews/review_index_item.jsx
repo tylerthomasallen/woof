@@ -163,7 +163,7 @@ class ReviewIndexItem extends React.Component {
             <img src={currentUser.photoUrl} />
           </div>
 
-          <div className="user-info">
+          <div className="user-info" id="user-info">
 
             <span className="user-info-name">{this.formattedName(currentUser)}</span>
             <span className="user-info-loc">{this.formattedLocation(currentUser)}</span>
