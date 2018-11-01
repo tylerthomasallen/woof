@@ -15,7 +15,7 @@ class ReviewsIndex extends React.Component {
 
       return (
 
-      <div className="reviews-container dog-show-body">
+      <div className="reviews-container">
         <div className="reviews-title">
           <span>Recommended Reviews </span>
           <span>for a {`${currentDog.name}`}</span>
