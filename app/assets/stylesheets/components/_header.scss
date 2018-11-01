@@ -15,3 +15,15 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+      .header-logo {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      .show-top-nav-right {
+        display: none;
+      }
+    }
