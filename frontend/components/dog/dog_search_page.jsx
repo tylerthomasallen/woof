@@ -33,7 +33,6 @@ class DogSearchPage extends React.Component {
         if (dogType.type_id === currentType.id) {
           Object.values(dogs).forEach(dog => {
             if (dog.id === dogType.dog_id) {
-              debugger;
               dog['types'] = [currentType];
               currentDogs.push(dog);
             }
@@ -55,7 +54,7 @@ class DogSearchPage extends React.Component {
           </div>
         </div>
 
-        <div className="dog-search-preview-container">
+          <div className="splash-dogs-preview-comp">
           {currentDogs.map(dog => (
             <DogPreviewItem dog={dog} key={dog.id} cssClass="search"/>
           ))}
