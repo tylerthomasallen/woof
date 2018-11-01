@@ -27,29 +27,29 @@ class DogPreviewItem extends React.Component {
     const firstPhoto = dogPhotos[0];
 
     return (
-      <div className={`${cssClass}-dog-preview-item-container`}>
+      <div className={`splash-dog-preview-item-container`}>
         <Link to={`/dog/${dog.id}`}>
           <img src={firstPhoto.url}></img>
         </Link>
 
-        <div className={`${cssClass}-dog-preview-item-text`}>
+        <div className={`splash-dog-preview-item-text`}>
           <Link to={`/dog/${dog.id}`}><h3>{dog.name}</h3></Link>
 
 
-          <div className={`${cssClass}-dog-preview-stars`}>
+          <div className={`splash-dog-preview-stars`}>
             <DynamicStars rating={dog.rating} />
               <span>{dog.reviewCount} reviews</span>
           </div>
 
-          <span className={`${cssClass}-dog-preview-types`}>
+          <span className={`splash-dog-preview-types`}>
             {this.dogTypeText()}
           </span>
 
-          <span className={`${cssClass}-dog-preview-types`}>
+          <span className={`splash-dog-preview-types`}>
             {dog.city}, {dog.state}
           </span>
 
-          <div className={`${cssClass}-dog-preview-fire`}>
+          <div className={`splash-dog-preview-fire`}>
             <i className="fas fa-paw"></i>
             <span>Popular dog in your area!</span>
           </div>
