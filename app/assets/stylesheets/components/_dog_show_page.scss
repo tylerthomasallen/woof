@@ -155,6 +155,7 @@ $yelp-red: #d32323;
   font-family: $yelp-font;
 
   .dog-show-header-left {
+    margin-left: 8px;
 
     .dog-show-left-title {
       display: flex;
@@ -284,6 +285,12 @@ $yelp-red: #d32323;
       div:hover {
         background: white;
       }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .dog-show-header-right {
+      display: none;
     }
   }
 }
