@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import DogIndexHeaderItem from './dog_index_header_item';
 import DogNavIndex from './nav/dog_nav_index';
 import Header from '../header/header';
@@ -142,6 +142,14 @@ class DogIndex extends React.Component {
               </div>
 
               {this.dogPhotos()}
+
+              <div className="dog-show-header-mobile">
+                <Link to={`/dog/${dogId}/writeareview`} className="dog-show-write-review-mobile">
+                  <i className="fa fa-star" aria-hidden="true"></i>
+                  <span>Write a Review</span>
+                </Link>
+              </div>
+
 
             </div>
           </div>
