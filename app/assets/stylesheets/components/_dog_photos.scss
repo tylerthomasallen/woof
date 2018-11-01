@@ -3,12 +3,6 @@
   align-items: center;
 }
 
-// .dog-photos-container:nth-child(2) {
-//   height: 255px;
-//   width: 36%;
-//   z-index: 1;
-// }
-
 .dog-photos-container {
   height: 250px;
   display: flex;
@@ -18,79 +12,16 @@
 
   img {
     height: 220px;
-    width: 33.3%;
+    // width: 33.3%;
+    width: 220px;
     object-fit: cover;
     cursor: pointer;
   }
 
   .dog-image-1 {
     height: 255px;
-    width: 36%;
+    // width: 36%;
     z-index: 1;
+    width: 255px;
   }
-
-  //
-  // img:hover {
-  //   height: 255px;
-  //   width: 36%;
-  //   z-index: 1;
-  // }
-  // .dog-photos-container:first-child:hover {
-  //   height: 255px;
-  //   width: 36%;
-  //   z-index: 1;
-  // }
-  //
-  // .dog-photos-container:nth-child(2):hover {
-  //   height: 255px;
-  //   width: 36%;
-  //   z-index: 1;
-  // }
-  //
-  // .dog-photos-container:last-child:hover {
-  //   height: 255px;
-  //   width: 36%;
-  //   z-index: 1;
-  // }
-
-  // .dog-image-1 {
-  //   height: 255px;
-  //   width: 36%;
-  //   z-index: 1;
-  // }
-  //
-  // .dog-image-0:hover + .dog-image-1 {
-  //   height: 220px;
-  //   width: 33.3%;
-  // }
-  //
-  // .dog-image-0:hover {
-  //   height: 255px;
-  //   width: 36%;
-  //   z-index: 1;
-  // }
-  //
-  // .dog-image-1 + .dog-image-2:hover {
-  //   height: 220px;
-  //   width: 33.3%;
-  // }
-  //
-  // #dog-image-2:hover {
-  //   height: 255px;
-  //   width: 36%;
-  //   z-index: 1;
-  // }
-
-
-  // .dog-image-2:hover {
-  //   height: 255px;
-  //   width: 36%;
-  //   z-index: 1;
-  // }
-
-  // img:hover {
-  //   height: 255px;
-  //   width: 36%;
-  //   z-index: 1;
-  // }
 }

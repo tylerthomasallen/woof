@@ -60,6 +60,12 @@ $yelp-blue: #0073bb;
   border: 1px solid #ccc;
 }
 
+@media screen and (max-width: 1080px) {
+  .map-container {
+    display: none;
+  }
+}
+
 .map-text {
   line-height: 18px;
 }
