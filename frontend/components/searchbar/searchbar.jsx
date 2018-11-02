@@ -15,7 +15,8 @@ class SearchBar extends ClickOutComponent {
   }
 
 
-  handleDropdown(side) {
+  handleDropdown(e, side) {
+    e.preventDefault();
     return () => {
       const left = document.getElementById('left-search-bar-dropdown');
       const leftBar = document.getElementById('left-search-bar');
@@ -98,7 +99,7 @@ class SearchBar extends ClickOutComponent {
           <input type="text"
             placeholder="Labradors, pugs, poodles..."
             className="left-input"
-            onClick={this.handleDropdown('left')}
+            onClick={this.handleDropdown(event, 'left')}
             onChange={this.update('searchInfo')}
           />
           <i className="fas fa-times" id="search-close-button" onClick={(e) => this.onClickOut(e)}></i>
