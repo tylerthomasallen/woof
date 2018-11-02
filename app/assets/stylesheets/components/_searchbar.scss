@@ -186,12 +186,6 @@ $yelp-grey: #666;
     }
   }
 
-  @media screen and (max-width: 600px) {
-      .show-left-bar {
-        border-radius: 4px;
-      }
-    }
-
   @media screen and (max-width: 1300px) {
       .show-left-bar {
         width: 100%;
@@ -266,6 +260,7 @@ $yelp-grey: #666;
     @media screen and (max-width: 750px) {
       .show-search-container {
         width: 90%;
+        height: 100%;
         margin: none
       }
     }

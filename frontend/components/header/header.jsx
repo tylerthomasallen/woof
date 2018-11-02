@@ -18,6 +18,7 @@ class Header extends React.Component {
         <div className="header-logo">
           <Link to="/" className="header-logo-link">
             <img src='https://i.imgur.com/RZ5UvrT.png' />
+             <i class="fas fa-home"></i>
           </Link>
         </div>
         <SearchBarContainer formType={formType} />
