@@ -149,35 +149,6 @@ $yelp-grey: #666;
   width: 50%;
   height: 24px;
 
-  .show-search-input {
-    background: white;
-    padding: 7px 0;
-    width: 47.5%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    span {
-      color: #333;
-      margin: 5px;
-      font-weight: bold;
-      font-size: 16px;
-      width: 10%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-
-    input {
-      height: 21px;
-      font-size: 13px;
-      width: 85%;
-      margin: 5px;
-    }
-  }
-
   .show-left-bar {
     border-radius: 4px 0 0 4px;
 
@@ -193,6 +164,13 @@ $yelp-grey: #666;
         .left-input {
         border-right: none;
       }
+      }
+    }
+
+    @media screen and (max-width: 750px) {
+      .show-left-bar {
+        padding: 0;
+        border-radius: 0;
       }
     }
 
@@ -239,6 +217,36 @@ $yelp-grey: #666;
   }
 }
 
+
+  .show-search-input {
+    background: white;
+    padding: 7px 0;
+    width: 47.5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      color: #333;
+      margin: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      width: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    input {
+      height: 21px;
+      font-size: 13px;
+      width: 85%;
+      margin: 5px;
+    }
+  }
+
   .search-bar-container-active {
     border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
@@ -261,6 +269,6 @@ $yelp-grey: #666;
       .show-search-container {
         width: 90%;
         height: 100%;
-        margin: none
+        margin: none;
       }
     }
