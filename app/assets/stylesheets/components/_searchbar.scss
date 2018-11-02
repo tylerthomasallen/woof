@@ -57,6 +57,17 @@ $yelp-grey: #666;
       height: 30px;
       width: 85%;
     }
+
+     .fa-times {
+    margin: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .active-close-button {
+    display: flex;
+  }
   }
 
   .splash-left-bar {
@@ -157,17 +168,6 @@ $yelp-grey: #666;
     }
   }
 
-  .fa-times {
-    margin: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    display: none;
-  }
-
-  .active-close-button {
-    display: flex;
-  }
-
   @media screen and (max-width: 1300px) {
       .show-left-bar {
         width: 100%;
@@ -256,6 +256,18 @@ $yelp-grey: #666;
       width: 85%;
       margin: 5px;
     }
+
+
+  .fa-times {
+    margin: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .active-close-button {
+    display: flex;
+  }
   }
 
   .search-bar-container-active {
