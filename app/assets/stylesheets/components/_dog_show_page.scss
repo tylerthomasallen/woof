@@ -144,7 +144,10 @@ $yelp-red: #d32323;
   justify-content: center;
 }
 
-.dog-show-body {
+@media screen and (max-width: 600px) {
+  .dog-show-upper-half {
+    height: 100%;
+  }
 }
 
 .dog-show-header {
@@ -171,6 +174,19 @@ $yelp-red: #d32323;
       i {
         color: $yelp-blue;
         margin: 0 10px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .dog-show-left-title {
+        
+        span {
+          display: none;
+
+        }
+        i {
+          display: none;
+        }
       }
     }
 
@@ -306,27 +322,27 @@ $yelp-red: #d32323;
       display: flex;
       background: $yelp-red;
       color: white;
-      margin-right: 12px;
-      height: 37px;
       align-items: center;
-      padding: 0 10px;
+      padding: 15px;
       border-radius: 3px;
       font-family: $yelp-font;
       border: .5px solid #8d0005;
       cursor: pointer;
+      margin: 15px 0px;
+      font-size: 14px;
 
        i {
         margin-right: 10px;
+        font-size: 18px;
       }
+      
 
       span {
         font-weight: bold;
-        font-size: 14px;
 
       }
   }
 }
-
   @media screen and (max-width: 600px) {
     .dog-show-header-mobile {
       display: flex;
