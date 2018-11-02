@@ -18,6 +18,7 @@ class DogSearchPage extends React.Component {
   componentDidMount() {
     const { typeId, retrieveType } = this.props;
     retrieveType(typeId);
+    window.scrollTo(0, 0);
   }
 
 

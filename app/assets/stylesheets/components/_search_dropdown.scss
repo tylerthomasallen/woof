@@ -23,12 +23,12 @@ $yelp-grey: #666;
       i {
         margin-right: 15px;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 18px;
       }
 
       span {
         color: black;
-        font-size: 14px;
+        font-size: 16px;
       }
     }
 
@@ -56,7 +56,7 @@ $yelp-grey: #666;
   top: 31px;
   width: 100%;
   border-top: 1px solid #e6e6e6;
-  z-index: 1;
+  z-index: 2;
   min-height: 240px;
   border-radius: 0 0 3px 3px;
   background: white;
@@ -72,12 +72,12 @@ $yelp-grey: #666;
     i {
       margin-right: 15px;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     span {
       color: black;
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 

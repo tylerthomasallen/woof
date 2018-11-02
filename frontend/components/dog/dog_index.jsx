@@ -13,6 +13,7 @@ class DogIndex extends React.Component {
   componentDidMount() {
     const { dogId, retrieveDog } = this.props;
     this.props.retrieveDog(dogId);
+    window.scrollTo(0, 0);
   }
 
   addClass(num) {
