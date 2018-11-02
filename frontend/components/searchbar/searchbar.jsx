@@ -20,10 +20,12 @@ class SearchBar extends ClickOutComponent {
       const left = document.getElementById('left-search-bar-dropdown');
       const leftBar = document.getElementById('left-search-bar');
       const right = document.getElementById('right-search-bar-dropdown');
+      const closeButton = document.getElementById('search-close-button');
 
       if (side === 'left') {
         left.classList.add('search-bar-active');
         leftBar.classList.add('search-bar-container-active');
+        closeButton.classList.add('active-close-button');
         this.setState({leftActive: true});
         this.setState({rightShow: false});
       } else {
@@ -44,12 +46,15 @@ class SearchBar extends ClickOutComponent {
     const { leftActive, rightActive } = this.state;
     let active;
     let activeBar;
+    let closeButton;
 
     if (leftActive)  {
       active = document.getElementById('left-search-bar-dropdown');
       activeBar = document.getElementById('left-search-bar');
+      closeButton = document.getElementById('search-close-button');
       active.classList.remove('search-bar-active');
       activeBar.classList.remove('search-bar-container-active');
+      closeButton.classList.remove('active-close-button');
       this.setState({leftActive: false});
     } else if (rightActive) {
       active = document.getElementById('right-search-bar-dropdown');
@@ -96,6 +101,7 @@ class SearchBar extends ClickOutComponent {
             onClick={this.handleDropdown('left')}
             onChange={this.update('searchInfo')}
           />
+          <i className="fas fa-times" id="search-close-button" onClick={(e) => this.onClickOut(e)}></i>
         </div>
 
         <SearchDropdown formType={formType} side={'left'} searchInfo={searchInfo}

@@ -157,6 +157,17 @@ $yelp-grey: #666;
     }
   }
 
+  .fa-times {
+    margin: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .active-close-button {
+    display: flex;
+  }
+
   @media screen and (max-width: 1300px) {
       .show-left-bar {
         width: 100%;
