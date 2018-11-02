@@ -91,6 +91,12 @@ $yelp-grey: #666;
   }
 }
 
+@media screen and (max-width: 750px) {
+  .show-search-dropdown-container {
+    top: 60px;
+  }
+}
+
 .show-search-container {
   position: relative;
 }
