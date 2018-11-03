@@ -40,7 +40,7 @@ class SearchBar extends ClickOutComponent {
 
   update(field) {
     return e => this.setState({
-      [field]: e.currentTarget.value
+      [field]: e.currentTarget.value.toLowerCase()
     });
   }
 
@@ -49,8 +49,8 @@ class SearchBar extends ClickOutComponent {
     const { searchInfo, lastSearchInfo } = this.state;
 
      if (searchInfo.length >= 2 && lastSearchInfo !== searchInfo) {
-      this.setState({lastSearchInfo: searchInfo})
-      retrieveDogs(searchInfo.toLowerCase());
+      this.setState({lastSearchInfo: searchInfo});
+      retrieveDogs(searchInfo);
     }
 
   }
