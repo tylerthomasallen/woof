@@ -9,7 +9,7 @@ class SearchBar extends ClickOutComponent {
       leftActive: false,
       rightActive: false,
       searchInfo: '',
-      lastSearchInfo:
+      lastSearchInfo: '',
       location: ''
     };
     this.handleDropdown = this.handleDropdown.bind(this);
