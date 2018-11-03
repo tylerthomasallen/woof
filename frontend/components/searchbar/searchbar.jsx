@@ -50,7 +50,7 @@ class SearchBar extends ClickOutComponent {
 
      if (searchInfo.length >= 2 && lastSearchInfo !== searchInfo) {
       this.setState({lastSearchInfo: searchInfo})
-      retrieveDogs(searchInfo);
+      retrieveDogs(searchInfo.toLowerCase());
     }
 
   }
