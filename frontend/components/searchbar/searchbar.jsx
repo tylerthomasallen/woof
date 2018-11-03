@@ -68,9 +68,9 @@ class SearchBar extends ClickOutComponent {
     const { formType, dogs, types, retrieveDogs } = this.props;
     const { leftShow, rightShow, searchInfo, location } = this.state;
 
-    if (searchInfo.length >= 2) {
-      retrieveDogs(searchInfo);
-    }
+    // if (searchInfo.length >= 2) {
+    //   retrieveDogs(searchInfo);
+    // }
 
     let filteredDogs = [];
     let filteredTypes = [];
