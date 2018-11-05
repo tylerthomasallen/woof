@@ -94,7 +94,8 @@ $yelp-red: #d32323;
 
 .session-form-errors {
   background: #fcd6d3;
-  margin: 20px 100px;
+  display: flex;
+  justify-content: center;
 
   li {
     font-family: sans-serif;
@@ -102,6 +103,15 @@ $yelp-red: #d32323;
     color: #333333;
   }
 }
+
+
+  @media screen and (max-width: 1000px) {
+    .session-form-left {
+      padding: 30px 0 !important;
+      margin: 0 !important;
+    }
+  }
+
 
 .session-form-left {
   display: block;
@@ -272,4 +282,10 @@ $yelp-red: #d32323;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .session-form-right {
+    display: none;
+  }
 }
