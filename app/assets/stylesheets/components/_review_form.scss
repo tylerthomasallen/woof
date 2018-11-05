@@ -68,6 +68,13 @@ $yelp-light-border: #e6e6e6;
     top: 3px;
   }
 
+  @media screen and (max-width: 600px) {
+    img {
+      left: -2px;
+      top: 8px;
+    }
+  }
+
   .review-form-stars {
     height: 30px;
     display: flex;
