@@ -27,11 +27,23 @@ $yelp-light-border: #e6e6e6;
   }
 }
 
+@media screen and (max-width: 800px) {
+  .review-form-body {
+    width: 90%;
+  }
+}
+
 .review-form-input {
   border: 1px solid $yelp-light-border;
   border-radius: 3px;
   width: 65%;
   height: 380px;
+}
+
+@media screen and (max-width: 800px) {
+  .review-form-input {
+    width: 100%;
+  }
 }
 
 .review-form-text-input {
