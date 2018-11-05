@@ -94,7 +94,8 @@ $yelp-red: #d32323;
 
 .session-form-errors {
   background: #fcd6d3;
-  margin: 20px 100px;
+  display: flex;
+  justify-content: center;
 
   li {
     font-family: sans-serif;
