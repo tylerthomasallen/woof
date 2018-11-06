@@ -36,7 +36,7 @@ $yelp-light-border: #e6e6e6;
 .review-form-input {
   border: 1px solid $yelp-light-border;
   border-radius: 3px;
-  width: 65%;
+  max-width: 650px;
   height: 380px;
 }
 
@@ -96,7 +96,9 @@ $yelp-light-border: #e6e6e6;
 
 .rating-text {
   margin-left: 20px;
+  margin-top: 8px;
 }
+
 
 .review-form {
   form {
