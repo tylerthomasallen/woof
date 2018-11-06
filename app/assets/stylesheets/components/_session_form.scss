@@ -63,17 +63,11 @@ $yelp-red: #d32323;
   }
 
   input[type=submit] {
-    // padding-top: 12px;
-    // padding-bottom: 12px;
     font-size: 16px;
     border: none;
-    // line-height: 1.3125em;
-    // border-color: #8d0005;
-    // box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-    background-color: #d90007;
+    background: transparent;
     color: white;
     font-weight: bold;
-    cursor: pointer;
     height: 100%;
     width: 100%;
     padding: 0;
@@ -305,7 +299,7 @@ $yelp-red: #d32323;
     margin: 10px 0;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     height: 40px;
-    width: 96%;
+    width: 98%;
     cursor: pointer;
     border-color: #8d0005;
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
