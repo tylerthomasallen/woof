@@ -9,7 +9,6 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 export const receiveCurrentUser = payload => {
-  debugger;
   return {
     type: RECEIVE_CURRENT_USER,
     payload
@@ -54,7 +53,6 @@ export const retrieveUser = userId => dispatch => {
 
 
 export const signup = currentUser => dispatch => {
-  debugger;
   return (
     AuthUtil.fetchSignUp(currentUser).then(
       user => (dispatch(receiveCurrentUser(user))),
