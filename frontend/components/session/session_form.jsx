@@ -252,12 +252,16 @@ class SessionForm extends React.Component {
                 {this.birthday()}
                 {this.forgotPassword()}
 
+                <div className="session-submit-button">
                 <input type="submit" value={formType} />
+                </div>
 
               </form>
 
               <form onSubmit={this.handleGuestSubmit}>
+                <div className="session-submit-button">
                 <input type="submit" value={`Guest ${formType}`} />
+                </div>
               </form>
 
               <div className="session-form-left-text bottom">

@@ -63,17 +63,24 @@ $yelp-red: #d32323;
   }
 
   input[type=submit] {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    // padding-top: 12px;
+    // padding-bottom: 12px;
     font-size: 16px;
-    line-height: 1.3125em;
-    border-color: #8d0005;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    border: none;
+    // line-height: 1.3125em;
+    // border-color: #8d0005;
+    // box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     background-color: #d90007;
     color: white;
     font-weight: bold;
-    text-align: center;
     cursor: pointer;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
   }
 
   a {
@@ -288,4 +295,21 @@ $yelp-red: #d32323;
   .session-form-right {
     display: none;
   }
+}
+
+.session-submit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 10px 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    height: 40px;
+    width: 96%;
+    cursor: pointer;
+    border-color: #8d0005;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    background-color: #d90007;
+    color: white;
+    font-weight: bold;
 }
