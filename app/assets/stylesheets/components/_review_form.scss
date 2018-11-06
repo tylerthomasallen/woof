@@ -105,21 +105,13 @@ $yelp-light-border: #e6e6e6;
 }
 
 .form-submit-button {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  font-size: 16px;
-  line-height: 1.3125em;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-  background-color: #d90007;
-  color: white;
-  font-weight: bold;
-  text-align: center;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  border: 1px solid #8d0005;
-  border-radius: 3px;
-  width: 40%;
-  margin-left: -15px;
-
 }
 
 .review-form-star-errors {
@@ -134,4 +126,20 @@ $yelp-light-border: #e6e6e6;
 
 .isActive {
   display: inline;
+}
+
+.review-form-submit {
+  height: 40px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  background-color: #d90007;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #8d0005;
+  border-radius: 3px;
+  max-width: 200px;
+  margin: 0 auto;
+  cursor: pointer;
 }

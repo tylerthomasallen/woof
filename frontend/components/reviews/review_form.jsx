@@ -211,7 +211,10 @@ class ReviewForm extends React.Component {
             required
           />
 
-          <input type="submit" value={`${formType} Review`} className="form-submit-button"/>
+          <div className="review-form-submit">
+            <input type="submit" value={`${formType} Review`} className="form-submit-button"/>
+          </div>
+
         </form>
       </div>
     );
