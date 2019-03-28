@@ -13,6 +13,17 @@
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script>
+      if (window.location.protocol == "http:") {
+        console.log("You are not connected with a secure connection.")
+        console.log("Reloading the page to a Secure Connection...")
+        window.location = document.URL.replace("http://", "https://");
+      }
+
+      if (window.location.protocol == "https:") {
+        console.log("You are connected with a secure connection.")
+      }
+    </script>
   </head>
 
   <body>
